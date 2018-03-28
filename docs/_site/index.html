@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="James R Holmquist, J Patrick Megonigal, Emmett Duffy, Lisamarie Windham-Myers, Jim Tang, Kevin Kroeger, Jorge Ramos, Emily Pigeon" />
+
+
+<title>Principles of Governance and Data Management</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Coastal Carbon Research Coordination Network</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Governance and Data Management</a>
+</li>
+<li>
+  <a href="contact.html">Join the Network</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Principles of Governance and Data Management</h1>
+<h4 class="author"><em>James R Holmquist, J Patrick Megonigal, Emmett Duffy, Lisamarie Windham-Myers, Jim Tang, Kevin Kroeger, Jorge Ramos, Emily Pigeon</em></h4>
+
+</div>
+
+
+<script>
+   $(document).ready(function() {
+     $head = $('#header');
+     $head.prepend('<img src=\"images/CoastalCarobonRCNLogo-OnlyLogo.png\" style=\"float: right;width: 150px;\"/>')
+   });
+</script>
+<p><strong>Note: This document is for public review. If you have any comments about these principles, please email</strong> <a href="mailto:CoastalCarbon@si.edu">CoastalCarbon@si.edu</a> <strong>by Friday May 13th at 12 pm EST</strong></p>
+<div id="contents" class="section level2">
+<h2>Contents</h2>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#governance-structure">Governance Structure</a>
+<ul>
+<li><a href="#core-principles">Core Principles</a></li>
+<li><a href="#defined-roles-and-responsibilities-within-the-ccrcn">Defined Roles and Responsibilities within the CCRCN</a></li>
+<li><a href="#data-synthesis-workshops">Data Synthesis Workshops</a></li>
+<li><a href="#coauthorship-policy">Coauthorship Policy</a></li>
+</ul></li>
+<li><a href="#data-management-principles">Data Management Principles</a>
+<ul>
+<li><a href="#types-of-data">Types of Data</a></li>
+<li><a href="#digital-object-identifiers">Digital Object Identifiers</a></li>
+<li><a href="#metadata-standards">Metadata standards</a></li>
+<li><a href="%22variables%22">Variables</a>
+<ul>
+<li><a href="#proposed-level-of-disaggregation-for-variables">Proposed Level of Disaggregation for Variables</a></li>
+<li><a href="#hierarchical-structure">Hierarchical Structure</a></li>
+</ul></li>
+<li><a href="#data-storage">Data Storage</a></li>
+<li><a href="#quality-control">Quality Control</a></li>
+<li><a href="#data-use-policy">Data Use Policy</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>The goal of the Coastal Carbon Research Coordination Network (CCRCN) is to accelerate the pace of discovery in coastal wetland carbon science by providing our community with access to data, analysis tools, and synthesis opportunities. Our proposed activities include bringing data libraries online, creating open source analysis and modeling tools, providing training and outreach opportunities, holding town halls and responding to community feedback, and hosting five data synthesis workshops each targeted at strategically reducing uncertainty in a coastal carbon science issue.</p>
+<p>One of our proposed activities is building an online data library of soil carbon data. This effort builds off of efforts undertaken by the NASA Blue Carbon Monitoring System, and discussions undertaken by 46 participants at the Coastal Carbon Working Group in 2016 in Menlo Park, CA. These data management principles incorporate experience from both of these efforts as as well as research on data management best practices, and collaborations with data management specialists across both the Smithsonian our partner agencies.</p>
+</div>
+<div id="governance-structure" class="section level2">
+<h2>Governance Structure</h2>
+<div id="core-principles" class="section level3">
+<h3>Core Principles</h3>
+<ol style="list-style-type: decimal">
+<li>We are responsive to the community.</li>
+<li>We will focus on quantifiable improvements to the state of the science.</li>
+<li>We will build off of previous efforts.</li>
+<li>We provide open data and analytics.</li>
+</ol>
+</div>
+<div id="defined-roles-and-responsibilities-within-the-ccrcn" class="section level3">
+<h3>Defined Roles and Responsibilities within the CCRCN</h3>
+<ul>
+<li><strong>Principle Investigators</strong> - Refer the the three names listed as principal investigators on the original Coastal Carbon RCN proposal to NSF and include Emmett Duffy, J Patrick Megonigal, and James Holmquist. PIs are responsible for executing the project as proposed to NSF and reporting to NSF on project progress.</li>
+<li><strong>Steering Committee Members</strong> - refer to the 3 PIs and 5 other elected members from outside agencies who guide the direction and contribute to implementing of CCRCN goals. Steering committee members are expected to serve between 1-2 years. New steering committee members can be nominated by their colleagues, will be voted on by the current steering committee, and will rotate in for members stepping down one or two at a time, twice a year. Steering committee members are responsible for attending monthly meetings, voting on synthesis meeting topics, participants, and new steering committee members.</li>
+<li><strong>CCRCN Personnel</strong> - Include PIs, the steering committee, as well as federal and trust employees and volunteers with official Smithsonian affiliations working on CCRCN-related tasks. Personnel are responsible for implementing CCRCN goals.</li>
+<li><strong>Collaborators</strong> - Refer to researchers who are not CCRCN personnel, but are otherwise actively contributing to CCRCN products in collaboration with CCRCN personnel or as part of data synthesis workshops. Collaborators are expected to participate at the level of co-author on synthesis products.</li>
+<li><strong>Collaborating Organizations</strong> - are similar to collabors except in a more official capacity an organization has issued a memorandum of understanding or letter of support to formalize collaboration with CCRCN. Collaborating organizations are expected to explore financial support of additional proposed activities not currently supported by CCRCN’s NSF funding, as well as explore opportunities to secure funding for the next iteration of CCRCN past the current five years of NSF funding.</li>
+<li><strong>Partners</strong> - Are a broad group engaged in any type of communication and feedback with the CCRCN. There are many opportunities to participate including remote consultations, town halls, twitter, webinars, online surveys, and participating in public comment periods. The best way to be recognized as a partner is to sign up for regular CCRCN email updates.</li>
+<li><strong>Partner Organizations</strong> - are similar to partners except in a more official capacity an organization has issued a memorandum of understanding or letter of support to formalize partnership with CCRCN. This could involve consultation or other non-monetary support for CCRCN goals.</li>
+<li><strong>Users</strong> - Refer to anyone using data structures or synthesis products created by the CCRCN. There is no obligation to involve CCRCN personnel or collaborators in individual research efforts beyond the funded data networking and synthesis workshops funded by NSF. User responsibilities include properly citing CCRCN synthesis products and properly citing original authors in the case that datasets curated to or synthesized by the CCRCN are downloaded and reused. See <a href="#data-use-policy">Data Use Policy</a>.</li>
+</ul>
+</div>
+<div id="data-synthesis-workshops" class="section level3">
+<h3>Data Synthesis Workshops</h3>
+<p>Data synthesis products lead by the CCRCN will be developed over the course of five workshops led by CCRCN personal, or collaborators. Potential collaborators can propose a workshop, or apply to participate in workshops once they are announced. Topics and 12-15 participants for each workshop will be voted on by the steering committee.</p>
+</div>
+<div id="coauthorship-policy" class="section level3">
+<h3>Coauthorship Policy</h3>
+<p>Researchers accepted to participate in any of the the five synthesis workshops hosted by the RCN will be expected to contribute at the level of a co-author preparing for, participating in, and following workshops. We agree to follow the <a href="https://harassment.agu.org/files/2017/08/ScientificIntegrityandProfessionalEthics_25August2017.pdf">American Geophysical Union’s 2017 Scientific and Professional Ethics: Guideline B. Ethical Obligations of Authors/Contributors for determining co-authorship</a>. Submitting data to the network alone will not merit co-authorship in data syntheses. If done according to the protocols established herein, it will result in citation.</p>
+<p>The steering committee also recognizes that a common criticism of such co-authorship policies in data sharing exercises is that established researchers from western industrialized nations can disproportionately benefit at the expense of researchers from groups with less institutional power <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. Recognizing this we commit to prioritizing the involvement of students, those with indigenous knowledge, and researchers from low and middle income countries, as synthesis workshops attendees/co-authors, when applicable.</p>
+</div>
+</div>
+<div id="data-management-principles" class="section level2">
+<h2>Data Management Principles</h2>
+<div id="types-of-data" class="section level3">
+<h3>Types of Data</h3>
+<p>Throughout this document we will refer to <strong>data that we curate</strong>, <strong>data that we ingest</strong>, and <strong>synthesis products</strong> we create. All data that we curate will be hosted by on Smithsonian Institution (SI) servers, but the original data submitter, and funding sources will be credited as the dataset’s creators. Data that we ingest will include both data we curate, and data from any outside sources that meet basic availability, archiving, and metadata standards. These data will be pulled into intermediate files in a centralized database using <code>R</code> code. The workflow and files will be archived and publically available on an SI run <code>GitHub</code> website. This document refers to soil depth profile data throughout, but it is our intention that these general structure and principles be applied to other types of data as the CCRCN progresses.</p>
+</div>
+<div id="digital-object-identifiers" class="section level3">
+<h3>Digital Object Identifiers</h3>
+<p>To be cited and used in the CCRCN synthesis, a dataset needs to have a citable <strong>digital object identifier (DOI)</strong>, which points to a repository containing freely downloadable data, and associated metadata. If data were discussed as part of a peer-reviewed journal article or report with a DOI, but are not otherwise publically available in their original form, then a second DOI for the dataset would be needed for inclusion in synthesis activities. Even if data are publically available, a new DOI should be assigned in cases where the original data is not machine readable, or data were missing key detail necessary for CCRCN synthesis purposes. In cases where data is continuously updated over time, we propose version controlling data, rather than issuing a new DOI for every update.</p>
+<p>Submitters can choose to archive data according to these outlined standards, host data on an SI server, and apply for a DOI through Smithsonian Institution Libraries (SIL) with the assistance of CCRCN personnel. This service is specific to this project. While data will be digitally archived long-term in accordance with SI standards, we cannot guaranty new data will be accepted after CCRCN funding ends. For data that we curate, file trees will be hosted on SI <code>DSpace</code> and DOIs will be issued by SIL. Although CCRCN cannot make any guarantees about how long digital objects will be stable, we hope that SI’s reputation, <code>DSpace</code>’s status as an approved technology, and the SIL’s commitment to digital object curation, generate an acceptable level of community trust.</p>
+<p>Data submitters can choose to forward outside DOI’s to the CCRCN which will be ingested into the central data structure on the CCRCN’s SI <code>GitHub</code> website using custom written <code>R</code> scripts. Some DOI issuing repository services include <a href="https://figshare.com/">Figshare</a> and the <a href="https://environmentaldatainitiative.org/">Environmental Data Initiative</a>. While we recognize that there is no official definition for what constitutes a <em>trusted repository</em>, repositories associated with DOIs should in general have community recognition and trust in their long-term stability.</p>
+</div>
+<div id="metadata-standards" class="section level3">
+<h3>Metadata standards</h3>
+<p>For data that we curate, we will be using the <em>Environmental Metadata Language</em> standards. This includes an abstract, detailed submitor information, variable definitions, and variable data types, for example character, integer, or float. CCRCN personnel will use the R-based <a href="https://cran.rstudio.com/web/packages/EML/">EML</a> package in our workflow to create metadata for data that we curate.</p>
+</div>
+<div id="variables" class="section level3">
+<h3>Variables</h3>
+<p>Variable naming should follow good management practices<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Variable names should be self descriptive and machine readable. They should contain no spaces, instead using <em>pothole case</em> (underscores instead of spaces or special characters), and not begin with a numbers or special character. For example for organic matter measured by loss-on-ignition at 550 degrees celsius: bad: 550loi, better: loi550, best: loss_on_ignition with 550 degree ignition temperature specified elsewhere in the metadata.</p>
+<p>We will recommend controlled vocabulary, variable names and variables, we wish to keep consistently formatted. for key variables relevant to our synthesis work. All other variable names will be considered user defined and will need to be defined in the associated metadata. Controlled vocabulary will be updated if there as there is need expressed by CCRCN partners.</p>
+<p>Units for all variables need to be defined and in some cases controlled. For some variables which typically have commonly reported units we will recommend submittors format using these controlled units. These include loss_on_ignition (fraction), dry_bulk_density (g cm^-3) and latitude and longitude (decimal degrees [world geological survey 1983]). For variables that are applicable to the synthesis, but typically have multiple common unit formats we recommend an accompanying column defining these units. Uncommon or data types not included in synthesis projects simply need to have units defined in associated metadata.</p>
+<p>There are a few special cases we are already aware of that require special discussion. Positional Information can either be associated with cores, sites, or both. However, positional information at one of these levels is required for inclusion in synthesis products. For some variables such as % carbon values, some studies may measure this using elemental analysis, while others may model it estimating it as a function of % organic matter. In these special cases we would create a special methods column to indicate whether the variable is measured or modeled.</p>
+<p>Other consistent good data practices include consistently formatting no data values and categorical variables. In our synthesis work ‘no data’ values will be represented as ‘NA’, never as blank cells or -9999. Categorical variables should have descriptive names stored as text, similar to variables names. For example one may code the categorical variable ‘treatments’ as numeric values ‘0’ and ‘1’ standing in for ‘experimental’ and ‘control’. Best practices would dictate coding these as characters rather than numbers.</p>
+<p>Some projects, sites, and cores may also have additional data tables that do not fit well with the prescribed structure. Some instances where this may be useful for the soil carbon core synthesis are age-depth models and tables of paired measurements of % organic matter and % carbon. In these cases additional tables can be included and indexed to their proper hierarchy.</p>
+<p>For data we curate we will recommend using controlled vocabulary units and variable types. For data we ingest we will keep a file of corresponding controlled variables and ‘aliases’ so that data not complying with controlled vocabulary can still be ingested. We will document transformation made to ingested data to standardize them with the data we curate in <code>R</code> code.</p>
+<div id="proposed-level-of-disaggregation-for-variables" class="section level5">
+<h5>Proposed Level of Disaggregation for Variables</h5>
+<p>In general we believe that there should be community agreement on the finest level of data disaggregation archived for practical use and reuse. This fundamental unit should be the most detailed unit typically used and reported in the available literature. For soils data we propose that we stratify by site, by core, and by depth increment. We propose that calculations such as loss-on-ignition and bulk density for each depth increment should be fundamental level of archiving. For age-depth information we propose archiving radiocarbon (<sup>14</sup>C) age ± sd for a sample for <sup>14</sup>C dates, and counts per unit dry weight ± sd for <sup>210</sup>Pb and <sup>137</sup>Cs profiles.</p>
+<p>We will not archive data at levels of disaggregation typically useful only for internal laboratory processes, but not orderly efficient data sharing. For example soil cores bulk density and loss on ignition for example we would not archive crucible weights before and after ignition.</p>
+</div>
+<div id="hierarchical-structure" class="section level4">
+<h4>Hierarchical Structure</h4>
+<p>We will make an effort to ingest existing data and curate submitted data in a hierarchical framework. Information associated with submitters, projects, sites, cores, and depth profiles will all be hosted in seperate tables related by indexes codes that are unique in that database. Submitter metadata include name and affiliation data for principal investigators. This will be indexed using the principal investigator’s last name and first initial. Numbers will be added in case of conflicts (Example: Jane Doe = DoeJ). A submitter can have be associated with one or more projects.</p>
+<p><strong>Project metadata</strong> will have an abstract and information about coauthors, associated funding source, or set of funding sources, associated publications, and materials and methods. A project should be a discrete unit of research united by consistent personnel, funding sources, and materials and methods.A project code should be a brief but descriptive and user defined, but should not otherwise conflict with existing project codes for example: DoeJ_USGS_saltmarsh_resiliency_grant_2011_to_2015. Note the use of pothole case, and the descriptive but brief nature of the code. A project can be associated with one or more sites. One project should be associated with one DOI.</p>
+<p><strong>Sites</strong> refer to discrete geographic or management units and are somewhat nebulous, project specific, and user defined. Site metadata refer to data associated with the sites, such as location (minimum and maximum latitude and longitude), notes on dominant vegetation types, salinity, and site condition. A site code should be follow the same best practices for variable naming, no spaces, not starting with a number, descriptive, brief, and meaningful to project documentation and design, for example morro_bay or south_bay_pond12a. Although there are no standards for what constitutes a site, and different projects could have the different names for the same site, this coding should be consistent within a project. A site can have one or more data sets, including one or more soil cores.</p>
+<p><strong>Core/Plot-Level</strong> data refer to information specifically about the location of a soil core. This could include positional information such as latitude, longitude, and elevation. It could also include notes are redundant but more detailed than site metadata, such as vegetation. A core code should be follow the same best practices for variable naming, no spaces, not starting with a number, descriptive, brief, and meaningful to project documentation and design. In cases where cores have the same name and are numbered, the number of digits should be kept consistent using leading zeros. For example of there were 20 cores in a dataset and leading zeros were not used, they would appear listed in the order (core1, core10, core11 … core9). If leading 0’s were used they would appear properly ordered (core01, core02, core03 … core20). Each core should have a unique name within a project. Redundant core names can occur within, the entire dataset, but as long as they are indexed to different sites, projects, and submitted, the database architecture as we design it will not confuse them.</p>
+<p>For future syntheses this level of hierarchy could also house other types of plot data or instrumental data. For example, a user may want to query our dataset to find all projects which have sites including both soil core data and methane flux.</p>
+<p><strong>Depth Series Information</strong>: Soil cores have depth-series information which should include minimum and maximum depth increments, as well as measurements presented in their fundamental unit (explained below), with associated methods notes, uncertainties, and/or QA:QC flags if applicable (explained below). Each sample should have it’s own ‘sample code’. These can be submitter defined, but should conform to general good principles for variable naming. If they are not defined by the data submitters they will be assigned as the core name the depth increment in centimeters, and letters a - z, then aa - zz, etc, in pothole case. Leading 0’s will also be used to keep the number of digits in the depth increments consistent. For example in a case with 20 cores without unique names, that are 100 cm long and there are three replicates for each sample: core01_000to001cm_a, core01_000to001cm_b … core20_090to100cm_c. In future syntheses time-series data could also be archived in this format with instrument replacing a core, and time replacing depth.</p>
+</div>
+</div>
+<div id="data-storage" class="section level3">
+<h3>Data Storage</h3>
+<p>Tabular data will be stored in a flat text file, meaning that no data formatting will be included. We will default to using tab delimited text files “.txt” for the sake of simplicity. Although comma separated values “.csv” are also common, these types of files can be corrupted if commas are ever used within a variable rather than just to delineate variables. Submissions that are received in other formats, such Microsoft Excel files will be edit locked and archived as submission documents. However, a working version of this submission will be formatted according to CCRCN standards in flat text files.</p>
+<p>Tabular data will be stored in long-form tables, as opposed to wide-form tables. Each column should correspond to one variable, each row should correspond to one entry. Each column needs to have a single data type, and represent only one variable. Extra information such as units, notes, or operator code should not be encoded as an excel note, cell color, or be included in the same cell as a value.</p>
+</div>
+<div id="quality-control" class="section level3">
+<h3>Quality Control</h3>
+<p>CCRCN personnel will perform a cursory visual check on all data we curate and note then relay any concerns with the data submitter during the curation process. We will also write scripts to enforce consistent units and data types for controlled variables, to check for completeness, and to ensure there are no conflicts or duplicates with previously archived data.</p>
+<p>Some key variables will receive quality control flags. For variables that are strongly intercorrelated, quality control flags will be assigned to the whole sample unit. Key variables independent of sample intercorrelation will receive variable-specific quality code flags. For example, organic matter and bulk density are tightly intercorrelated. Values falling far outside this known relationship could receive a flag for the entire sampling interval. Whereas, a suspiciously young radiocarbon date would require a separate flag as that error would presumably be independent of the bulk density and loss-on-ignition measurements. For data that we curate,files will be edit locked following QA:QC. Any updates or corrections will result in a new named ‘version’ of the file, a change logged by CBSSC personnel in a text file associated with the data, and a note of the change sent to the next update to CBSSC email list members.</p>
+</div>
+<div id="data-use-policy" class="section level3">
+<h3>Data Use Policy</h3>
+<p>We refer to <strong>users</strong> as anyone using either data we curate, or synthesis products we create. Data that is curated, but not created, by the CCRCN, should not be attributed to the CCRCN. Users should cite all dataset DOIs and credit the datasets original authors. All synthesis products created by the CCRCN and associated collaborators will be listed under a Creative Commons <em>With Attribution</em> license. The CCRCN should be acknowledged and cited appropriately if users utilize any of the data structures, tools, or scripts developed by CCRCN and associated collaborators. For example if a user downloaded datasets from 100 sources, through the CCRCN GitHub interface, the user would be responsible for both citing all 100 database DOI’s, and the DOI for the CCRCN GitHub-based interface. We will develop additional tools to assist users in generating lists of citations, but users will be ultimately responsible for correctly citing all data used.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Serwadda D, Ndebele P, Grabowski MK, Bajunirwe F, Wanyenze RK (2018). Open data sharing and the Global South—Who benefits?. Science, 359(6376), 642-643.<a href="https://doi.org/10.1126/science.aap8395" class="uri">https://doi.org/10.1126/science.aap8395</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Wilson G, Bryan J, Cranston K, Kitzes J, Nederbragt L, Teal TK (2017) Good enough practices in scientific computing. PLoS Comput Biol 13(6): e1005510. <a href="https://doi.org/10.1371/journal.pcbi.1005510" class="uri">https://doi.org/10.1371/journal.pcbi.1005510</a><a href="#fnref2">↩</a></p></li>
+</ol>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

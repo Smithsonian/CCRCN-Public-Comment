@@ -1,0 +1,8 @@
+name: "coastal-carbon-research-coordination-network"
+navbar:
+  title: "Coastal Carbon Research Coordination Network"
+  left:
+    - text: "Governance and Data Management"
+      href: index.html
+    - text: "Join the Network"
+      href: contact.html
