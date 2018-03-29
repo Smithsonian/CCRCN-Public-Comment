@@ -12,14 +12,14 @@ output:
 </script>
 <br>
 
-### Frequent
+### Frequent Updates
 <!--html_preserve-->
 <a href="https://twitter.com/coastalcarbon?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @coastalcarbon</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <!--/html_preserve-->
 <br>
 <br>
 
-### Monthly
+### Monthly Updates
 <!--html_preserve-->
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
