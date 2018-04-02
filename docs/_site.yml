@@ -3,7 +3,11 @@ output_dir: "."
 navbar:
   title: "Coastal Carbon Research Coordination Network"
   left:
-    - text: "Governance and Data Management"
+    - text: "Governance Principles"
       href: index.html
+    - text: "Data Management Principles"
+      href: data_management.html
+    - text: "Controlled Variables"
+      href: Controlled_Variables_and_Vocabulary.html
     - text: "Join the Network"
       href: contact.html
