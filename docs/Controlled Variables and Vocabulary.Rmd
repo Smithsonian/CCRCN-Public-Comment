@@ -2,16 +2,16 @@
 title: "Controlled Variables and Vocabulary"
 output: html_document
 ---
-
 <script>
    $(document).ready(function() {
      $head = $('#header');
      $head.prepend('<img src=\"images/CoastalCarobonRCNLogo-OnlyLogo.png\" style=\"float: right;width: 150px;\"/>')
    });
 </script>
-<br>
+**Note: This document is for public review. If you have any comments about these principles, please email** CoastalCarbon@si.edu **by Friday May 13th at 12 pm EST**    
 
 ### Contents
+* [Overview](#overview)
 * [Soil Depth Series Variables](#soil-depth-series-variables)
 * [Core Level Variables](#core-level-variables)
     + [Core Level Controlled Vocabulary](#core-level-controlled-vocabulary)
@@ -23,6 +23,9 @@ output: html_document
     + [Materials and Methods Vocabulary](#materials-and-methods-vocabulary)
 * [Funding Sources Table](#funding-sources-table)
 * [Study Authors Table](#study-authors-table)
+
+### Overview
+Individual studies and contributors will each have their own way of naming variables, representing units, naming categorical variables, and representing notes or observations. We propose the following standardized vocabulary for data and metadata in order to make datasets machine readable and interoperable within our soil carbon synthesis products. Each sub-heading lists a level of data and metadata heirarchy from *depth series* to *core* to *site* to *study level* information. We also include accompanying sets of reccomended controlled vocabulary for key categorical variables. Some variables have controlled units that we wich to keep uniform for the series. Data that we curate will follow naming conventions outlined herin. Data that we ingest from outside sources will be converted to these convetions when being ingested into the central GitHub databased using custom built R scripts. 
 
 ### Soil Depth Series Variables
 | Variable Name | Description | Data Type | Controlled Units |
