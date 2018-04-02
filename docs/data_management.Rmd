@@ -9,7 +9,7 @@ output: html_document
    });
 </script>
 
-**Note: This document is for public review. If you have any comments about these principles, please email** CoastalCarbon@si.edu **by Friday May 13th at 12 pm EST**
+**Note: This document is for public review. If you have any comments about these principles, please email** CoastalCarbon@si.edu **by Friday April 13th at 12 pm EST**
 
 ##Contents
 
