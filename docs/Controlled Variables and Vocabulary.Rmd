@@ -151,8 +151,8 @@ For the following variable, salinity, vegetation, impacts, and management status
 ||mesohaline|5-18 ppt|
 ||oligohaline|0.5-5 ppt|
 |**vegetation_class**|emergent| Describes wetlands dominated by persistant emergent vasular plants |
-||scrub_shrub| Describes wetlands dominated by woody vegetation < 5 meters in heightt |
-||forested| Describes wetlands dominated by woody vegetation > 5 meters in heights|
+||scrub_shrub| Describes wetlands dominated by woody vegetation < 5 meters in height |
+||forested| Describes wetlands dominated by woody vegetation > 5 meters in height |
 ||seagrass| Describes tidal or subtidal communities dominated by rooted vasular plants|
 |**impact_class**| impounded | Tidal flow is muted or blocked by built structures |
 ||managed_impounded | Tidal flow is muted or blocked seasonally, and other times follows natural or semi-natural flooding patterns |
