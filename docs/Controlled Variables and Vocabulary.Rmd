@@ -219,7 +219,6 @@ We recognicze that funding situations are often complex, so for each project we 
 |funding_start_month | Numbered month of the start of the funding period | numeric | 1-12 |
 |funding_start_day | Day of the month of the start of the funding period |numeric | 1-31 |
 |funding_end_year | Year of the end of the funding period | numeric | four digit year (common era) |
-|funding_start_month | Numerbed month of the start of the funding period | numeric | 1-12 |
 |funding_end_month | Numbered month of the end of the funding period | numeric | 1-12 |
 |funding_end_day | Day of the month of the end of the funding period |numeric | 1-31 |
 |funding_notes| Any other user generated notes about the project funding | character | user defined |
