@@ -121,7 +121,7 @@ For the following variable, salinity, vegetation, impacts, and management status
 | salinity_method | Indicate whether *salinity_class* was determined using a *field observation* or a *measurement* | character | *field observation*,  *measurement*, or other user defined code |
 | salinity_notes | Any relevant user-generated notes on how *salinity_class* was determined | character  | user defined |
 | vegetation_class | Code based on user's field observations or measurement indicating dominant wetland vegetation type  | character  | [*emergent*, *scrub_shrub*, *forest*, *seagrass* ](#core--or-site-level-controlled-vocabulary), or other user defined code  |
-| dominant_species | Single string of ";" seperated species codes indicating the dominant speces.  | character  | Species codes are user defined, but should be summarized in a [separate table listing *species_code*, *genus*, *species*, *sub_species*, *hybrid*, and *species_notes* for the entire study]((#study-level-species-table)) |
+| dominant_species | Single string of ";" seperated species codes indicating the dominant speces.  | character  | Species codes are user defined, but should be summarized in a [separate table listing *species_code*, *genus*, *species*, *sub_species*, *hybrid*, and *species_notes* for the entire study](#study-level-species-table) |
 | vegetation_method | Indicate whether *salinity_class* was determined using a *field observation* or a *measurement* | character | *field observation*,  *measurement*, or other user defined code |
 | vegetation_notes | Any relevant user-generated notes on how *vegetation_class* and *dominant_species* were determined | character  | user defined |
 | impact_class | Code indicating any major  anthropogenic impacts historically and currently affecting the coring location. List these especially if the study was specifically designed to address these. If more than one are applicable, include them all as a single character string separated by ";". | character | [*impounded*, , *managed_impounded*, *ditched*, *drained*, *farmed*, other user defined variable](#core--or-site-level-controlled-vocabulary) |
@@ -205,7 +205,7 @@ Materials and methods can be assigned to depth series, core level data, or can e
 ||push_corer| Any number of coring types involving driving a pipe or pvc into the sediment to recover a core |
 ||other_shallow_corer| Any other method of collecting cores shallower than 1 meter |
 ||other_deep_corer| Any other method that collects cores 1 meter or deeper |
-|**carbonates_removal_method**|acid_fumigation| Carbonate were removed by fumigation with strong acid |
+|**carbonates_removal_method**|acid_fumigation| Carbonates were removed by fumigation with strong acid |
 ||direct_acid_treatment| Carbonates were removed by direct treatment with dilute acid |
 
 ### Funding Sources Table
@@ -231,6 +231,6 @@ We recognicze that funding situations are often complex, so for each project we 
 |first_name| The given name of the author or contributor| character | user defined |
 |middle_name| The middle name or initial of the author or contributor | character |user defined |
 |institution| This category can either refer to institutional affiliation of the author, or the instiution or team itself in the case that a group of authors are credited together under one identification | character |user defined |
-|email| | The email address of the author or contributor. This is a required field for corresponding authors and optional for others | character |user defined |
+|email | The email address of the author or contributor. This is a required field for corresponding authors and optional for others | character |user defined |
 |address| The mailing address of the author or contributor. This is a required field for corresponding authors and optional for others | character |user defined |
 |corresponding_author| Please whether the author should be contacted for further information or requests. Field requires at least one marked as *True* | Boolean | *True* or *False* |
