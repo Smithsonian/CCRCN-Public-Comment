@@ -100,8 +100,8 @@ Note positional data can be assigned at the core level, or at the site level, ho
 |  |  MHW |  A tidal datum, Mean High Water as measured against a local tide gauge |
 |  |  MHHW |  A tidal datum, Mean Higher High Water as measured against a local tide gauge |
 |  |  MHHWS |  A tidal datum, Mean Higher High Water for Spring Tides as measured against a local tide gauge |
-|  |  MLW |  At tidal datum, Mean Low Water as against a local tide gauge |
-|  |  MLLW |  At tidal datum, Mean Lower Low Water as measured against a local tide gauge |
+|  |  MLW |  A tidal datum, Mean Low Water as against a local tide gauge |
+|  |  MLLW |  A tidal datum, Mean Lower Low Water as measured against a local tide gauge |
 | **core_elevation_method**| rtk_gps | Real-time kinematic GPS  |
 |  | other_high_resolution  | Any other technique resulting in positional error < 5 cm of random error | 
 |  | lidar_based  | Handheld GPS matched to lidar-based digital elevation model |
