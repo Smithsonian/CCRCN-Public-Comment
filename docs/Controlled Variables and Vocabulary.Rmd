@@ -87,7 +87,6 @@ Note positional data can be assigned at the core level, or at the site level, ho
 |  | other_moderate_resolution  | Any other technique resulting in positional error < 30 meters |
 |  |  other_low_resolution | Any other technique resulting in positional error > 30 meters |
 |**core_elevation_datum**| NAVD88 | A gravity-based geodetic datum, North American Vertical Datum from 1988 |
-<<<<<<< HEAD
 |  |  MSL |  A tidal datum, Mean Sea Level as seasured against a local tide gauges |
 |  |  MTL |  A tidal datum, Mean Tidal Level as seasured against a local tide gauges |
 |  |  MHW |  A tidal datum, Mean High Water as seasured against a local tide gauges |
@@ -96,11 +95,11 @@ Note positional data can be assigned at the core level, or at the site level, ho
 |  |  MLW |  A tidal datum, Mean Low Water as   against a local tide gauges |
 |  |  MLLW |  A tidal datum, Mean Lower Low Water as seasured against a local tide gauges |
 | **core_elevation_method**| rtk_gps | Real time kinematic GPS  |
-|  |  MSL |  At tidal datum, Mean Sea Level as measured against a local tide gauge |
-|  |  MTL |  At tidal datum, Mean Tidal Level as measured against a local tide gauge |
-|  |  MHW |  At tidal datum, Mean High Water as measured against a local tide gauge |
-|  |  MHHW |  At tidal datum, Mean Higher High Water as measured against a local tide gauge |
-|  |  MHHWS |  At tidal datum, Mean Higher High Water for Spring Tides as measured against a local tide gauge |
+|  |  MSL |  A tidal datum, Mean Sea Level as measured against a local tide gauge |
+|  |  MTL |  A tidal datum, Mean Tidal Level as measured against a local tide gauge |
+|  |  MHW |  A tidal datum, Mean High Water as measured against a local tide gauge |
+|  |  MHHW |  A tidal datum, Mean Higher High Water as measured against a local tide gauge |
+|  |  MHHWS |  A tidal datum, Mean Higher High Water for Spring Tides as measured against a local tide gauge |
 |  |  MLW |  At tidal datum, Mean Low Water as against a local tide gauge |
 |  |  MLLW |  At tidal datum, Mean Lower Low Water as measured against a local tide gauge |
 | **core_elevation_method**| rtk_gps | Real-time kinematic GPS  |
