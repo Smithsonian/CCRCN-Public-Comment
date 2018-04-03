@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -236,7 +238,7 @@ $(document).ready(function () {
 </div>
 <div id="overview" class="section level3">
 <h3>Overview</h3>
-<p>Individual studies and contributors will each have their own way of naming variables, representing units, naming categorical variables, and representing notes or observations. We propose the following standardized vocabulary for data and metadata in order to make datasets machine readable and interoperable within our soil carbon synthesis products. Each sub-heading lists a level of data and metadata heirarchy from <em>depth series</em> to <em>core</em> to <em>site</em> to <em>study level</em> information. We also include accompanying sets of reccomended controlled vocabulary for key categorical variables. Some variables have controlled units that we wish to keep uniform accross datasets. Data that we curate will follow naming conventions outlined herin. Data that we ingest from outside sources will be converted to these convetions when being ingested into the central GitHub databased using custom built R scripts.</p>
+<p>Individual studies and contributors will each have their own way of naming variables, representing units, naming categorical variables, and representing notes or observations. We propose the following standardized vocabulary for data and metadata in order to make datasets machine readable and interoperable within our soil carbon synthesis products. Each sub-heading lists a level of data and metadata hierarchy from <em>depth series</em> to <em>core</em> to <em>site</em> to <em>study level</em> information. We also include accompanying sets of recommended controlled vocabulary for key categorical variables. Some variables have controlled units that we wish to keep uniform across datasets. Data that we curate will follow naming conventions outlined herein. Data that we ingest from outside sources will be converted to these conventions when being ingested into the central GitHub databased using custom-built R scripts.</p>
 </div>
 <div id="soil-depth-series-variables" class="section level3">
 <h3>Soil Depth Series Variables</h3>
@@ -260,7 +262,7 @@ $(document).ready(function () {
 <td align="left">sample_id</td>
 <td align="left">Sample identification unique to the core</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">depth_min</td>
@@ -314,7 +316,7 @@ $(document).ready(function () {
 <td align="left">loss_on_ignition_notes</td>
 <td align="left">Any user-generated notes about the loss on ignition and bulk density processes</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">compaction_fraction</td>
@@ -324,9 +326,9 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">compaction_notes</td>
-<td align="left">Any User generated notes on compaction</td>
+<td align="left">Any user-generated notes on compaction</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">cs137_activity</td>
@@ -342,9 +344,9 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td align="left">cs137_notes</td>
-<td align="left">Any user generated notes on <sup>137</sup>Cs dating process</td>
+<td align="left">Any user-generated notes on <sup>137</sup>Cs dating process</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">pb210_activity</td>
@@ -360,15 +362,15 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">pb210_notes</td>
-<td align="left">Any user generated notes on <sup>210</sup>Pb dating process</td>
+<td align="left">Any user-generated notes on <sup>210</sup>Pb dating process</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">c14_material</td>
 <td align="left">Description of the material selected for radiocarbon (<sup>14</sup>C) dating</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">c14_age</td>
@@ -386,20 +388,20 @@ $(document).ready(function () {
 <td align="left">c14_notes</td>
 <td align="left">Any relevant user-generated notes on <sup>14</sup>C dating process</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">(other)</td>
 <td align="left">Other variables could be included, but variable name should follow good data management practices, the variable should be described, and the data type defined, in the accompanying metadata</td>
-<td align="left">user defined</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
+<td align="left">user-defined</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="core-level-variables" class="section level3">
 <h3>Core Level Variables</h3>
-<p>Note positional data can be assigned at the core level, or at the site level, however it is important that this is specified, that site coordinates are not attributed as core coordinates, and that the method of measurement and precision is noted.</p>
+<p>Note positional data can be assigned at the core level, or at the site level, however, it is important that this is specified, that site coordinates are not attributed as core coordinates, and that the method of measurement and precision is noted.</p>
 <table style="width:75%;">
 <colgroup>
 <col width="11%" />
@@ -420,7 +422,7 @@ $(document).ready(function () {
 <td align="left">core_id</td>
 <td align="left">Core identification code unique to each site</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">year</td>
@@ -462,13 +464,13 @@ $(document).ready(function () {
 <td align="left">core_position_method</td>
 <td align="left">Code indicating how <em>latitude</em> and <em>longitude</em> were determined.</td>
 <td align="left">character</td>
-<td align="left"><a href="#core-level-controlled-vocabulary"><em>rtk_gps</em>, <em>handheld_gps</em>, <em>other_high_resolution</em>, <em>other_moderate_resolution</em>, <em>other_low_resolution</em></a>, or other user defined code</td>
+<td align="left"><a href="#core-level-controlled-vocabulary"><em>rtk_gps</em>, <em>handheld_gps</em>, <em>other_high_resolution</em>, <em>other_moderate_resolution</em>, <em>other_low_resolution</em></a>, or other user-defined code</td>
 </tr>
 <tr class="odd">
 <td align="left">core_position_notes</td>
 <td align="left">Any relevant user-generated notes on how <em>latitude</em> and <em>longitude</em> were determined</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">core_elevation</td>
@@ -480,7 +482,7 @@ $(document).ready(function () {
 <td align="left">core_elevation_datum</td>
 <td align="left">The datum relative to which the core was measured</td>
 <td align="left">character</td>
-<td align="left">Example: <a href="#core-level-controlled-vocabulary"><em>NAVD88</em>, <em>various tidal datums</em>, other user defined code</a></td>
+<td align="left">Example: <a href="#core-level-controlled-vocabulary"><em>NAVD88</em>, <em>various tidal datums</em>, other user-defined code</a></td>
 </tr>
 <tr class="even">
 <td align="left">core_elevation_accuracy</td>
@@ -492,25 +494,25 @@ $(document).ready(function () {
 <td align="left">core_elevation_method</td>
 <td align="left">Code indicating how <em>elevation</em> was determined</td>
 <td align="left">character</td>
-<td align="left"><a href="#core-level-controlled-vocabulary"><em>rtk_gps</em>, <em>other_high_resolution</em>, <em>lidar_based</em>, <em>dem_based</em>, or other user defined code</a></td>
+<td align="left"><a href="#core-level-controlled-vocabulary"><em>rtk_gps</em>, <em>other_high_resolution</em>, <em>lidar_based</em>, <em>dem_based</em>, or other user-defined code</a></td>
 </tr>
 <tr class="even">
 <td align="left">core_elevation_notes</td>
 <td align="left">Any relevant user-generated notes on how <em>elevation</em> was determined</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">core_notes</td>
 <td align="left">Any other relevant user-generated notes on how cores were collected</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">(other)</td>
 <td align="left">Other variables could be included, but variable name should follow good data management practices, the variable should be described, and the data type defined, in the accompanying metadata</td>
-<td align="left">user defined</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
+<td align="left">user-defined</td>
 </tr>
 </tbody>
 </table>
@@ -533,7 +535,7 @@ $(document).ready(function () {
 <tr class="odd">
 <td align="left"><strong>position_method</strong></td>
 <td align="left">rtk_gps</td>
-<td align="left">Real time kinematic global position system (GPS)</td>
+<td align="left">Real-time kinematic global position system (GPS)</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -563,42 +565,42 @@ $(document).ready(function () {
 <tr class="odd">
 <td align="left"></td>
 <td align="left">MSL</td>
-<td align="left">At tidal datum, Mean Sea Level as seasured against a local tide gauges</td>
+<td align="left">At tidal datum, Mean Sea Level as measured against a local tide gauge</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left">MTL</td>
-<td align="left">At tidal datum, Mean Tidal Level as seasured against a local tide gauges</td>
+<td align="left">At tidal datum, Mean Tidal Level as measured against a local tide gauge</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left">MHW</td>
-<td align="left">At tidal datum, Mean High Water as seasured against a local tide gauges</td>
+<td align="left">At tidal datum, Mean High Water as measured against a local tide gauge</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left">MHHW</td>
-<td align="left">At tidal datum, Mean Higher High Water as seasured against a local tide gauges</td>
+<td align="left">At tidal datum, Mean Higher High Water as measured against a local tide gauge</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left">MHHWS</td>
-<td align="left">At tidal datum, Mean Higher High Water for Spring Tides as seasured against a local tide gauges</td>
+<td align="left">At tidal datum, Mean Higher High Water for Spring Tides as measured against a local tide gauge</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left">MLW</td>
-<td align="left">At tidal datum, Mean Low Water as against a local tide gauges</td>
+<td align="left">At tidal datum, Mean Low Water as against a local tide gauge</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left">MLLW</td>
-<td align="left">At tidal datum, Mean Lower Low Water as seasured against a local tide gauges</td>
+<td align="left">At tidal datum, Mean Lower Low Water as measured against a local tide gauge</td>
 </tr>
 <tr class="even">
 <td align="left"><strong>core_elevation_method</strong></td>
 <td align="left">rtk_gps</td>
-<td align="left">Real time kinematic GPS</td>
+<td align="left">Real-time kinematic GPS</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -613,7 +615,7 @@ $(document).ready(function () {
 <tr class="odd">
 <td align="left"></td>
 <td align="left">dem_based</td>
-<td align="left">Handheld GPS matched to other digital elevation model</td>
+<td align="left">Handheld GPS matched to another digital elevation model</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -646,7 +648,7 @@ $(document).ready(function () {
 <td align="left">site_id</td>
 <td align="left">Site identification code unique to each study</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">site_latitude_max</td>
@@ -686,7 +688,7 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">site_extent</td>
-<td align="left">Alternatively, data submittors could submit a shapefile (.shp) of keyhole markup language (.kml) file defining the extent of a site</td>
+<td align="left">Alternatively, data submitters could submit a shapefile (.shp) of keyhole markup language (.kml) file defining the extent of a site</td>
 <td align="left">Separate .shp or .kml file</td>
 <td align="left"></td>
 </tr>
@@ -695,7 +697,7 @@ $(document).ready(function () {
 </div>
 <div id="variables-that-can-be-assigned-to-either-cores-or-sites" class="section level3">
 <h3>Variables that can be assigned to either cores or sites</h3>
-<p>For the following variable, salinity, vegetation, impacts, and management status could either be listed for each core separately, or entered for the whole site. If entered at the site level, cores would inheret the variables associated with the site.</p>
+<p>For the following variable, salinity, vegetation, impacts, and management status could either be listed for each core separately or entered for the whole site. If entered at the site level, cores would inherit the variables associated with the site.</p>
 <table style="width:75%;">
 <colgroup>
 <col width="11%" />
@@ -716,19 +718,19 @@ $(document).ready(function () {
 <td align="left">inundation_class</td>
 <td align="left">Code based on user’s field observation or measurement indicating how often the coring location is inundated</td>
 <td align="left">character</td>
-<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>high_marsh</em>, <em>mid_marsh</em>, <em>low_marsh</em>, <em>levee</em>, <em>back_marsh</em>, or other user defined code</a></td>
+<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>high_marsh</em>, <em>mid_marsh</em>, <em>low_marsh</em>, <em>levee</em>, <em>back_marsh</em>, or other user-defined code</a></td>
 </tr>
 <tr class="even">
 <td align="left">inundation_method</td>
 <td align="left">Indicate whether <em>inundation_class</em> was determined using a <em>field observation</em> or a <em>measurement</em></td>
 <td align="left">character</td>
-<td align="left"><em>field observation</em>, <em>measurement</em>, or other user defined code</td>
+<td align="left"><em>field observation</em>, <em>measurement</em>, or other user-defined code</td>
 </tr>
 <tr class="odd">
 <td align="left">inundation_notes</td>
 <td align="left">Any relevant user-generated notes on how <em>elevation</em> was determined</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">salinity_class</td>
@@ -740,53 +742,53 @@ $(document).ready(function () {
 <td align="left">salinity_method</td>
 <td align="left">Indicate whether <em>salinity_class</em> was determined using a <em>field observation</em> or a <em>measurement</em></td>
 <td align="left">character</td>
-<td align="left"><em>field observation</em>, <em>measurement</em>, or other user defined code</td>
+<td align="left"><em>field observation</em>, <em>measurement</em>, or other user-defined code</td>
 </tr>
 <tr class="even">
 <td align="left">salinity_notes</td>
 <td align="left">Any relevant user-generated notes on how <em>salinity_class</em> was determined</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">vegetation_class</td>
 <td align="left">Code based on user’s field observations or measurement indicating dominant wetland vegetation type</td>
 <td align="left">character</td>
-<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>emergent</em>, <em>scrub_shrub</em>, <em>forest</em>, <em>seagrass</em></a>, or other user defined code</td>
+<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>emergent</em>, <em>scrub_shrub</em>, <em>forest</em>, <em>seagrass</em></a>, or other user-defined code</td>
 </tr>
 <tr class="even">
 <td align="left">dominant_species</td>
-<td align="left">Single string of “;” seperated species codes indicating the dominant speces.</td>
+<td align="left">Single string of “;” separated species codes indicating the dominant species.</td>
 <td align="left">character</td>
-<td align="left">Species codes are user defined, but should be summarized in a <a href="#study-level-species-table">separate table listing <em>species_code</em>, <em>genus</em>, <em>species</em>, <em>sub_species</em>, <em>hybrid</em>, and <em>species_notes</em> for the entire study</a></td>
+<td align="left">Species codes are user-defined, but should be summarized in a <a href="#study-level-species-table">separate table listing <em>species_code</em>, <em>genus</em>, <em>species</em>, <em>sub_species</em>, <em>hybrid</em>, and <em>species_notes</em> for the entire study</a></td>
 </tr>
 <tr class="odd">
 <td align="left">vegetation_method</td>
 <td align="left">Indicate whether <em>salinity_class</em> was determined using a <em>field observation</em> or a <em>measurement</em></td>
 <td align="left">character</td>
-<td align="left"><em>field observation</em>, <em>measurement</em>, or other user defined code</td>
+<td align="left"><em>field observation</em>, <em>measurement</em>, or other user-defined code</td>
 </tr>
 <tr class="even">
 <td align="left">vegetation_notes</td>
 <td align="left">Any relevant user-generated notes on how <em>vegetation_class</em> and <em>dominant_species</em> were determined</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">impact_class</td>
 <td align="left">Code indicating any major anthropogenic impacts historically and currently affecting the coring location. List these especially if the study was specifically designed to address these. If more than one are applicable, include them all as a single character string separated by “;”.</td>
 <td align="left">character</td>
-<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>impounded</em>, , <em>managed_impounded</em>, <em>ditched</em>, <em>drained</em>, <em>farmed</em>, other user defined variable</a></td>
+<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>impounded</em>, , <em>managed_impounded</em>, <em>ditched</em>, <em>drained</em>, <em>farmed</em>, other user-defined variable</a></td>
 </tr>
 <tr class="even">
 <td align="left">impact_notes</td>
 <td align="left">Any relevant additional user-generated notes detailing <em>impact_class</em></td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">management_class</td>
-<td align="left">Code indicating any active management or restoration efforts are directly affecting the coring location. List these especially if the study was specifically designed to address these. If more than one are applicable, include them all as a single character string separated by “;”.</td>
+<td align="left">Code indicating any active management or restoration efforts are directly affecting the coring location. List these especially if the study was specifically designed to address these. If more than one is applicable, include them all as a single character string separated by “;”.</td>
 <td align="left">character</td>
 <td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>impoundment_removed</em>, <em>revegetated</em>, <em>invasive_plants_removed</em>, <em>invasive_herbivores_removed</em>, <em>sediment_added</em>, <em>wetlands_built</em></a></td>
 </tr>
@@ -794,7 +796,7 @@ $(document).ready(function () {
 <td align="left">management_notes</td>
 <td align="left">Any relevant additional user-generated notes detailing <em>management_class</em></td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 </tbody>
 </table>
@@ -822,7 +824,7 @@ $(document).ready(function () {
 <tr class="even">
 <td align="left"></td>
 <td align="left">mid_marsh</td>
-<td align="left">Study-specific definition of an elevation in the relative middle in the tidal frame, typically defined by vegetation type</td>
+<td align="left">Study-specific definition of an elevation in the relative middle of the tidal frame, typically defined by vegetation type</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -832,7 +834,7 @@ $(document).ready(function () {
 <tr class="even">
 <td align="left"></td>
 <td align="left">levee</td>
-<td align="left">Study-specific definition of a relatively high elevation zone built up on the edge of a river, creek, or channnel</td>
+<td align="left">Study-specific definition of a relatively high elevation zone built up on the edge of a river, creek, or channel</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -892,7 +894,7 @@ $(document).ready(function () {
 <tr class="even">
 <td align="left"><strong>vegetation_class</strong></td>
 <td align="left">emergent</td>
-<td align="left">Describes wetlands dominated by persistant emergent vasular plants</td>
+<td align="left">Describes wetlands dominated by persistent emergent vascular plants</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -907,7 +909,7 @@ $(document).ready(function () {
 <tr class="odd">
 <td align="left"></td>
 <td align="left">seagrass</td>
-<td align="left">Describes tidal or subtidal communities dominated by rooted vasular plants</td>
+<td align="left">Describes tidal or subtidal communities dominated by rooted vascular plants</td>
 </tr>
 <tr class="even">
 <td align="left"><strong>impact_class</strong></td>
@@ -917,17 +919,17 @@ $(document).ready(function () {
 <tr class="odd">
 <td align="left"></td>
 <td align="left">managed_impounded</td>
-<td align="left">Tidal flow is muted or blocked seasonally, and other times follows natural or semi-natural flooding patterns</td>
+<td align="left">Tidal flow is muted or blocked seasonally, and other times follow natural or semi-natural flooding patterns</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left">ditched</td>
-<td align="left">Tidal hydrology is altered because artifical ditches have been cut to improve drainage</td>
+<td align="left">Tidal hydrology is altered because artificial ditches have been cut to improve drainage</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left">drained</td>
-<td align="left">Tidal hydrology is altered because artifical the wetland has been drained by any combination of impoundments, ditching, pumbing, etc.</td>
+<td align="left">Tidal hydrology is altered because artificial the wetland has been drained by any combination of impoundments, ditching, pumping, etc.</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -962,7 +964,7 @@ $(document).ready(function () {
 <tr class="even">
 <td align="left"></td>
 <td align="left">wetlands_built</td>
-<td align="left">Wetlands previously eroded but have been rebuilt using sediment such as dredge spoils or other reclaimation techniques</td>
+<td align="left">Wetlands previously eroded but have been rebuilt using sediments such as dredge spoils or other reclamation techniques</td>
 </tr>
 </tbody>
 </table>
@@ -989,33 +991,33 @@ $(document).ready(function () {
 <tbody>
 <tr class="odd">
 <td align="left">species_code</td>
-<td align="left">User defined common name, shortened name, or code used to refer to a species throughout the study</td>
+<td align="left">user-defined common name, shortened name, or code used to refer to a species throughout the study</td>
 <td align="left">integer or character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">genus</td>
-<td align="left">Genus according to the most up to date taxanomic binomial nomenclature</td>
+<td align="left">Genus according to the most up to date taxonomic binomial nomenclature</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">species</td>
-<td align="left">Species according to the most up to date taxanomic binomial nomenclature</td>
+<td align="left">Species according to the most up to date taxonomic binomial nomenclature</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">sub_species</td>
 <td align="left">Any additional naming or description appropriate at the subspecies level</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">hybrid</td>
 <td align="left">Any additional naming or description appropriate to describe hybridization</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 </tbody>
 </table>
@@ -1043,13 +1045,13 @@ $(document).ready(function () {
 <td align="left">coring_method</td>
 <td align="left">Code indicating what type of device was used to collect soil depth profiles.</td>
 <td align="left">character</td>
-<td align="left"><a href="#materials-and-methods-vocabulary"><em>russian_auger</em>, <em>gouge_auger</em>, <em>hargas</em>, <em>other_shallow_corer</em>, <em>other_deep_corer</em>, or other user defined</a></td>
+<td align="left"><a href="#materials-and-methods-vocabulary"><em>russian_auger</em>, <em>gouge_auger</em>, <em>hargas</em>, <em>other_shallow_corer</em>, <em>other_deep_corer</em>, or other user-defined</a></td>
 </tr>
 <tr class="even">
 <td align="left">coring_method_notes</td>
-<td align="left">Other user generated notes on coring</td>
+<td align="left">Other user-generated notes on coring</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">complete_profile</td>
@@ -1059,15 +1061,15 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">complete_profile_notes</td>
-<td align="left">Any other user generated notes about the completeness of the profile, such as whether the core met refusal, bedrock, non-marsh interface, etc.</td>
+<td align="left">Any other user-generated notes about the completeness of the profile, such as whether the core met refusal, bedrock, non-marsh interface, etc.</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">bulk_density_temperature</td>
 <td align="left">Temperature at which samples were dried at for bulk density</td>
 <td align="left">numeric</td>
-<td align="left">degrees celcius</td>
+<td align="left">degrees celsius</td>
 </tr>
 <tr class="even">
 <td align="left">bulk_density_duration</td>
@@ -1079,7 +1081,7 @@ $(document).ready(function () {
 <td align="left">loss_on_ignition_temperature</td>
 <td align="left">Temperature at which samples were ignited for loss-on-ignition to as a measure for organics</td>
 <td align="left">numeric</td>
-<td align="left">degrees celcius</td>
+<td align="left">degrees celsius</td>
 </tr>
 <tr class="even">
 <td align="left">loss_on_ignition_duration</td>
@@ -1095,21 +1097,21 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">loi_bd_notes</td>
-<td align="left">Any other user generated notes on loss-on-ignition and bulk density methodlogy</td>
+<td align="left">Any other user-generated notes on loss-on-ignition and bulk density methodology</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">carbonates_removal_method</td>
 <td align="left">Code indicating how carbonates were removed for measuring fraction organic carbon by elemental analysis.</td>
 <td align="left">character</td>
-<td align="left"><a href="#materials-and-methods-vocabulary"><em>acid_fumigation</em>, <em>direct_acid_treatment</em>, or other user defined method</a></td>
+<td align="left"><a href="#materials-and-methods-vocabulary"><em>acid_fumigation</em>, <em>direct_acid_treatment</em>, or other user-defined method</a></td>
 </tr>
 <tr class="even">
 <td align="left">carbonates_removal_notes</td>
-<td align="left">Any other user generated notes on how carbonates were removed for measuring fraction organic carbon by elemental analysis.</td>
+<td align="left">Any other user-generated notes on how carbonates were removed for measuring fraction organic carbon by elemental analysis.</td>
 <td align="left">character</td>
-<td align="left">User defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">roots_removed</td>
@@ -1119,9 +1121,9 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">(other)</td>
-<td align="left">Any other user defined variables</td>
-<td align="left">user defined</td>
-<td align="left">user defined</td>
+<td align="left">Any other user-defined variables</td>
+<td align="left">user-defined</td>
+<td align="left">user-defined</td>
 </tr>
 </tbody>
 </table>
@@ -1144,17 +1146,17 @@ $(document).ready(function () {
 <tr class="odd">
 <td align="left"><strong>coring_method</strong></td>
 <td align="left">russian_auger</td>
-<td align="left">A half cylander coring device with the coring section sealed off by a fin attached by a rotating pivot point</td>
+<td align="left">A half cylinder coring device with the coring section sealed off by a fin attached to a rotating pivot point</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left">gouge_auger</td>
-<td align="left">A half cylander coring device in which the coring section is open, not sealed off by a fin</td>
+<td align="left">A half cylinder coring device in which the coring section is open, not sealed off by a fin</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left">hargas</td>
-<td align="left">A large diameter (&gt;10 cm) coring device consisting of a tube, piston and a cutting head</td>
+<td align="left">A large diameter (&gt;10 cm) coring device consisting of a tube, piston, and a cutting head</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -1164,12 +1166,12 @@ $(document).ready(function () {
 <tr class="odd">
 <td align="left"></td>
 <td align="left">cryo_core</td>
-<td align="left">A technique involveing collecting a core by freezing soil using liquid nitrogent to a copper tube</td>
+<td align="left">A technique involving collecting a core by freezing soil using liquid nitrogen to a copper tube</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left">push_corer</td>
-<td align="left">Any number of coring types involving driving a pipe or pvc into the sediment to recover a core</td>
+<td align="left">Any number of coring types involving driving a pipe or PVC into the sediment to recover a core</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -1197,7 +1199,7 @@ $(document).ready(function () {
 </div>
 <div id="funding-sources-table" class="section level3">
 <h3>Funding Sources Table</h3>
-<p>We recognicze that funding situations are often complex, so for each project we include a table to ensure that all funcing sources are credited appropriately</p>
+<p>We recognize that funding situations are often complex, so for each project, we include a table to ensure that all funding sources are credited appropriately</p>
 <table style="width:75%;">
 <colgroup>
 <col width="11%" />
@@ -1218,19 +1220,19 @@ $(document).ready(function () {
 <td align="left">funding_agency</td>
 <td align="left">Agency name funding the research</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">funding_id</td>
 <td align="left">Internally used number referring to the project funding</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">funding_start_year</td>
 <td align="left">Year of the start of the funding period</td>
 <td align="left">numeric</td>
-<td align="left">four digit year (common era)</td>
+<td align="left">four-digit year (common era)</td>
 </tr>
 <tr class="even">
 <td align="left">funding_start_month</td>
@@ -1248,7 +1250,7 @@ $(document).ready(function () {
 <td align="left">funding_end_year</td>
 <td align="left">Year of the end of the funding period</td>
 <td align="left">numeric</td>
-<td align="left">four digit year (common era)</td>
+<td align="left">four-digit year (common era)</td>
 </tr>
 <tr class="odd">
 <td align="left">funding_end_month</td>
@@ -1264,9 +1266,9 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td align="left">funding_notes</td>
-<td align="left">Any other user generated notes about the project funding</td>
+<td align="left">Any other user-generated notes about the project funding</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 </tbody>
 </table>
@@ -1293,41 +1295,41 @@ $(document).ready(function () {
 <td align="left">last_name</td>
 <td align="left">The family name of the contributor or author</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">first_name</td>
 <td align="left">The given name of the author or contributor</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">middle_name</td>
 <td align="left">The middle name or initial of the author or contributor</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">institution</td>
-<td align="left">This category can either refer to institutional affiliation of the author, or the instiution or team itself in the case that a group of authors are credited together under one identification</td>
+<td align="left">This category can either refer to institutional affiliation of the author or the institution or team itself in the case that a group of authors is credited together under one identification</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">email</td>
 <td align="left">The email address of the author or contributor. This is a required field for corresponding authors and optional for others</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="even">
 <td align="left">address</td>
 <td align="left">The mailing address of the author or contributor. This is a required field for corresponding authors and optional for others</td>
 <td align="left">character</td>
-<td align="left">user defined</td>
+<td align="left">user-defined</td>
 </tr>
 <tr class="odd">
 <td align="left">corresponding_author</td>
-<td align="left">Please whether the author should be contacted for further information or requests. Field requires at least one marked as <em>True</em></td>
+<td align="left">Please whether the author should be contacted for further information or requests. The field requires at least one marked as <em>True</em></td>
 <td align="left">Boolean</td>
 <td align="left"><em>True</em> or <em>False</em></td>
 </tr>
