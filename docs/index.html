@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -242,7 +244,7 @@ $(document).ready(function () {
 <li><strong>Steering Committee Members</strong> - Steering committee members are responsible for advising the Director and Manager on Network management, adherence to core principles, workshop topics, and evaluating steering committee nominees.</li>
 <li><strong>CCRCN Personnel</strong> - Principal Investigators, the Steering Committee, and people with official Smithsonian affiliations who work on Network-related tasks. Personnel are responsible for implementing the activities of the Network.</li>
 <li><strong>Collaborators</strong> - Researchers who are not Network personnel, but are otherwise actively contributing to Network products in collaboration with Network personnel, or as part of data synthesis workshops. Collaborators are expected to participate at the level of co-author on synthesis products.</li>
-<li><strong>Collaborating Organizations</strong> - Responsibilities are similar to Collabors except the organization and the Network have entered into a memorandum of understanding to formalize expectations with respect to the Network. Collaborating organizations are expected to explore financial support of activities that are not supported by the NSF funding that established the Network, and to explore opportunities to secure funding to support Network activities beyond the initial five years of NSF funding.</li>
+<li><strong>Collaborating Organizations</strong> - Responsibilities are similar to Collaborators except the organization and the Network have entered into a memorandum of understanding to formalize expectations with respect to the Network. Collaborating organizations are expected to explore financial support of activities that are not supported by the NSF funding that established the Network, and to explore opportunities to secure funding to support Network activities beyond the initial five years of NSF funding.</li>
 <li><strong>Partners</strong> -People engaged in any of the activities of the Network such as communication, data sharing, workshop participation, and feedback. Partners participate via remote consultations, town halls, twitter, webinars, online surveys, and participating in public comment periods, but are engaged more informally than Collaborators. The best way to be recognized as a partner is to sign up for regular Network email updates.</li>
 <li><strong>Partner Organizations</strong> - Organizations that interact with the Network in a manner similar to Partners, but have entered into a memorandum of understanding with the Network that formalizes activities such as consultation or other non-monetary support for Network goals.</li>
 <li><strong>Users</strong> - Anyone using data structures or synthesis products created by the Network. There is no obligation to involve Network personnel or collaborators in individual research efforts beyond the workshops funded by the Network NSF grant. Users are responsible for properly citing Network synthesis products, and properly citing original authors when datasets curated or synthesized by the Network are downloaded and reused. See the <a href="data_management.html">Data Use Policy</a>.</li>
