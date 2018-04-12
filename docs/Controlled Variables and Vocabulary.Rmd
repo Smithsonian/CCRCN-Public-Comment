@@ -109,7 +109,7 @@ Note positional data can be assigned at the core level, or at the site level, ho
 | site_longitude_max | Maximum longitude defining a bounding box for the site. | numeric | decimal degrees WGS88 |
 | site_longitude_min | Minimum longitude defining a bounding box for the site. | numeric | decimal degrees WGS88 |
 | site_latitude_centroid |  Latitude defining the center of the site. | numeric | decimal degrees WGS88 |
-| site_latitude_centroid | Longitude defining the center of the site.  | numeric | decimal degrees WGS88 |
+| site_longitude_centroid | Longitude defining the center of the site.  | numeric | decimal degrees WGS88 |
 | site_extent | Alternatively, data submitters could submit a shapefile (.shp) of keyhole markup language (.kml) file defining the extent of a site | Separate .shp or .kml file |
 
 ### Variables that can be assigned to either cores or sites
