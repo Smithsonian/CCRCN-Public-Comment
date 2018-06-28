@@ -11,7 +11,7 @@
 
 
 
-<title>Controlled Variables and Vocabulary</title>
+<title>Controlled Attributes and Variables</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -182,7 +184,7 @@ $(document).ready(function () {
   <a href="data_management.html">Data Management Principles</a>
 </li>
 <li>
-  <a href="Controlled_Variables_and_Vocabulary.html">Controlled Variables</a>
+  <a href="Controlled_Attributes_and_Variables.html">Controlled Attributes</a>
 </li>
 <li>
   <a href="contact.html">Join the Network</a>
@@ -199,7 +201,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Controlled Variables and Vocabulary</h1>
+<h1 class="title toc-ignore">Controlled Attributes and Variables</h1>
 
 </div>
 
@@ -215,31 +217,31 @@ $(document).ready(function () {
 <h3>Contents</h3>
 <ul>
 <li><a href="#overview">Overview</a></li>
-<li><a href="#soil-depth-series-variables">Soil Depth Series Variables</a></li>
-<li><a href="#core-level-variables">Core Level Variables</a>
-<ul>
-<li><a href="#core-level-controlled-vocabulary">Core Level Controlled Vocabulary</a></li>
-</ul></li>
-<li><a href="#site-level-variables">Site Level Variables</a></li>
-<li><a href="#variables-that-can-be-assigned-to-either-cores-or-sites">Variables that can be assigned to either cores or sites</a>
-<ul>
-<li><a href="#core--or-site-level-controlled-vocabulary">Core- or Site-level Controlled Vocabulary</a></li>
-</ul></li>
-<li><a href="#study-level-species-table">Study Level Species Table</a></li>
-<li><a href="#materials-and-methods-variables">Materials and Methods Variables</a>
-<ul>
-<li><a href="#materials-and-methods-vocabulary">Materials and Methods Vocabulary</a></li>
-</ul></li>
-<li><a href="#funding-sources-table">Funding Sources Table</a></li>
 <li><a href="#study-authors-table">Study Authors Table</a></li>
+<li><a href="#funding-sources-table">Funding Sources Table</a></li>
+<li><a href="#study-level-species-table">Study Level Species Table</a></li>
+<li><a href="#materials-and-methods-attributes">Materials and Methods Attributes</a>
+<ul>
+<li><a href="#materials-and-methods-variables">Materials and Methods Variables</a></li>
+</ul></li>
+<li><a href="#site-level-attributes">Site Level attributes</a></li>
+<li><a href="#attributes-that-can-be-assigned-to-either-cores-or-sites">attributes that can be assigned to either cores or sites</a>
+<ul>
+<li><a href="#core--or-site-level-controlled-variables">Core- or Site-level Controlled variables</a></li>
+</ul></li>
+<li><a href="#core-level-attributes">Core Level attributes</a>
+<ul>
+<li><a href="#core-level-controlled-variables">Core Level Controlled variables</a></li>
+</ul></li>
+<li><a href="#soil-depth-series-attributes">Soil Depth Series Variables</a></li>
 </ul>
 </div>
 <div id="overview" class="section level3">
 <h3>Overview</h3>
-<p>Individual studies and contributors will each have their own way of naming variables, representing units, naming categorical variables, and representing notes or observations. We propose the following standardized vocabulary for data and metadata in order to make datasets machine readable and interoperable within our soil carbon synthesis products. Each sub-heading lists a level of data and metadata hierarchy from <em>depth series</em> to <em>core</em> to <em>site</em> to <em>study level</em> information. We also include accompanying sets of recommended controlled vocabulary for key categorical variables. Some variables have controlled units that we wish to keep uniform across datasets. Data that we curate will follow naming conventions outlined herein. Data that we ingest from outside sources will be converted to these conventions when being ingested into the central GitHub databased using custom-built R scripts.</p>
+<p>Individual studies and contributors will each have their own way of naming attributes, representing units, naming categorical attributes, and representing notes or observations. We propose the following standardized variables for data and metadata in order to make datasets machine readable and interoperable within our soil carbon synthesis products. Each sub-heading lists a level of data and metadata hierarchy from <em>depth series</em> to <em>core</em> to <em>site</em> to <em>study level</em> information. We also include accompanying sets of recommended controlled variables for key categorical variables. Some attributes have controlled units that we wish to keep uniform across datasets. Data that we curate will follow naming conventions outlined herein. Data that we ingest from outside sources will be converted to these conventions when being ingested into the central GitHub databased using custom-built R scripts.</p>
 </div>
-<div id="soil-depth-series-variables" class="section level3">
-<h3>Soil Depth Series Variables</h3>
+<div id="study-authors-table" class="section level3">
+<h3>Study Authors Table</h3>
 <table style="width:75%;">
 <colgroup>
 <col width="11%" />
@@ -249,7 +251,7 @@ $(document).ready(function () {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Variable Name</th>
+<th align="left">attribute Name</th>
 <th align="left">Description</th>
 <th align="left">Data Type</th>
 <th align="left">Controlled Units</th>
@@ -257,148 +259,197 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">sample_id</td>
-<td align="left">Sample identification unique to the core</td>
+<td align="left">last_name</td>
+<td align="left">The family name of the contributor or author</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="even">
-<td align="left">depth_min</td>
-<td align="left">Minimum depth of a sampling increment</td>
-<td align="left">numeric</td>
-<td align="left">centimeters below surface</td>
-</tr>
-<tr class="odd">
-<td align="left">depth_max</td>
-<td align="left">Maximum depth of a sampling increment</td>
-<td align="left">numeric</td>
-<td align="left">centimeters below surface</td>
-</tr>
-<tr class="even">
-<td align="left">loss_on_ignition</td>
-<td align="left">Fraction mass lost following ignition in a muffle furnace, a common proxy for organic matter</td>
-<td align="left">numeric</td>
-<td align="left">fraction</td>
-</tr>
-<tr class="odd">
-<td align="left">dry_bulk_density</td>
-<td align="left">Dry mass per unit volume of a soil sample</td>
-<td align="left">numeric</td>
-<td align="left">g cm<sup>-3</sup></td>
-</tr>
-<tr class="even">
-<td align="left">organic_carbon</td>
-<td align="left">Mass of organic carbon relative to mass of organic matter</td>
-<td align="left">numeric</td>
-<td align="left">fraction</td>
-</tr>
-<tr class="odd">
-<td align="left">organic_carbon_measured_or_modeled</td>
-<td align="left">Specification indicating whether organic carbon is measured from a machine such as elemental analysis, or is modeled as a function of loss_on_ignition</td>
-<td align="left">character</td>
-<td align="left"><em>measured</em> or <em>modeled</em></td>
-</tr>
-<tr class="even">
-<td align="left">total_carbon</td>
-<td align="left">Mass of total carbon relative to mass of organic matter</td>
-<td align="left">numeric</td>
-<td align="left">fraction</td>
-</tr>
-<tr class="odd">
-<td align="left">total_carbon_measured_or_modeled</td>
-<td align="left">Specification indicating whether organic carbon is measured from a machine such as elemental analysis, or is modeled as a function of loss_on_ignition</td>
-<td align="left">character</td>
-<td align="left"><em>measured</em> or <em>modeled</em></td>
-</tr>
-<tr class="even">
-<td align="left">loss_on_ignition_notes</td>
-<td align="left">Any user-generated notes about the loss on ignition and bulk density processes</td>
+<td align="left">first_name</td>
+<td align="left">The given name of the author or contributor</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="odd">
-<td align="left">compaction_fraction</td>
-<td align="left">Fraction of the sample depth interval reduced due to compaction</td>
-<td align="left">numeric</td>
-<td align="left">fraction</td>
-</tr>
-<tr class="even">
-<td align="left">compaction_notes</td>
-<td align="left">Any user-generated notes on compaction</td>
-<td align="left">character</td>
-<td align="left">user-defined</td>
-</tr>
-<tr class="odd">
-<td align="left">cs137_activity</td>
-<td align="left">Radioactivity counts per unit dry weight for radio-cesium (<sup>137</sup>Cs)</td>
-<td align="left">numeric</td>
-<td align="left">disintegrations per minute per gram dry weight</td>
-</tr>
-<tr class="even">
-<td align="left">cs137_activity_sd</td>
-<td align="left">1 standard deviation of uncertainty associated with <em>cs137_activity</em></td>
-<td align="left">numeric</td>
-<td align="left">disintegrations per minute per gram dry weight</td>
-</tr>
-<tr class="odd">
-<td align="left">cs137_notes</td>
-<td align="left">Any user-generated notes on <sup>137</sup>Cs dating process</td>
+<td align="left">middle_name</td>
+<td align="left">The middle name or initial of the author or contributor</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="even">
-<td align="left">pb210_activity</td>
-<td align="left">Radioactivity counts per unit dry weight for lead-210 (<sup>210</sup>Pb)</td>
-<td align="left">numeric</td>
-<td align="left">disintegrations per minute per gram dry weight</td>
-</tr>
-<tr class="odd">
-<td align="left">pb210_activity_sd</td>
-<td align="left">1 standard deviation of uncertainty associated with <em>pb210_activity</em></td>
-<td align="left">numeric</td>
-<td align="left">disintegrations per minute per gram dry weight</td>
-</tr>
-<tr class="even">
-<td align="left">pb210_notes</td>
-<td align="left">Any user-generated notes on <sup>210</sup>Pb dating process</td>
+<td align="left">institution</td>
+<td align="left">This category can either refer to institutional affiliation of the author or the institution or team itself in the case that a group of authors is credited together under one identification</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="odd">
-<td align="left">c14_material</td>
-<td align="left">Description of the material selected for radiocarbon (<sup>14</sup>C) dating</td>
+<td align="left">email</td>
+<td align="left">The email address of the author or contributor. This is a required field for corresponding authors and optional for others</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="even">
-<td align="left">c14_age</td>
-<td align="left">Radiocarbon age as estimated from AMS measurements</td>
-<td align="left">numeric</td>
-<td align="left">radiocarbon years</td>
-</tr>
-<tr class="odd">
-<td align="left">c14_age_sd</td>
-<td align="left">Estimated uncertainty in <em>c14_age</em></td>
-<td align="left">numeric</td>
-<td align="left">standard deviation of radiocarbon years</td>
-</tr>
-<tr class="even">
-<td align="left">c14_notes</td>
-<td align="left">Any relevant user-generated notes on <sup>14</sup>C dating process</td>
+<td align="left">address</td>
+<td align="left">The mailing address of the author or contributor. This is a required field for corresponding authors and optional for others</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="odd">
-<td align="left">(other)</td>
-<td align="left">Other variables could be included, but variable name should follow good data management practices, the variable should be described, and the data type defined, in the accompanying metadata</td>
+<td align="left">corresponding_author</td>
+<td align="left">Please whether the author should be contacted for further information or requests. The field requires at least one marked as <em>True</em></td>
+<td align="left">Boolean</td>
+<td align="left"><em>True</em> or <em>False</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funding-sources-table" class="section level3">
+<h3>Funding Sources Table</h3>
+<p>We recognize that funding situations are often complex, so for each project, we include a table to ensure that all funding sources are credited appropriately</p>
+<table style="width:75%;">
+<colgroup>
+<col width="11%" />
+<col width="30%" />
+<col width="13%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">attribute Name</th>
+<th align="left">Description</th>
+<th align="left">Data Type</th>
+<th align="left">Controlled Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">funding_agency</td>
+<td align="left">Agency name funding the research</td>
+<td align="left">character</td>
 <td align="left">user-defined</td>
+</tr>
+<tr class="even">
+<td align="left">funding_id</td>
+<td align="left">Internally used number referring to the project funding</td>
+<td align="left">character</td>
+<td align="left">user-defined</td>
+</tr>
+<tr class="odd">
+<td align="left">funding_start_year</td>
+<td align="left">Year of the start of the funding period</td>
+<td align="left">numeric</td>
+<td align="left">four-digit year (common era)</td>
+</tr>
+<tr class="even">
+<td align="left">funding_start_month</td>
+<td align="left">Numbered month of the start of the funding period</td>
+<td align="left">numeric</td>
+<td align="left">1-12</td>
+</tr>
+<tr class="odd">
+<td align="left">funding_start_day</td>
+<td align="left">Day of the month of the start of the funding period</td>
+<td align="left">numeric</td>
+<td align="left">1-31</td>
+</tr>
+<tr class="even">
+<td align="left">funding_end_year</td>
+<td align="left">Year of the end of the funding period</td>
+<td align="left">numeric</td>
+<td align="left">four-digit year (common era)</td>
+</tr>
+<tr class="odd">
+<td align="left">funding_end_month</td>
+<td align="left">Numbered month of the end of the funding period</td>
+<td align="left">numeric</td>
+<td align="left">1-12</td>
+</tr>
+<tr class="even">
+<td align="left">funding_end_day</td>
+<td align="left">Day of the month of the end of the funding period</td>
+<td align="left">numeric</td>
+<td align="left">1-31</td>
+</tr>
+<tr class="odd">
+<td align="left">funding_notes</td>
+<td align="left">Any other user-generated notes about the project funding</td>
+<td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="core-level-variables" class="section level3">
-<h3>Core Level Variables</h3>
+<div id="site-level-attributes" class="section level3">
+<h3>Site Level attributes</h3>
+<table style="width:75%;">
+<colgroup>
+<col width="11%" />
+<col width="30%" />
+<col width="13%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">attribute Name</th>
+<th align="left">Description</th>
+<th align="left">Data Type</th>
+<th align="left">Controlled Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">site_id</td>
+<td align="left">Site identification code unique to each study</td>
+<td align="left">character</td>
+<td align="left">user-defined</td>
+</tr>
+<tr class="even">
+<td align="left">site_latitude_max</td>
+<td align="left">Maximum latitude defining a bounding box for the site.</td>
+<td align="left">numeric</td>
+<td align="left">decimal degrees WGS88</td>
+</tr>
+<tr class="odd">
+<td align="left">site_latitude_min</td>
+<td align="left">Minimum latitude defining a bounding box for the site.</td>
+<td align="left">numeric</td>
+<td align="left">decimal degrees WGS88</td>
+</tr>
+<tr class="even">
+<td align="left">site_longitude_max</td>
+<td align="left">Maximum longitude defining a bounding box for the site.</td>
+<td align="left">numeric</td>
+<td align="left">decimal degrees WGS88</td>
+</tr>
+<tr class="odd">
+<td align="left">site_longitude_min</td>
+<td align="left">Minimum longitude defining a bounding box for the site.</td>
+<td align="left">numeric</td>
+<td align="left">decimal degrees WGS88</td>
+</tr>
+<tr class="even">
+<td align="left">site_latitude_centroid</td>
+<td align="left">Latitude defining the center of the site.</td>
+<td align="left">numeric</td>
+<td align="left">decimal degrees WGS88</td>
+</tr>
+<tr class="odd">
+<td align="left">site_longitude_centroid</td>
+<td align="left">Longitude defining the center of the site.</td>
+<td align="left">numeric</td>
+<td align="left">decimal degrees WGS88</td>
+</tr>
+<tr class="even">
+<td align="left">site_extent</td>
+<td align="left">Alternatively, data submitters could submit a shapefile (.shp) of keyhole markup language (.kml) file defining the extent of a site</td>
+<td align="left">Separate .shp or .kml file</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="core-level-attributes" class="section level3">
+<h3>Core Level attributes</h3>
 <p>Note positional data can be assigned at the core level, or at the site level, however, it is important that this is specified, that site coordinates are not attributed as core coordinates, and that the method of measurement and precision is noted.</p>
 <table style="width:75%;">
 <colgroup>
@@ -409,7 +460,7 @@ $(document).ready(function () {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Variable Name</th>
+<th align="left">attribute Name</th>
 <th align="left">Description</th>
 <th align="left">Data Type</th>
 <th align="left">Controlled Units</th>
@@ -462,7 +513,7 @@ $(document).ready(function () {
 <td align="left">core_position_method</td>
 <td align="left">Code indicating how <em>latitude</em> and <em>longitude</em> were determined.</td>
 <td align="left">character</td>
-<td align="left"><a href="#core-level-controlled-vocabulary"><em>rtk_gps</em>, <em>handheld_gps</em>, <em>other_high_resolution</em>, <em>other_moderate_resolution</em>, <em>other_low_resolution</em></a>, or other user-defined code</td>
+<td align="left"><a href="#core-level-controlled-variables"><em>rtk_gps</em>, <em>handheld_gps</em>, <em>other_high_resolution</em>, <em>other_moderate_resolution</em>, <em>other_low_resolution</em></a>, or other user-defined code</td>
 </tr>
 <tr class="odd">
 <td align="left">core_position_notes</td>
@@ -480,7 +531,7 @@ $(document).ready(function () {
 <td align="left">core_elevation_datum</td>
 <td align="left">The datum relative to which the core was measured</td>
 <td align="left">character</td>
-<td align="left">Example: <a href="#core-level-controlled-vocabulary"><em>NAVD88</em>, <em>various tidal datums</em>, other user-defined code</a></td>
+<td align="left">Example: <a href="#core-level-controlled-variables"><em>NAVD88</em>, <em>various tidal datums</em>, other user-defined code</a></td>
 </tr>
 <tr class="even">
 <td align="left">core_elevation_accuracy</td>
@@ -492,7 +543,7 @@ $(document).ready(function () {
 <td align="left">core_elevation_method</td>
 <td align="left">Code indicating how <em>elevation</em> was determined</td>
 <td align="left">character</td>
-<td align="left"><a href="#core-level-controlled-vocabulary"><em>rtk_gps</em>, <em>other_high_resolution</em>, <em>lidar_based</em>, <em>dem_based</em>, or other user-defined code</a></td>
+<td align="left"><a href="#core-level-controlled-variables"><em>rtk_gps</em>, <em>other_high_resolution</em>, <em>lidar_based</em>, <em>dem_based</em>, or other user-defined code</a></td>
 </tr>
 <tr class="even">
 <td align="left">core_elevation_notes</td>
@@ -508,14 +559,14 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">(other)</td>
-<td align="left">Other variables could be included, but variable name should follow good data management practices, the variable should be described, and the data type defined, in the accompanying metadata</td>
+<td align="left">Other attributes could be included, but attribute name should follow good data management practices, the attribute should be described, and the data type defined, in the accompanying metadata</td>
 <td align="left">user-defined</td>
 <td align="left">user-defined</td>
 </tr>
 </tbody>
 </table>
-<div id="core-level-controlled-vocabulary" class="section level4">
-<h4>Core Level Controlled Vocabulary</h4>
+<div id="core-level-controlled-variables" class="section level4">
+<h4>Core Level Controlled variables</h4>
 <table style="width:67%;">
 <colgroup>
 <col width="11%" />
@@ -524,8 +575,8 @@ $(document).ready(function () {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Variable</th>
-<th align="left">Controlled Vocabulary</th>
+<th align="left">attribute</th>
+<th align="left">Controlled variables</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -624,8 +675,9 @@ $(document).ready(function () {
 </table>
 </div>
 </div>
-<div id="site-level-variables" class="section level3">
-<h3>Site Level Variables</h3>
+<div id="attributes-that-can-be-assigned-to-either-cores-or-sites" class="section level3">
+<h3>attributes that can be assigned to either cores or sites</h3>
+<p>For the following attribute, salinity, vegetation, impacts, and management status could either be listed for each core separately or entered for the whole site. If entered at the site level, cores would inherit the attributes associated with the site.</p>
 <table style="width:75%;">
 <colgroup>
 <col width="11%" />
@@ -635,77 +687,7 @@ $(document).ready(function () {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Variable Name</th>
-<th align="left">Description</th>
-<th align="left">Data Type</th>
-<th align="left">Controlled Units</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">site_id</td>
-<td align="left">Site identification code unique to each study</td>
-<td align="left">character</td>
-<td align="left">user-defined</td>
-</tr>
-<tr class="even">
-<td align="left">site_latitude_max</td>
-<td align="left">Maximum latitude defining a bounding box for the site.</td>
-<td align="left">numeric</td>
-<td align="left">decimal degrees WGS88</td>
-</tr>
-<tr class="odd">
-<td align="left">site_latitude_min</td>
-<td align="left">Minimum latitude defining a bounding box for the site.</td>
-<td align="left">numeric</td>
-<td align="left">decimal degrees WGS88</td>
-</tr>
-<tr class="even">
-<td align="left">site_longitude_max</td>
-<td align="left">Maximum longitude defining a bounding box for the site.</td>
-<td align="left">numeric</td>
-<td align="left">decimal degrees WGS88</td>
-</tr>
-<tr class="odd">
-<td align="left">site_longitude_min</td>
-<td align="left">Minimum longitude defining a bounding box for the site.</td>
-<td align="left">numeric</td>
-<td align="left">decimal degrees WGS88</td>
-</tr>
-<tr class="even">
-<td align="left">site_latitude_centroid</td>
-<td align="left">Latitude defining the center of the site.</td>
-<td align="left">numeric</td>
-<td align="left">decimal degrees WGS88</td>
-</tr>
-<tr class="odd">
-<td align="left">site_longitude_centroid</td>
-<td align="left">Longitude defining the center of the site.</td>
-<td align="left">numeric</td>
-<td align="left">decimal degrees WGS88</td>
-</tr>
-<tr class="even">
-<td align="left">site_extent</td>
-<td align="left">Alternatively, data submitters could submit a shapefile (.shp) of keyhole markup language (.kml) file defining the extent of a site</td>
-<td align="left">Separate .shp or .kml file</td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="variables-that-can-be-assigned-to-either-cores-or-sites" class="section level3">
-<h3>Variables that can be assigned to either cores or sites</h3>
-<p>For the following variable, salinity, vegetation, impacts, and management status could either be listed for each core separately or entered for the whole site. If entered at the site level, cores would inherit the variables associated with the site.</p>
-<table style="width:75%;">
-<colgroup>
-<col width="11%" />
-<col width="30%" />
-<col width="13%" />
-<col width="19%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Variable Name</th>
+<th align="left">attribute Name</th>
 <th align="left">Description</th>
 <th align="left">Data Type</th>
 <th align="left">Controlled Units</th>
@@ -716,7 +698,7 @@ $(document).ready(function () {
 <td align="left">inundation_class</td>
 <td align="left">Code based on user’s field observation or measurement indicating how often the coring location is inundated</td>
 <td align="left">character</td>
-<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>high_marsh</em>, <em>mid_marsh</em>, <em>low_marsh</em>, <em>levee</em>, <em>back_marsh</em>, or other user-defined code</a></td>
+<td align="left"><a href="#core--or-site-level-controlled-variables"><em>high_marsh</em>, <em>mid_marsh</em>, <em>low_marsh</em>, <em>levee</em>, <em>back_marsh</em>, or other user-defined code</a></td>
 </tr>
 <tr class="even">
 <td align="left">inundation_method</td>
@@ -734,7 +716,7 @@ $(document).ready(function () {
 <td align="left">salinity_class</td>
 <td align="left">Code based on user’s field observation or measurement indicating average annual salinity</td>
 <td align="left">character</td>
-<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>estuarine</em>, <em>palustrine</em>, <em>saline</em>, <em>brackish</em>, <em>fresh</em>, <em>polyhaline</em>, etc.</a></td>
+<td align="left"><a href="#core--or-site-level-controlled-variables"><em>estuarine</em>, <em>palustrine</em>, <em>saline</em>, <em>brackish</em>, <em>fresh</em>, <em>polyhaline</em>, etc.</a></td>
 </tr>
 <tr class="odd">
 <td align="left">salinity_method</td>
@@ -752,7 +734,7 @@ $(document).ready(function () {
 <td align="left">vegetation_class</td>
 <td align="left">Code based on user’s field observations or measurement indicating dominant wetland vegetation type</td>
 <td align="left">character</td>
-<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>emergent</em>, <em>scrub_shrub</em>, <em>forest</em>, <em>seagrass</em></a>, or other user-defined code</td>
+<td align="left"><a href="#core--or-site-level-controlled-variables"><em>emergent</em>, <em>scrub_shrub</em>, <em>forest</em>, <em>seagrass</em></a>, or other user-defined code</td>
 </tr>
 <tr class="even">
 <td align="left">dominant_species</td>
@@ -776,7 +758,7 @@ $(document).ready(function () {
 <td align="left">impact_class</td>
 <td align="left">Code indicating any major anthropogenic impacts historically and currently affecting the coring location. List these especially if the study was specifically designed to address these. If more than one are applicable, include them all as a single character string separated by “;”.</td>
 <td align="left">character</td>
-<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>impounded</em>, , <em>managed_impounded</em>, <em>ditched</em>, <em>drained</em>, <em>farmed</em>, other user-defined variable</a></td>
+<td align="left"><a href="#core--or-site-level-controlled-variables"><em>impounded</em>, , <em>managed_impounded</em>, <em>ditched</em>, <em>drained</em>, <em>farmed</em>, other user-defined attribute</a></td>
 </tr>
 <tr class="even">
 <td align="left">impact_notes</td>
@@ -788,7 +770,7 @@ $(document).ready(function () {
 <td align="left">management_class</td>
 <td align="left">Code indicating any active management or restoration efforts are directly affecting the coring location. List these especially if the study was specifically designed to address these. If more than one is applicable, include them all as a single character string separated by “;”.</td>
 <td align="left">character</td>
-<td align="left"><a href="#core--or-site-level-controlled-vocabulary"><em>impoundment_removed</em>, <em>revegetated</em>, <em>invasive_plants_removed</em>, <em>invasive_herbivores_removed</em>, <em>sediment_added</em>, <em>wetlands_built</em></a></td>
+<td align="left"><a href="#core--or-site-level-controlled-variables"><em>impoundment_removed</em>, <em>revegetated</em>, <em>invasive_plants_removed</em>, <em>invasive_herbivores_removed</em>, <em>sediment_added</em>, <em>wetlands_built</em></a></td>
 </tr>
 <tr class="even">
 <td align="left">management_notes</td>
@@ -798,8 +780,8 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
-<div id="core--or-site-level-controlled-vocabulary" class="section level4">
-<h4>Core- or Site-level Controlled Vocabulary</h4>
+<div id="core--or-site-level-controlled-variables" class="section level4">
+<h4>Core- or Site-level Controlled variables</h4>
 <table style="width:67%;">
 <colgroup>
 <col width="11%" />
@@ -808,8 +790,8 @@ $(document).ready(function () {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Variable</th>
-<th align="left">Controlled Vocabulary</th>
+<th align="left">attribute</th>
+<th align="left">Controlled variables</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -980,7 +962,7 @@ $(document).ready(function () {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Variable Name</th>
+<th align="left">attribute Name</th>
 <th align="left">Description</th>
 <th align="left">Data Type</th>
 <th align="left">Controlled Units</th>
@@ -1020,8 +1002,8 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="materials-and-methods-variables" class="section level3">
-<h3>Materials and Methods Variables</h3>
+<div id="materials-and-methods-attributes" class="section level3">
+<h3>Materials and Methods attributes</h3>
 <p>Materials and methods can be assigned to depth series, core level data, or can exist in a separate table if materials and methods are the same for every core in the study.</p>
 <table style="width:75%;">
 <colgroup>
@@ -1032,7 +1014,7 @@ $(document).ready(function () {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Variable Name</th>
+<th align="left">attribute Name</th>
 <th align="left">Description</th>
 <th align="left">Data Type</th>
 <th align="left">Controlled Units</th>
@@ -1043,7 +1025,7 @@ $(document).ready(function () {
 <td align="left">coring_method</td>
 <td align="left">Code indicating what type of device was used to collect soil depth profiles.</td>
 <td align="left">character</td>
-<td align="left"><a href="#materials-and-methods-vocabulary"><em>russian_auger</em>, <em>gouge_auger</em>, <em>hargas</em>, <em>other_shallow_corer</em>, <em>other_deep_corer</em>, or other user-defined</a></td>
+<td align="left"><a href="#materials-and-methods-variables"><em>russian_auger</em>, <em>gouge_auger</em>, <em>hargas</em>, <em>other_shallow_corer</em>, <em>other_deep_corer</em>, or other user-defined</a></td>
 </tr>
 <tr class="even">
 <td align="left">coring_method_notes</td>
@@ -1103,7 +1085,7 @@ $(document).ready(function () {
 <td align="left">carbonates_removal_method</td>
 <td align="left">Code indicating how carbonates were removed for measuring fraction organic carbon by elemental analysis.</td>
 <td align="left">character</td>
-<td align="left"><a href="#materials-and-methods-vocabulary"><em>acid_fumigation</em>, <em>direct_acid_treatment</em>, or other user-defined method</a></td>
+<td align="left"><a href="#materials-and-methods-variables"><em>acid_fumigation</em>, <em>direct_acid_treatment</em>, or other user-defined method</a></td>
 </tr>
 <tr class="even">
 <td align="left">carbonates_removal_notes</td>
@@ -1119,14 +1101,14 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">(other)</td>
-<td align="left">Any other user-defined variables</td>
+<td align="left">Any other user-defined attributes</td>
 <td align="left">user-defined</td>
 <td align="left">user-defined</td>
 </tr>
 </tbody>
 </table>
-<div id="materials-and-methods-vocabulary" class="section level4">
-<h4>Materials and Methods Vocabulary</h4>
+<div id="materials-and-methods-variables" class="section level4">
+<h4>Materials and Methods variables</h4>
 <table style="width:67%;">
 <colgroup>
 <col width="11%" />
@@ -1135,8 +1117,8 @@ $(document).ready(function () {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Variable</th>
-<th align="left">Controlled Vocabulary</th>
+<th align="left">attribute</th>
+<th align="left">Controlled variables</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -1195,9 +1177,8 @@ $(document).ready(function () {
 </table>
 </div>
 </div>
-<div id="funding-sources-table" class="section level3">
-<h3>Funding Sources Table</h3>
-<p>We recognize that funding situations are often complex, so for each project, we include a table to ensure that all funding sources are credited appropriately</p>
+<div id="soil-depth-series-attributes" class="section level3">
+<h3>Soil Depth Series attributes</h3>
 <table style="width:75%;">
 <colgroup>
 <col width="11%" />
@@ -1207,7 +1188,7 @@ $(document).ready(function () {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Variable Name</th>
+<th align="left">attribute Name</th>
 <th align="left">Description</th>
 <th align="left">Data Type</th>
 <th align="left">Controlled Units</th>
@@ -1215,121 +1196,142 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">funding_agency</td>
-<td align="left">Agency name funding the research</td>
+<td align="left">sample_id</td>
+<td align="left">Sample identification unique to the core</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="even">
-<td align="left">funding_id</td>
-<td align="left">Internally used number referring to the project funding</td>
-<td align="left">character</td>
-<td align="left">user-defined</td>
-</tr>
-<tr class="odd">
-<td align="left">funding_start_year</td>
-<td align="left">Year of the start of the funding period</td>
+<td align="left">depth_min</td>
+<td align="left">Minimum depth of a sampling increment</td>
 <td align="left">numeric</td>
-<td align="left">four-digit year (common era)</td>
+<td align="left">centimeters below surface</td>
 </tr>
-<tr class="even">
-<td align="left">funding_start_month</td>
-<td align="left">Numbered month of the start of the funding period</td>
+<tr class="odd">
+<td align="left">depth_max</td>
+<td align="left">Maximum depth of a sampling increment</td>
 <td align="left">numeric</td>
-<td align="left">1-12</td>
+<td align="left">centimeters below surface</td>
 </tr>
-<tr class="odd">
-<td align="left">funding_start_day</td>
-<td align="left">Day of the month of the start of the funding period</td>
+<tr class="even">
+<td align="left">loss_on_ignition</td>
+<td align="left">Fraction mass lost following ignition in a muffle furnace, a common proxy for organic matter</td>
 <td align="left">numeric</td>
-<td align="left">1-31</td>
+<td align="left">fraction</td>
 </tr>
-<tr class="even">
-<td align="left">funding_end_year</td>
-<td align="left">Year of the end of the funding period</td>
+<tr class="odd">
+<td align="left">dry_bulk_density</td>
+<td align="left">Dry mass per unit volume of a soil sample</td>
 <td align="left">numeric</td>
-<td align="left">four-digit year (common era)</td>
+<td align="left">g cm<sup>-3</sup></td>
 </tr>
-<tr class="odd">
-<td align="left">funding_end_month</td>
-<td align="left">Numbered month of the end of the funding period</td>
+<tr class="even">
+<td align="left">organic_carbon</td>
+<td align="left">Mass of organic carbon relative to mass of organic matter</td>
 <td align="left">numeric</td>
-<td align="left">1-12</td>
+<td align="left">fraction</td>
+</tr>
+<tr class="odd">
+<td align="left">organic_carbon_measured_or_modeled</td>
+<td align="left">Specification indicating whether organic carbon is measured from a machine such as elemental analysis, or is modeled as a function of loss_on_ignition</td>
+<td align="left">character</td>
+<td align="left"><em>measured</em> or <em>modeled</em></td>
 </tr>
 <tr class="even">
-<td align="left">funding_end_day</td>
-<td align="left">Day of the month of the end of the funding period</td>
+<td align="left">total_carbon</td>
+<td align="left">Mass of total carbon relative to mass of organic matter</td>
 <td align="left">numeric</td>
-<td align="left">1-31</td>
+<td align="left">fraction</td>
 </tr>
 <tr class="odd">
-<td align="left">funding_notes</td>
-<td align="left">Any other user-generated notes about the project funding</td>
+<td align="left">total_carbon_measured_or_modeled</td>
+<td align="left">Specification indicating whether organic carbon is measured from a machine such as elemental analysis, or is modeled as a function of loss_on_ignition</td>
+<td align="left">character</td>
+<td align="left"><em>measured</em> or <em>modeled</em></td>
+</tr>
+<tr class="even">
+<td align="left">loss_on_ignition_notes</td>
+<td align="left">Any user-generated notes about the loss on ignition and bulk density processes</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
-</tbody>
-</table>
-</div>
-<div id="study-authors-table" class="section level3">
-<h3>Study Authors Table</h3>
-<table style="width:75%;">
-<colgroup>
-<col width="11%" />
-<col width="30%" />
-<col width="13%" />
-<col width="19%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Variable Name</th>
-<th align="left">Description</th>
-<th align="left">Data Type</th>
-<th align="left">Controlled Units</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td align="left">last_name</td>
-<td align="left">The family name of the contributor or author</td>
+<td align="left">compaction_fraction</td>
+<td align="left">Fraction of the sample depth interval reduced due to compaction</td>
+<td align="left">numeric</td>
+<td align="left">fraction</td>
+</tr>
+<tr class="even">
+<td align="left">compaction_notes</td>
+<td align="left">Any user-generated notes on compaction</td>
+<td align="left">character</td>
+<td align="left">user-defined</td>
+</tr>
+<tr class="odd">
+<td align="left">cs137_activity</td>
+<td align="left">Radioactivity counts per unit dry weight for radio-cesium (<sup>137</sup>Cs)</td>
+<td align="left">numeric</td>
+<td align="left">disintegrations per minute per gram dry weight</td>
+</tr>
+<tr class="even">
+<td align="left">cs137_activity_sd</td>
+<td align="left">1 standard deviation of uncertainty associated with <em>cs137_activity</em></td>
+<td align="left">numeric</td>
+<td align="left">disintegrations per minute per gram dry weight</td>
+</tr>
+<tr class="odd">
+<td align="left">cs137_notes</td>
+<td align="left">Any user-generated notes on <sup>137</sup>Cs dating process</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="even">
-<td align="left">first_name</td>
-<td align="left">The given name of the author or contributor</td>
+<td align="left">pb210_activity</td>
+<td align="left">Radioactivity counts per unit dry weight for lead-210 (<sup>210</sup>Pb)</td>
+<td align="left">numeric</td>
+<td align="left">disintegrations per minute per gram dry weight</td>
+</tr>
+<tr class="odd">
+<td align="left">pb210_activity_sd</td>
+<td align="left">1 standard deviation of uncertainty associated with <em>pb210_activity</em></td>
+<td align="left">numeric</td>
+<td align="left">disintegrations per minute per gram dry weight</td>
+</tr>
+<tr class="even">
+<td align="left">pb210_notes</td>
+<td align="left">Any user-generated notes on <sup>210</sup>Pb dating process</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="odd">
-<td align="left">middle_name</td>
-<td align="left">The middle name or initial of the author or contributor</td>
+<td align="left">c14_material</td>
+<td align="left">Description of the material selected for radiocarbon (<sup>14</sup>C) dating</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="even">
-<td align="left">institution</td>
-<td align="left">This category can either refer to institutional affiliation of the author or the institution or team itself in the case that a group of authors is credited together under one identification</td>
-<td align="left">character</td>
-<td align="left">user-defined</td>
+<td align="left">c14_age</td>
+<td align="left">Radiocarbon age as estimated from AMS measurements</td>
+<td align="left">numeric</td>
+<td align="left">radiocarbon years</td>
 </tr>
 <tr class="odd">
-<td align="left">email</td>
-<td align="left">The email address of the author or contributor. This is a required field for corresponding authors and optional for others</td>
-<td align="left">character</td>
-<td align="left">user-defined</td>
+<td align="left">c14_age_sd</td>
+<td align="left">Estimated uncertainty in <em>c14_age</em></td>
+<td align="left">numeric</td>
+<td align="left">standard deviation of radiocarbon years</td>
 </tr>
 <tr class="even">
-<td align="left">address</td>
-<td align="left">The mailing address of the author or contributor. This is a required field for corresponding authors and optional for others</td>
+<td align="left">c14_notes</td>
+<td align="left">Any relevant user-generated notes on <sup>14</sup>C dating process</td>
 <td align="left">character</td>
 <td align="left">user-defined</td>
 </tr>
 <tr class="odd">
-<td align="left">corresponding_author</td>
-<td align="left">Please whether the author should be contacted for further information or requests. The field requires at least one marked as <em>True</em></td>
-<td align="left">Boolean</td>
-<td align="left"><em>True</em> or <em>False</em></td>
+<td align="left">(other)</td>
+<td align="left">Other attributes could be included, but attribute name should follow good data management practices, the attribute should be described, and the data type defined, in the accompanying metadata</td>
+<td align="left">user-defined</td>
+<td align="left">user-defined</td>
 </tr>
 </tbody>
 </table>

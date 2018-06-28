@@ -1,15 +1,13 @@
 ---
-title: "Data Management Principles"
+title: "Data Management Plan"
 output: html_document
 ---
 <script>
    $(document).ready(function() {
      $head = $('#header');
-     $head.prepend('<img src=\"images/CoastalCarobonRCNLogo-OnlyLogo.png\" style=\"float: right;width: 150px;\"/>')
+     $head.prepend('<img src=\"https://smithsonian.github.io/CCRCN-Public-Comment/images/CoastalCarobonRCNLogo-OnlyLogo.png" style=\"float: right;width: 150px;\"/>')
    });
 </script>
-
-**Note: This document is for public review. If you have any comments about these principles, please email** CoastalCarbon@si.edu **by Friday April 13th at 12 pm EST**
 
 ##Contents
 
@@ -21,27 +19,27 @@ output: html_document
     + [Hierarchical Structure](#hierarchical-structure)
 * [Data Storage](#data-storage)
 * [Quality Control](#quality-control)
-* [Data Use Policy](#data-use-policy)
+* [Submitting Data](#submitting-data)
 
 ### Types of Data
 The Network recognizes three classes of data: (i) data that we curate, (ii) data that we ingest, and (iii) synthesis products we create. Data that we curate will be hosted by on Smithsonian Institution (SI) servers, but the original data submitter, and funding sources will be credited as the dataset’s creators. Data that we ingest will include both data we curate, and data from any outside sources that meet basic availability, archiving, and metadata standards. These data will be pulled into intermediate files in a centralized database using R code. The workflow and files will be archived and publically available on an SI-dedicated GitHub website. This document refers to soil depth profile data throughout, but it is our intention that these general structures and principles be applied to other types of data as the Network evolves.
 
 ### Digital Object Identifiers
-To be cited and used in the Network synthesis, a dataset needs to have a citable digital object identifier (DOI), which points to a repository containing freely downloadable data and associated metadata. When data are discussed in a peer-reviewed journal article or report with a DOI, but the data are not publically available in their original form, then a second DOI specific to the dataset will be needed for inclusion in synthesis activities. A new DOI should also be assigned in cases where the original data are publically available but not in machine-readable format, or when data were missing key details necessary for Network synthesis purposes. In cases where data is continuously updated over time, we will version control the data, rather than issuing a new DOI for every update.    
+To be cited and used in the Network synthesis, a dataset needs to have a citable digital object identifier (DOI), which points to a repository containing downloadable data and associated metadata. When data are discussed in a peer-reviewed journal article or report with a DOI, but the data are not publically available in their original form, then a second DOI specific to the dataset will be needed for inclusion in synthesis activities. In cases where data is continuously updated over time, we will version control the data, rather than issuing a new DOI for every update.
 
 Submitters may archive data according to these outlined standards, host data on an SI server, and apply for a DOI through SI libraries with the assistance of Network personnel. This service is specific to this project. While data will be digitally archived long-term in accordance with SI standards, we cannot guaranty new data will be accepted after Network funding ends. For data that we curate, file trees will be hosted on SI ‘DSpace’ and DOIs will be issued by Smithsonian Institution Libraries (SIL). Landing pages with summaries of projects, sites, cores, will be viewable from the Network website, which will include links to download original data archived on Dspace.
 
 Data submitters can additionally choose to forward DOIs issued outside of the Network for ingestion into the central data structure on the Network’s SI GitHub website. Some DOI-issuing repository services include [Figshare](https://figshare.com/) and the [Environmental Data Initiative](https://environmentaldatainitiative.org/). While we recognize that there is no official definition for what constitutes a ‘trusted repository’, repositories associated with DOIs should in general have community recognition and trust in their long-term stability. For data curated by the Network we hope that SI’s reputation, DSpace’s status as an approved technology, and the SIL’s commitment to digital object curation, generate this level of community trust.
 
 ### Metadata standards
-For data curated by the Network, we will use the Environmental Metadata Language standards. This includes an abstract, detailed submitor information, variable definitions, and variable data types (e.g. character, integer, or float). CCRCN personnel will use the R-based [EML](https://cran.rstudio.com/web/packages/EML/) package in our workflow to create metadata for data that we curate.
+For data curated by the Network, we will use the Environmental Metadata Language standards. This includes an abstract, detailed submitor information, variable definitions, and variable data types (e.g. character, integer, or float). CCRCN personnel will use the R-based [EML](https://cran.rstudio.com/web/packages/EML/) package in our workflow to create metadata for data that we curate. Code used to create EML will be documented, archived and backed up as part of an archive of working project files.
 
-### Variables
-Variable naming should follow good management practices[^1]. Variable names should be self descriptive and machine readable. They should contain no spaces and must not begin with a number or special character; however, underscores (i.e. ‘pothole case’) are acceptable.  We will use [controlled vocabulary](Controlled_Variables_and_Vocabulary.html) for variable names that require a consistent format. There will also be non-controlled variable names and variable types are user defined as described in the associated metadata.
+### Attribute Names
+Attributes naming (analogous to column names in a spreadsheet) should follow good management practices[^1]. Attribute names should be self descriptive and machine readable. They should contain no spaces and must not begin with a number or special character; however, underscores (i.e. ‘pothole case’) are acceptable.  We will reccomend and adopt [controlled vocabulary for attribute naming](Controlled_Attributes_and_Variables.html). There will also be non-controlled variable names and variable types are user defined as described in the associated metadata.
 
-Units for all variables need to be defined and in some cases controlled. For some variables which typically have commonly reported units we will recommend submittors format using these controlled units. These include loss_on_ignition (fraction), dry_bulk_density (g cm<sup>-3</sup>) and latitude and longitude (decimal degrees [world geographic survey 1988]). For variables that are applicable to the synthesis, but typically have multiple common unit formats we recommend an accompanying column defining these units. Uncommon or data types not included in synthesis projects simply need to have units defined in associated metadata.  
+Units for all attributes need to be defined and in some cases controlled. For some variables which typically have commonly reported units we will recommend submittors format using these controlled units. These include fraction_organic_matter (fraction), dry_bulk_density (g cm<sup>-3</sup>) and latitude and longitude (decimal degrees [world geographic survey 1984]). For attributes that are applicable to the synthesis, but typically have multiple common unit formats we recommend an accompanying column defining these units. Uncommon or data types not included in synthesis projects simply need to have units defined in associated metadata.  
 
-Good data practices require consistently formatting “no data” values and categorical variables. We adopt the R-based convention of representing ‘no data’ values as ‘NA’ for all variable types (never blanks). Categorical variables should have descriptive names stored as text, similar to variables names. For example, one may code the categorical variable ‘treatments’ as numeric values ‘0’ and ‘1’ standing in for ‘experimental’ and ‘control’; however, best practices would dictate coding these as descriptive characters (‘experimental’ and ‘control’) rather than numbers.
+Good data practices require consistently formatting “no data” values and categorical variables. We adopt the R-based convention of representing ‘no data’ values as ‘NA’ for all variable types (never blanks). Categorical variables should have descriptive names stored as text, similar to attribute names. For example, one may code the categorical variable ‘treatments’ as numeric values ‘0’ and ‘1’ standing in for ‘experimental’ and ‘control’; however, best practices would dictate coding these as descriptive characters (‘experimental’ and ‘control’) rather than numbers.
 
 For data we curate we will use controlled vocabulary units and variable types. For data we ingest, we will keep a file of corresponding controlled variables and ‘aliases’ so that data not complying with controlled vocabulary can still be ingested. We will document transformations made to ingested data to standardize them with the data we curate in R code.
 
@@ -67,9 +65,8 @@ Tabular data will be stored in long-form tables, as opposed to wide-form tables.
 ### Quality Control
 Network personnel will perform a cursory visual check on all data we curate and relay any concerns with the data submitter during the curation process. We will also write scripts to enforce consistent units and data types for controlled variables, to check for completeness, and to ensure there are no conflicts or duplicates with previously archived data. Some key variables will receive quality control flags. For variables that are strongly intercorrelated, quality control flags will be assigned to the whole sample unit. Key variables independent of sample intercorrelation will receive variable-specific quality code flags. For data that we curate, files will be edit-locked following QA:QC. Any updates or corrections will result in a new named ‘version’ of the file, a change logged by Network personnel in a text file associated with the data, and a note of the change sent to the next update of the Network email list members.
 
-### Data Use Policy
-We refer to users as anyone using either data we curate, or synthesis products we create. Data that is curated, but not created, by the Network, should not be attributed to the Network. Users should cite all dataset DOIs and credit the datasets' original authors. All synthesis products created by the Network and associated collaborators will be listed under a Creative Commons “With Attribution” license. The Network should be acknowledged and cited appropriately if users utilize any of the data structures, tools, or scripts developed by Network and associated collaborators. We will develop additional tools to assist users in generating lists of citations, but users will be ultimately responsible for correctly citing all data used.
-
+### Submitting Data
+If you are interested in submitting data, please email CoastalCarbon@si.edu and CCRCN personel will assist you in the process. We are working on building a webportal to automate a lot of this exchange, but until we do so this will remain a very friendly peer to peer handoff system.
 
 
 [^1]: Wilson G, Bryan J, Cranston K, Kitzes J, Nederbragt L, Teal TK (2017) Good enough practices in scientific computing. PLoS Comput Biol 13(6): e1005510. https://doi.org/10.1371/journal.pcbi.1005510

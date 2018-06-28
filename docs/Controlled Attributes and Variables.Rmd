@@ -1,0 +1,243 @@
+---
+title: "Database Structure"
+subtitle: "Naming Conventions for Attributes and Variables"
+output: html_document
+---
+<script>
+   $(document).ready(function() {
+     $head = $('#header');
+     $head.prepend('<img src=\"https://smithsonian.github.io/CCRCN-Public-Comment/images/CoastalCarobonRCNLogo-OnlyLogo.png" style=\"float: right;width: 150px;\"/>')
+   });
+</script>
+
+## Contents
+* [Overview](#overview)
+    + [Development Process to Date](#development-process-to-date)
+    + [Ongoing and Future Development](#ongoing-and-future-development)
+* [Study Level Metadata](#study-level-metadata)
+    + [Study Information](#study-information)
+    + [Keywords](#keywords)
+    + [Authors](#authors)
+    + [Funding Sources](#funding-sources)
+    + [Associated Publications](#associated-publications)
+* [Materials and Methods](#materials-and-methods)
+* [Site Level](#site-level)
+* [Core Level](#core-level)
+* [Soil Depth Series](#soil-depth-series)
+* [Mulitple Special Conditions at the Level of the Site or Core](#mulitple-special-conditions-at-the-level-of-the-site-or-core)
+    + [Domiant Species Present](#domiant-species-present)
+    + [Anthropogenic Impacts Present](#anthropogenic-impacts-present)
+* [User Defined Attributes and Definitions](#user-defined-attributes-and-definitions)
+    + [Study Level Species Table](#study-level-species-table)
+    + [Other Attributes and Variables](#other-attributes-and-variables)
+
+## Overview
+[Return to Top](#contents)
+
+This page serves as guidence for the types and scope of data and metadata that will be archived as part of the Coastal carbon RCN's developing tidal soil carbon synthesis. We propose the following data structure, standardized attribute names for metadata and data in order to make datasets machine readable and interoperable. Each sub-heading lists a level of metadata or data hierarchy from *study level* metadata to *site level* to *core level* to *depth/time series* information. Each subheading also represents separate tables which can be joined by common attributes such as study_id, site_id, and core_id. We also include accompanying sets of recommended controlled vocabulary for key categorical variables. Some attributes have controlled units that we wish to keep uniform across datasets. Data that we curate will follow naming conventions outlined herein. Data that we ingest from outside sources will be converted to these conventions when being ingested into the central GitHub databased using custom-built R scripts.
+
+At a minimum a submission should have the following for inclusion in soil carbon synthesis products: *study_id*, author information, *core_id*, latitude and longitude information associated with either a core or the site, *depth_min*, *depth_max*, *dry_bulk_density*, *organic_matter_fraction* and/or *carbon_fraction*. The more auxillary detail that you provide, the more widely your data can be used.
+
+There are many opportunities to express your data's individuality. We refer throughout to 'flags' and 'notes'. Flags refer to common methodlogical choices or data issues that can be coded using categorical variables (also known as factors). The idea behind flags is to allow users the option to query datasets based on methodology. Flags are very machine readable but not very flexable from the standoint of a submitter. Notes are available for almost all measured attributes and take the form of free-text allowing submitters to provide context, obeservations, or concerns about methods, sites, cores, or observations. These are more flexable from the perspective of a submitter but are less machine readable.
+
+### Development Process to Date
+[Return to Top](#contents)
+
+This guidence is the culminations of three efforts:
+
+1. [A meeting of 47 expert in Menlo Park, CA in January 2016](https://www.carboncyclescience.us/news/global-science-and-data-network-coastal-blue-carbon-workshop-completed), hosted by the United States Carbon Cycle Science Program, in order to establish community priorities. 
+2. Experience with the initial curation of a dataset of [~1,500 public soil cores](https://doi.org/10.25572/ccrcn/10088/35684) as part of the publication [Holmquist et al., 2018 Accuracy and Precision of Tidal Wetland Soil Carbon Mapping in the Conterminous United States.](https://www.nature.com/articles/s41598-018-26948-7)
+3. The results of 19 collaborators submitting commentary on an [initial draft of these reccomendations](https://smithsonian.github.io/CCRCN-Public-Comment/index.html) put up for public comment in May and April 2018.
+
+### Ongoing and Future Development
+[Return to Top](#contents)
+
+We aknowledge that this is a lot of information to process and do not want to imply >100 attribtues are manditory. They are not. While we will make the entire entry template available for download, we are also in the process of designing an application which will generate a custom submission template based on your answers to a questionaire about your dataset.
+
+Submitters can feel free to add other attributes to data submissions as long as the attributes and any associated categorical variables are defined with the submission. CCRCN personel will accept and archive related soils data within reason, but will not be able to quality control data falling outside the outlined guidence. If attributes or variables become commonly submitted and there is community coordination behind their inclusion, they could be integrated into periodic updates to this guidence.
+
+We anticipate that this guidence will evolve as we synthesize new datasets as part of five working groups. Part of each working group's task will be to revisit this guidence and agree on new needed attribute names, definitions, variables, controlled vocabulary and units. Any further guidence based on the working group's experience will be made available to the community via post-workshop reports and peer reviewed publications. Documentation on any changes to the data management plan and submission templates will be issued with version numbers. CCRCN producs will reference these documents and version numbers. We will avoid changing attribute or variable names, and will only do so if there is a compelling reason to. If in the future there ends up being more than one acceptable redundent attribute or variable name, names will be added to a database of synonyms and working synthesis products will be updated given the most current standards.
+
+``` {r, loadPackages, include = F, echo = F}
+
+library(tidyverse) # load tidyverse packages
+library(knitr)
+
+# load attributes table
+attribute_tab <- read_csv("tables/controlled_attributes_180626.csv")
+head(attribute_tab)
+
+# load variables table
+variable_tab <- read_csv("tables/controlled_variables_180627.csv")
+head(variable_tab)
+
+# Need a function that takes: 
+# 1. a table of attributes
+# 2. and table of variables, 
+# and 3. an optional table subset as it's inputs,
+# It outputs a nice ready to display table.
+
+create_attributes_display_table <- function(attributes_table = attribute_tab,
+                                            variables_table = variable_tab,
+                                            table_subset = "e related publications") {
+  
+  factor_table <- variables_table %>%
+    subset(table == table_subset) %>%
+    group_by(attribute_name) %>%
+    summarise(codes = paste(variable_name, " = ", variable_definition, sep="", collapse = " "))
+
+  attributes_display <- attributes_table %>%
+    subset(table == table_subset) %>% # Subset table based on specification
+    mutate('attribute name' = ifelse(manditory == T, # If the variable required cast text as bold
+           paste("<b>", attribute_name, "</b>", sep = ""),
+           attribute_name)) %>% 
+    rename(definition = attribute_definition) %>% # rename attribute definition
+    left_join(factor_table, by = "attribute_name") %>% # join the table of codes
+    mutate('format, unit or codes' = ifelse(data_type == "Date", # If the data is a Date
+           format_string, # 3rd column should have the format String
+           ifelse(data_type == "numeric", # if the datatype is number
+                  units, # 3rd column should be the unit
+                  ifelse(data_type == "factor", # if the datatype is a factor
+                         codes, # 3rd column should be all of the factor definitions in a neat readable row separated by.
+                         "" # if the datatype is a character 3rd column should be blank
+                  )))) %>%
+    rename('data type' = data_type) %>%
+    select('attribute name', definition, 'data type', 'format, unit or codes')
+  
+  return(attributes_display) # Return New Table
+}
+
+```
+
+## Study Level Metadata
+
+[Return to Top](#contents)
+
+
+
+### Study Information
+
+[Return to Top](#contents)
+
+``` {r, study info table, echo = F}
+study_display <- create_attributes_display_table(table_subset = "a study information")
+kable(study_display, caption = "Study Information")
+  
+```
+
+
+### Keywords
+[Return to Top](#contents)
+
+
+``` {r, keywords table, echo = F}
+keywords_display <- create_attributes_display_table(table_subset = "b keywords")
+kable(keywords_display, caption = "Keywords")
+```
+
+
+### Authors
+[Return to Top](#contents)
+
+``` {r, authors table, echo = F}
+authors_display <- create_attributes_display_table(table_subset = "c authors")
+kable(authors_display, caption = "Authors")
+```
+
+
+
+### Funding Sources
+[Return to Top](#contents)
+
+``` {r, funding sources table, echo = F}
+funding_display <- create_attributes_display_table(table_subset = "d funding source")
+kable(funding_display, caption = "Funding")
+```
+
+
+### Associated Publications
+[Return to Top](#contents)
+
+``` {r, associated publications table, echo = F}
+publications_display <- create_attributes_display_table(table_subset = "e related publications")
+kable(publications_display, caption = "Associated Publications")
+```
+
+
+
+## Materials and Methods
+[Return to Top](#contents)
+
+``` {r, materials and methods table, echo = F}
+mAndM_display <- create_attributes_display_table(table_subset = "f materials and methods")
+kable(mAndM_display, caption = "Materials and Methods")
+```
+
+
+## Site Level
+[Return to Top](#contents)
+
+``` {r, site table, echo = F}
+site_display <- create_attributes_display_table(table_subset = "g site information")
+kable(site_display, caption = "Site Information")
+```
+
+
+## Core Level
+[Return to Top](#contents)
+
+Note positional data can be assigned at the core level, or at the site level, however, it is important that this is specified, that site coordinates are not attributed as core coordinates, and that the method of measurement and precision is noted.
+
+``` {r, Core- (or Subsite-) Level Information, echo = F}
+core_display <- create_attributes_display_table(table_subset = "h subsite information")
+kable(core_display, caption = "Core- (or Subsite-) Level Information")
+```
+
+
+## Soil Depth Series
+[Return to Top](#contents)
+
+``` {r, Soil Depth Series, echo = F}
+depth_series_display <- create_attributes_display_table(table_subset = "j depth series")
+kable(depth_series_display, caption = "Soil Depth Series Information")
+```
+
+
+## Mulitple Special Conditions at the Level of the Core
+[Return to Top](#contents)
+
+### Domiant Species Present 
+[Return to Top](#contents)
+
+``` {r, Species Table, echo = F}
+species_display <- create_attributes_display_table(table_subset = "k species present at site or subsite")
+kable(species_display, caption = "Species Present at Site or Subsite")
+```
+
+
+### Anthropogenic Impacts Present
+[Return to Top](#contents)
+
+``` {r, Impacts Table, echo = F}
+impacts_display <- create_attributes_display_table(table_subset = "l impact at site or subsite")
+kable(impacts_display, caption = "Anthropogenic Impacts at Site or Subsite")
+```
+
+
+## User Defined Attributes and Definitions
+[Return to Top](#contents)
+
+### Study Level Species Table
+If species codes or common names are used anywhere in the study, there should be a separate table included defining all names using scientific names.  
+
+``` {r, Species Codes, echo = F}
+species_code_display <- create_attributes_display_table(table_subset = "m species table")
+kable(species_code_display, caption = "Define Species Codes Used")
+```
+
+### Other Attributes and variables
+[Return to Top](#contents)
+
+
+
+

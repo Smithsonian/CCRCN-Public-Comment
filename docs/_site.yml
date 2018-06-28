@@ -5,9 +5,9 @@ navbar:
   left:
     - text: "Governance Principles"
       href: index.html
-    - text: "Data Management Principles"
+    - text: "Data Management Plan"
       href: data_management.html
-    - text: "Controlled Variables"
-      href: Controlled_Variables_and_Vocabulary.html
+    - text: "Attributes and Variables"
+      href: Controlled_Attributes_and_Variables.html
     - text: "Join the Network"
       href: contact.html

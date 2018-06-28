@@ -1,0 +1,153 @@
+table,attribute_name,variable_name,variable_definition
+e related publications,publication_type,article,Journal article.
+e related publications,publication_type,book,Book.
+e related publications,publication_type,mastersthesis,Master's Thesis.
+e related publications,publication_type,misc,Miscellaneous publications such as online datasets.
+e related publications,publication_type,phdthesis,PhD thesis or dissertation.
+e related publications,publication_type,techreport,Technical report.
+e related publications,publication_type,unpublished,Unpublished source.
+f materials and methods,coring_method,gouge auger,"A half cylinder coring device in which the coring section is open, not sealed off by a fin."
+f materials and methods,coring_method,hargas corer,"A large diameter (>10 cm) coring device consisting of a tube, piston, and a cutting head."
+f materials and methods,coring_method,mcauley corer,A half cylinder coring device with the coring section sealed off by a fin attached to a rotating pivot point.
+f materials and methods,coring_method,mccaffrey peat cutter,U-shaped blade that extracts a core by cutting down through peat.
+f materials and methods,coring_method,none specified,No coring device was specified.
+f materials and methods,coring_method,other shallow corer,Any other type of coring device typically taking cores shallower than 30 centimeters.
+f materials and methods,coring_method,piston corer,A device that extrudes core into tube upward with a plunger.
+f materials and methods,coring_method,push core,Any number of coring types involving driving a tube into the sediment to recover a core.
+f materials and methods,coring_method,pvc and hammer,PVC pipe was driven into the sediment with a hammer to recover a core.
+f materials and methods,coring_method,russian corer,A half cylinder coring device with the coring section sealed off by a fin attached to a rotating pivot point.
+f materials and methods,coring_method,vibracore,"A technique involving collecting a core by sinking a continuous pipe into sediment attaching a source of vibration, then recovering using a winch and pulley."
+f materials and methods,coring_method,surface sample,A technique involving collecting a core shallower than ~5 cm using a circular metal cutter.
+f materials and methods,roots_flag,roots and rhizomes included,Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements.
+f materials and methods,roots_flag,roots seperated using floation,Roots and rhizomes were separated from soil using floatation before dry bulk density and or organic matter and carbon measurements.
+f materials and methods,sediment_sieved_flag,sediment sieved,Sediment was sieved prior to analysis for organics.
+f materials and methods,sediment_sieved_flag,sediment not sieved,Sediment was not sieved prior to analysis for organics.
+f materials and methods,compaction_flag,< 10-20%,Compaction was  less than 10 to 20% of the core depth.
+f materials and methods,compaction_flag,corer limits compaction,Authors specified that the coring device's design minimized compaction.
+f materials and methods,compaction_flag,no obvious compaction,Authors observed no obvious compaction.
+f materials and methods,dry_bulk_density_flag,air dried to constant mass,Methodology specified that samples were air dried to a constant mass.
+f materials and methods,dry_bulk_density_flag,duplicate measurements,Methodology specified that the reported values are the averages of duplicated measurements.
+f materials and methods,dry_bulk_density_flag,estimated from loss on ignition and particle densities of mineral and organic solids,"Bulk density was not measured, but was modeled from loss on ignition and assumptions about the particle densities of organic and inorganic matter."
+f materials and methods,dry_bulk_density_flag,freeze dried,Bulk density was measured on freeze dried samples.
+f materials and methods,dry_bulk_density_flag,no details,No additional details regarding bulk density methodology were provided.
+f materials and methods,dry_bulk_density_flag,removed non structural water,"Bulk density methodology did not specify drying temperature or length, only that non-strucural water was removed."
+f materials and methods,dry_bulk_density_flag,time approximate,Bulk density time recorded herin is an approximate estimate.
+f materials and methods,dry_bulk_density_flag,time not specified,Bulk density time was not specified.
+f materials and methods,dry_bulk_density_flag,to constant mass,"Bulk density methodology did not specify drying temperature or length, only that samples were dried to a constant mass."
+f materials and methods,loss_on_ignition_flag,duplicate measurements,Methodology specified that the reported values are the averages of duplicated measurements.
+f materials and methods,loss_on_ignition_flag,ground and sieved,Methodology specified that the samples were ground and seived before loss on ignition.
+f materials and methods,loss_on_ignition_flag,no details,No additional details regarding loss on ignition methodology were provided.
+f materials and methods,loss_on_ignition_flag,time not specified,No additional details regarding loss on ignition duration were provided.
+f materials and methods,carbon_measured_or_modeled,measured,Fraction carbon was measured as opposed to modeled.
+f materials and methods,carbon_measured_or_modeled,modeled,Fraction carbon was modeled as opposed to measured.
+f materials and methods,carbonates_removed,FALSE,Carbonates were not removed before measuring organic carbon.
+f materials and methods,carbonates_removed,TRUE,Carbonates were removed before measuring organic carbon.
+f materials and methods,carbonate_removal_method,1N H3PO4,I normal phosphoric acid was used to remove carbonates.
+f materials and methods,carbonate_removal_method,direct acid treatment,Carbonates were removed using direct application of dilute acid.
+f materials and methods,carbonate_removal_method,HCl fumigation,Carbonates were removed by fumigating with concentrated hydrochloric acid.
+f materials and methods,carbonate_removal_method,low carbonate soil,Organic carbon fraction were measured without removing carbonates becasuse assuming carbonate content of the soil type was minimal. 
+f materials and methods,carbonate_removal_method,none specified,Carbonate removal methodology was not specified.
+f materials and methods,fraction_carbon_flag,extrapolated from subset of samples,A regression model fit using a subset of measurements was used to predict fraction carbon as a funciton of fraction organic matter.
+f materials and methods,fraction_carbon_flag,fumigated to remove microbeal biomass,Authors report removing microbeal biomass with acid fumigation.
+f materials and methods,fraction_carbon_flag,no details,No additional detals were provided regarding fraction carbon methodologies.
+f materials and methods,fraction_carbon_flag,replicate samples,Methodology specified that the reported values are the averages of duplicated measurements.
+f materials and methods,cs_137_counting_method,alpha,Alpha counting method used.
+f materials and methods,cs_137_counting_method,gamma,Gamma counting method used.
+f materials and methods,pb_210_counting_method,alpha,Alpha counting method used.
+f materials and methods,pb_210_counting_method,gamma,Gamma counting method used.
+f materials and methods,excess_pb_210_rate,mass accumulation,Excess <sup>210</sup>Pb modeled using mass accumulation rate.
+f materials and methods,excess_pb_210_rate,accretion,Excess <sup>210</sup>Pb modeled using vertical accretion rate.
+f materials and methods,excess_pb_210_model,CRS,Constant rate of supply model used.
+f materials and methods,excess_pb_210_model,CIC,Constant initial concentration model used.
+f materials and methods,excess_pb_210_model,CFCS,Constant flux constant sedimentation model used.
+f materials and methods,c_14_counting_method,AMS,Accelerator mass spectroscopy used.
+f materials and methods,c_14_counting_method,beta,Beta counting used.
+g site information,salinity_class,estuarine,5-35 parts per thousand salinity (ppt).
+g site information,salinity_class,palustrine,< 5 ppt.
+g site information,salinity_class,brine,>50 ppt.
+g site information,salinity_class,saline,30-50 ppt.
+g site information,salinity_class,brackish,0.5-30 ppt.
+g site information,salinity_class,fresh,<0.5 ppt.
+g site information,salinity_class,mixoeuhaline,30-40 ppt.
+g site information,salinity_class,polyhaline,18-30 ppt.
+g site information,salinity_class,mesohaline,5-18 ppt.
+g site information,salinity_class,oligohaline,0.5-5 ppt.
+g site information,salinity_method,field observation,Salinity inferred by field observation such as vegetation.
+g site information,salinity_method,measurement,Salinity observed from local instrument.
+g site information,vegetation_class,emergent,Describes wetlands dominated by persistent emergent vascular plants.
+g site information,vegetation_class,scrub shrub,Describes wetlands dominated by woody vegetation <= 5 meters in height.
+g site information,vegetation_class,forested,Describes wetlands dominated by woody vegetation > 5 meters in height.
+g site information,vegetation_class,FO/SS,Dominated by forested to scrub/shrub biomass.
+g site information,vegetation_class,seagrass,Describes tidal or subtidal communities dominated by rooted vascular plants.
+g site information,vegetation_method,field observation,Vegetation inferred by field observation.
+g site information,vegetation_method,measurement,Vegetation measured by counts or plots.
+g site information,inundation_class,high,"Study-specific definition of an elevation relatively high in the tidal frame, typically defined by vegetation type."
+g site information,inundation_class,mid,"Study-specific definition of an elevation in the relative middle of the tidal frame, typically defined by vegetation type."
+g site information,inundation_class,low,"Study-specific definition of an elevation in relatively low in the tidal frame, typically defined by vegetation type."
+g site information,inundation_class,levee,"Study-specific definition of a relatively high elevation zone built up on the edge of a river, creek, or channel."
+g site information,inundation_class,back,Study-specific definition of a relatively low elevation zone behind a levee.
+g site information,inundation_method,field observation,Inundation inferred by field observation such as vegetation.
+g site information,inundation_method,measurement,Inundation class assesed from elevation and nearby tidegauge or other similar method.
+h subsite information,core_position_method,RTK,Real-time kinematic global position system (GPS).
+h subsite information,core_position_method,handheld,Conventional Commercially available hand-held GPS.
+h subsite information,core_position_method,other high resolution,Any other technique resulting in positional error < 1 meter.
+h subsite information,core_position_method,other moderate resolution,Any other technique resulting in positional error < 30 meters.
+h subsite information,core_position_method,other low resolution,Any other technique resulting in positional error > 30 meters.
+h subsite information,core_elevation_datum,NAVD88,"A gravity-based geodetic datum, North American Vertical Datum from 1988."
+h subsite information,core_elevation_datum,MSL,"A tidal datum, Mean Sea Level as measured against a local tide gauge."
+h subsite information,core_elevation_datum,MTL,"A tidal datum, Mean Tidal Level as measured against a local tide gauge."
+h subsite information,core_elevation_datum,MHW,"A tidal datum, Mean High Water as measured against a local tide gauge."
+h subsite information,core_elevation_datum,MHHW,"A tidal datum, Mean Higher High Water as measured against a local tide gauge."
+h subsite information,core_elevation_datum,MHHWS,"A tidal datum, Mean Higher High Water for Spring Tides as measured against a local tide gauge."
+h subsite information,core_elevation_datum,MLW,"A tidal datum, Mean Low Water as measured against a local tide gauge."
+h subsite information,core_elevation_datum,MLLW,"A tidal datum, Mean Lower Low Water as measured against a local tide gauge."
+h subsite information,core_elevation_method,RTK,Real-time kinematic GPS.
+h subsite information,core_elevation_method,other high resolution,Any other technique resulting in positional error < 5 cm of random error.
+h subsite information,core_elevation_method,LiDAR,Handheld GPS matched to lidar-based digital elevation model.
+h subsite information,core_elevation_method,DEM,Handheld GPS matched to another digital elevation model.
+h subsite information,core_elevation_method,other low resolution,Any other technique resulting in positional error > 5 cm of random error.
+h subsite information,salinity_class,estuarine,5-35 parts per thousand salinity (ppt).
+h subsite information,salinity_class,palustrine,< 5 ppt.
+h subsite information,salinity_class,brine,>50 ppt.
+h subsite information,salinity_class,saline,30-50 ppt.
+h subsite information,salinity_class,brackish,0.5-30 ppt.
+h subsite information,salinity_class,fresh,<0.5 ppt.
+h subsite information,salinity_class,mixoeuhaline,30-40 ppt.
+h subsite information,salinity_class,polyhaline,18-30 ppt.
+h subsite information,salinity_class,mesohaline,5-18 ppt.
+h subsite information,salinity_class,oligohaline,0.5-5 ppt.
+h subsite information,salinity_method,field observation,Salinity inferred by field observation such as vegetation.
+h subsite information,salinity_method,measurement,Salinity observed from local instrument.
+h subsite information,vegetation_class,emergent,Describes wetlands dominated by persistent emergent vascular plants.
+h subsite information,vegetation_class,scrub shrub,Describes wetlands dominated by woody vegetation < 5 meters in height.
+h subsite information,vegetation_class,forested,Describes wetlands dominated by woody vegetation > 5 meters in height.
+h subsite information,vegetation_class,seagrass,Describes tidal or subtidal communities dominated by rooted vascular plants.
+h subsite information,vegetation_method,field observation,Vegetation inferred by field observation.
+h subsite information,vegetation_method,measurement,Vegetation measured by counts or plots.
+h subsite information,inundation_class,high,"Study-specific definition of an elevation relatively high in the tidal frame, typically defined by vegetation type."
+h subsite information,inundation_class,mid,"Study-specific definition of an elevation in the relative middle of the tidal frame, typically defined by vegetation type."
+h subsite information,inundation_class,low,"Study-specific definition of an elevation in relatively low in the tidal frame, typically defined by vegetation type."
+h subsite information,inundation_class,levee,"Study-specific definition of a relatively high elevation zone built up on the edge of a river, creek, or channel."
+h subsite information,inundation_class,back,Study-specific definition of a relatively low elevation zone behind a levee.
+h subsite information,inundation_method,field observation,Inundation inferred by field observation such as vegetation.
+h subsite information,inundation_method,measurement,Inundation class assesed from elevation and nearby tidegauge or other similar method.
+h subsite information,core_length_flag,core depth limited by length of corer,The total depth of the core was limited by the length of the coring device.
+h subsite information,core_length_flag,core depth represents deposit depth,Authors report that the depth of the core represents the depth of the wetland soil deposit.
+h subsite information,core_length_flag,not specified,Authors did not specify whether or not the depth of the core represents the depth of the wetland soil deposit.
+j depth series,fraction_carbon_type,fraction_organic_carbon,Author specified that fraction carbon measurements were of organic carbon.
+j depth series,fraction_carbon_type,fraction_total_carbon,Author specified that fraction carbon measurements were of total carbon.
+j depth series,marker_type,artificial horizon,"Horizon was added to the surface artificially by using materials such as feldspar, glitter, or rare earth elements."
+j depth series,marker_type,pollen,"Pollen analysis was used to tie horizon to the timing of vegetation change such as the arrival of invasives, or the beginning of local agriculture."
+j depth series,marker_type,pollution,Chemical analysis was used to tie the horizon to the timing of a pollution event.
+j depth series,marker_type,tsunami,Sediment analysis was used to tie the horizon to the timing of a tsunami event.
+l impact at site or subsite,impact_class,tidally restricted,Tidal flow is muted or blocked by built structures.
+l impact at site or subsite,impact_class,managed impounded,"Tidal flow is muted or blocked seasonally, and other times follow natural or semi-natural flooding patterns."
+l impact at site or subsite,impact_class,ditched,Tidal hydrology is altered because artificial ditches have been cut to improve drainage.
+l impact at site or subsite,impact_class,drained,"Tidal hydrology is altered because artificial the wetland has been drained by any combination of impoundments, ditching, pumping, etc."
+l impact at site or subsite,impact_class,farmed,"Special case of impoundment, managed impoundment, or drainage in which wetland have been converted to agricultural land."
+l impact at site or subsite,impact_class,impoundment removed,Tidal flow has been restored by removing an artificial impoundment.
+l impact at site or subsite,impact_class,revegetated,Tidal vegetation has been reintroduced by replanting on unvegetated surfaces.
+l impact at site or subsite,impact_class,invasive plants removed,Natural plant communities have been restored by the active removal of invasive plant species.
+l impact at site or subsite,impact_class,invasive herbivores removed,Tidal wetland vegetation has been managed by the removal of invasive herbivores.
+l impact at site or subsite,impact_class,sediment added,Elevation has been managed by artificially adding sediment to the site using techniques such as thin layering or sediment diversion.
+l impact at site or subsite,impact_class,wetlands built,Wetlands previously eroded but have been rebuilt using sediments such as dredge spoils or other reclamation techniques.
