@@ -272,9 +272,11 @@ $(document).ready(function () {
 <div id="study-level-metadata" class="section level2">
 <h2>Study Level Metadata</h2>
 <p><a href="#contents">Return to Top</a></p>
+<p>Study-level information is essential for formatting the Ecological Metadata Language, and is a great way for you to express your project’s history, context, and originality.</p>
 <div id="study-information" class="section level3">
 <h3>Study Information</h3>
 <p><a href="#contents">Return to Top</a></p>
+<p>Please provide some custom text for your study.</p>
 <table>
 <caption>Study Information</caption>
 <thead>
@@ -334,6 +336,7 @@ $(document).ready(function () {
 <div id="keywords" class="section level3">
 <h3>Keywords</h3>
 <p><a href="#contents">Return to Top</a></p>
+<p>Keywords are not necessary, but can help make your data more searchable in a database.</p>
 <table>
 <caption>Keywords</caption>
 <thead>
@@ -363,6 +366,7 @@ $(document).ready(function () {
 <div id="authors" class="section level3">
 <h3>Authors</h3>
 <p><a href="#contents">Return to Top</a></p>
+<p>For each dataset at least one corresponding author should be specified. Specifying author names will allow user’s (or you in the future) to query the dataset and see how many cores you’ve submitted.</p>
 <table>
 <caption>Authors</caption>
 <thead>
@@ -428,6 +432,7 @@ $(document).ready(function () {
 <div id="funding-sources" class="section level3">
 <h3>Funding Sources</h3>
 <p><a href="#contents">Return to Top</a></p>
+<p>Your funders will love being aknowledged in a data realase, and will appreciate being searchable in the database. One dataset can have multiple funding sources.</p>
 <table>
 <caption>Funding</caption>
 <thead>
@@ -469,6 +474,7 @@ $(document).ready(function () {
 <div id="associated-publications" class="section level3">
 <h3>Associated Publications</h3>
 <p><a href="#contents">Return to Top</a></p>
+<p>One dataset can be affiliated with multiple publications. This allows an original work to be cited as a primary source, as well as any secondary or synthesis papers that added value to the dataset’s archival. Submitter’s can simply add a bibtex style citation, such as one copied over from google earth engine, or they can fill out all of the relevant attributes for the data release. It’s all the same to us.</p>
 <table>
 <caption>Associated Publications</caption>
 <thead>
@@ -661,6 +667,7 @@ $(document).ready(function () {
 <div id="materials-and-methods" class="section level2">
 <h2>Materials and Methods</h2>
 <p><a href="#contents">Return to Top</a></p>
+<p>For each study please fill out key data regarding materials and methods that are important to the soil carbon stocks meta-analysis. Some users may want to include or exclude certain methodologies, or see your commentary on the methods. Let’s make it easy for them.</p>
 <table>
 <caption>Materials and Methods</caption>
 <thead>
@@ -822,6 +829,7 @@ $(document).ready(function () {
 <div id="site-level" class="section level2">
 <h2>Site Level</h2>
 <p><a href="#contents">Return to Top</a></p>
+<p>Site information is not mandatory, but could provide important context for your study. You should describe the site and how it fits into your broader study, provide geographic information (although this can be generated automatically from the cores as well), and add any relevant tags and notes regarding site vegetation and inundation. Vegetation and inundation can alternatively be incorporated into the core-level data, whatever makes the most sense to your study design.</p>
 <table>
 <caption>Site Information</caption>
 <thead>
@@ -941,7 +949,7 @@ $(document).ready(function () {
 <div id="core-level" class="section level2">
 <h2>Core Level</h2>
 <p><a href="#contents">Return to Top</a></p>
-<p>Note positional data can be assigned at the core level, or at the site level, however, it is important that this is specified, that site coordinates are not attributed as core coordinates, and that the method of measurement and precision is noted.</p>
+<p>Note positional data can be assigned at the core level, or at the site level, however, it is important that this is specified, that site coordinates are not attributed as core coordinates, and that the method of measurement and precision is noted. Vegetation and inundation can alternatively be incorporated into the site-level data, whatever makes the most sense to your study design. In the future this level of hierarchy will be reassesed as the ‘subsite level’ as this level of heirarchy can handle any sublocation information such as vegetation plot, and instrument location and description.</p>
 <table>
 <caption>Core- (or Subsite-) Level Information</caption>
 <thead>
@@ -1109,6 +1117,7 @@ $(document).ready(function () {
 <div id="soil-depth-series" class="section level2">
 <h2>Soil Depth Series</h2>
 <p><a href="#contents">Return to Top</a></p>
+<p>This level of hierarchy contains the actual depth series information. At minimum a submission needs to specify minimum and maximum depth increments, dry bulk density, and either fraction organic matter or fraction carbon. Sample ID’s should be used in the case that there are multiple replicants of a measurements. There is plenty of room for recording raw data from various dating techniques as well as age depth models.</p>
 <table>
 <caption>Soil Depth Series Information</caption>
 <thead>
@@ -1291,12 +1300,14 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="mulitple-special-conditions-at-the-level-of-the-core" class="section level2">
-<h2>Mulitple Special Conditions at the Level of the Core</h2>
+<div id="mulitple-special-conditions-at-the-level-of-the-site-or-core" class="section level2">
+<h2>Mulitple Special Conditions at the Level of the Site or Core</h2>
 <p><a href="#contents">Return to Top</a></p>
+<p>Becuase there may be multiple observations or conditions that are part of the study, such as species present, or degredation or restoration activities, that can affect a site or core, these are archived separately.</p>
 <div id="domiant-species-present" class="section level3">
 <h3>Domiant Species Present</h3>
 <p><a href="#contents">Return to Top</a></p>
+<p>You can record species codes associated with sites and/or cores.</p>
 <table>
 <caption>Species Present at Site or Subsite</caption>
 <thead>
@@ -1338,6 +1349,7 @@ $(document).ready(function () {
 <div id="anthropogenic-impacts-present" class="section level3">
 <h3>Anthropogenic Impacts Present</h3>
 <p><a href="#contents">Return to Top</a></p>
+<p>You can record various codes associated with degredation or restoration conditions at sites and/or cores.</p>
 <table>
 <caption>Anthropogenic Impacts at Site or Subsite</caption>
 <thead>
@@ -1380,6 +1392,7 @@ $(document).ready(function () {
 <div id="user-defined-attributes-and-definitions" class="section level2">
 <h2>User Defined Attributes and Definitions</h2>
 <p><a href="#contents">Return to Top</a></p>
+<p>Part of the reason we controll these attribute and variable names are so that the dataset does not become unmanageable, and we can deliver products that run cleanly and smoothly to you. However we know that research is complicated, and not all of the data you want to include can be represented here. As long as it fits within this heirarchy, we allow you to submit user defined variables.</p>
 <div id="study-level-species-table" class="section level3">
 <h3>Study Level Species Table</h3>
 <p>If species codes or common names are used anywhere in the study, there should be a separate table included defining all names using scientific names.</p>
@@ -1448,6 +1461,63 @@ $(document).ready(function () {
 <div id="other-attributes-and-variables" class="section level3">
 <h3>Other Attributes and variables</h3>
 <p><a href="#contents">Return to Top</a></p>
+<p>Any user-defined attributes should be included in a separate table indicating the associated level of heirarchy, attribute name, data type (date, factor, character, or numeric). Attribute names should follow good naming practices: self descriptive, don’t start with a number or special character, no spaces. Dates should be stored as a character string and should have an accompanying ‘string format’ indicating the position, number of digits and deliminators for the date time. For example June twenty-sixth two-thousand eighteen written as 2018-06-26 would be formatted as ‘YYYY-MM-DD’. <a href="https://www.w3.org/TR/NOTE-datetime">Here is a handy dateTime reference</a>. Numberic values should have their units defined. Factors (or categorical variables) should be defined in a separate table.</p>
+<table style="width:86%;">
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="30%" />
+<col width="13%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">level of heirarchy</th>
+<th align="left">attribute name</th>
+<th align="left">description</th>
+<th align="left">data Type</th>
+<th align="left">format, unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ex. site level or core level</td>
+<td align="left">(your column name here. [use good naming conventions])</td>
+<td align="left">(describe your attribute here.)</td>
+<td align="left">Date, factor, character, or numeric</td>
+<td align="left">(extra necessary info here)</td>
+</tr>
+</tbody>
+</table>
+<p>Variable names, like attribute names, should be self-descriptive. Such as ‘experimental’ or ‘control’ as opposed to ‘1’ and ‘2’.</p>
+<table style="width:67%;">
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="30%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">level of heirarchy</th>
+<th align="left">attribute name</th>
+<th align="left">categorical variable name</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ex. site level or core level</td>
+<td align="left">(parent column name here)</td>
+<td align="left">(your variable name here.)</td>
+<td align="left">(describe your variable)</td>
+</tr>
+</tbody>
+</table>
+<div id="thats-it" class="section level4">
+<h4>That’s It</h4>
+<p>You now know everything there is to know about soil carbon data management.</p>
+</div>
 </div>
 </div>
 
