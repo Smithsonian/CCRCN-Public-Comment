@@ -1,4 +1,6 @@
 table,attribute_name,variable_name,variable_definition
+c authors,corresponding_author,TRUE,The author should be contacted with any further questions.
+c authors,corresponding_author,FALSE,The author should not be contacted with any further questions.
 e related publications,publication_type,article,Journal article.
 e related publications,publication_type,book,Book.
 e related publications,publication_type,mastersthesis,Master's Thesis.
@@ -19,38 +21,35 @@ f materials and methods,coring_method,russian corer,A half cylinder coring devic
 f materials and methods,coring_method,vibracore,"A technique involving collecting a core by sinking a continuous pipe into sediment attaching a source of vibration, then recovering using a winch and pulley."
 f materials and methods,coring_method,surface sample,A technique involving collecting a core shallower than ~5 cm using a circular metal cutter.
 f materials and methods,roots_flag,roots and rhizomes included,Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements.
-f materials and methods,roots_flag,roots seperated using floation,Roots and rhizomes were separated from soil using floatation before dry bulk density and or organic matter and carbon measurements.
+f materials and methods,roots_flag,roots and rhizones separated,Roots and rhizomes were separated from soil before dry bulk density and or organic matter and carbon measurements.
 f materials and methods,sediment_sieved_flag,sediment sieved,Sediment was sieved prior to analysis for organics.
 f materials and methods,sediment_sieved_flag,sediment not sieved,Sediment was not sieved prior to analysis for organics.
-f materials and methods,compaction_flag,< 10-20%,Compaction was  less than 10 to 20% of the core depth.
+f materials and methods,compaction_flag,compaction qualified,Compaction was at least qualified and noted by the authors.
+f materials and methods,compaction_flag,compaction quantified,Compaction was quantified and corrected for in core based measurements.
 f materials and methods,compaction_flag,corer limits compaction,Authors specified that the coring device's design minimized compaction.
 f materials and methods,compaction_flag,no obvious compaction,Authors observed no obvious compaction.
+f materials and methods,compaction_flag,not specified,Compaction was not specified.
 f materials and methods,dry_bulk_density_flag,air dried to constant mass,Methodology specified that samples were air dried to a constant mass.
-f materials and methods,dry_bulk_density_flag,duplicate measurements,Methodology specified that the reported values are the averages of duplicated measurements.
-f materials and methods,dry_bulk_density_flag,estimated from loss on ignition and particle densities of mineral and organic solids,"Bulk density was not measured, but was modeled from loss on ignition and assumptions about the particle densities of organic and inorganic matter."
+f materials and methods,dry_bulk_density_flag,modeled,"Bulk density was not measured, but was modeled from loss on ignition and assumptions about the particle densities of organic and inorganic matter."
 f materials and methods,dry_bulk_density_flag,freeze dried,Bulk density was measured on freeze dried samples.
 f materials and methods,dry_bulk_density_flag,no details,No additional details regarding bulk density methodology were provided.
 f materials and methods,dry_bulk_density_flag,removed non structural water,"Bulk density methodology did not specify drying temperature or length, only that non-strucural water was removed."
 f materials and methods,dry_bulk_density_flag,time approximate,Bulk density time recorded herin is an approximate estimate.
 f materials and methods,dry_bulk_density_flag,time not specified,Bulk density time was not specified.
 f materials and methods,dry_bulk_density_flag,to constant mass,"Bulk density methodology did not specify drying temperature or length, only that samples were dried to a constant mass."
-f materials and methods,loss_on_ignition_flag,duplicate measurements,Methodology specified that the reported values are the averages of duplicated measurements.
-f materials and methods,loss_on_ignition_flag,ground and sieved,Methodology specified that the samples were ground and seived before loss on ignition.
 f materials and methods,loss_on_ignition_flag,no details,No additional details regarding loss on ignition methodology were provided.
+f materials and methods,loss_on_ignition_flag,time approximate,Loss on ignition time recorded herin is an approximate estimate.
 f materials and methods,loss_on_ignition_flag,time not specified,No additional details regarding loss on ignition duration were provided.
 f materials and methods,carbon_measured_or_modeled,measured,Fraction carbon was measured as opposed to modeled.
 f materials and methods,carbon_measured_or_modeled,modeled,Fraction carbon was modeled as opposed to measured.
 f materials and methods,carbonates_removed,FALSE,Carbonates were not removed before measuring organic carbon.
 f materials and methods,carbonates_removed,TRUE,Carbonates were removed before measuring organic carbon.
-f materials and methods,carbonate_removal_method,1N H3PO4,I normal phosphoric acid was used to remove carbonates.
 f materials and methods,carbonate_removal_method,direct acid treatment,Carbonates were removed using direct application of dilute acid.
-f materials and methods,carbonate_removal_method,HCl fumigation,Carbonates were removed by fumigating with concentrated hydrochloric acid.
+f materials and methods,carbonate_removal_method,acid  fumigation,Carbonates were removed by fumigating with concentrated acid.
 f materials and methods,carbonate_removal_method,low carbonate soil,Organic carbon fraction were measured without removing carbonates becasuse assuming carbonate content of the soil type was minimal. 
 f materials and methods,carbonate_removal_method,none specified,Carbonate removal methodology was not specified.
 f materials and methods,fraction_carbon_flag,extrapolated from subset of samples,A regression model fit using a subset of measurements was used to predict fraction carbon as a funciton of fraction organic matter.
-f materials and methods,fraction_carbon_flag,fumigated to remove microbeal biomass,Authors report removing microbeal biomass with acid fumigation.
 f materials and methods,fraction_carbon_flag,no details,No additional detals were provided regarding fraction carbon methodologies.
-f materials and methods,fraction_carbon_flag,replicate samples,Methodology specified that the reported values are the averages of duplicated measurements.
 f materials and methods,cs_137_counting_method,alpha,Alpha counting method used.
 f materials and methods,cs_137_counting_method,gamma,Gamma counting method used.
 f materials and methods,pb_210_counting_method,alpha,Alpha counting method used.
@@ -62,6 +61,12 @@ f materials and methods,excess_pb_210_model,CIC,Constant initial concentration m
 f materials and methods,excess_pb_210_model,CFCS,Constant flux constant sedimentation model used.
 f materials and methods,c_14_counting_method,AMS,Accelerator mass spectroscopy used.
 f materials and methods,c_14_counting_method,beta,Beta counting used.
+f materials and methods,fraction_carbon_type,organic carbon,Author specified that fraction carbon measurements were of organic carbon.
+f materials and methods,fraction_carbon_type,total carbon,Author specified that fraction carbon measurements were of total carbon.
+f materials and methods,age_depth_model_reference,YBP,"Year zero is defined as years before present, 1960 CE."
+f materials and methods,age_depth_model_reference,CE,Year zero is set according to Common Era and Before Common Era standards.
+f materials and methods,age_depth_model_reference,TS,"Year zero is defined as Taylor Swift's birth year, 1989 CE."
+f materials and methods,age_depth_model_reference,core collection date,Year zero is set as the core's collection year.
 g site information,salinity_class,estuarine,5-35 parts per thousand salinity (ppt).
 g site information,salinity_class,palustrine,< 5 ppt.
 g site information,salinity_class,brine,>50 ppt.
@@ -134,8 +139,6 @@ h subsite information,inundation_method,measurement,Inundation class assesed fro
 h subsite information,core_length_flag,core depth limited by length of corer,The total depth of the core was limited by the length of the coring device.
 h subsite information,core_length_flag,core depth represents deposit depth,Authors report that the depth of the core represents the depth of the wetland soil deposit.
 h subsite information,core_length_flag,not specified,Authors did not specify whether or not the depth of the core represents the depth of the wetland soil deposit.
-j depth series,fraction_carbon_type,fraction_organic_carbon,Author specified that fraction carbon measurements were of organic carbon.
-j depth series,fraction_carbon_type,fraction_total_carbon,Author specified that fraction carbon measurements were of total carbon.
 j depth series,marker_type,artificial horizon,"Horizon was added to the surface artificially by using materials such as feldspar, glitter, or rare earth elements."
 j depth series,marker_type,pollen,"Pollen analysis was used to tie horizon to the timing of vegetation change such as the arrival of invasives, or the beginning of local agriculture."
 j depth series,marker_type,pollution,Chemical analysis was used to tie the horizon to the timing of a pollution event.

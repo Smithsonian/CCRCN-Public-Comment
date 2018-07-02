@@ -27,17 +27,17 @@ output: html_document
 * [Mulitple Special Conditions at the Level of the Site or Core](#mulitple-special-conditions-at-the-level-of-the-site-or-core)
     + [Domiant Species Present](#domiant-species-present)
     + [Anthropogenic Impacts Present](#anthropogenic-impacts-present)
-* [User Defined Attributes and Definitions](#user-defined-attributes-and-definitions)
+* [Submitter Defined Attributes and Definitions](#submitter-defined-attributes-and-definitions)
     + [Study Level Species Table](#study-level-species-table)
     + [Other Attributes and Variables](#other-attributes-and-variables)
 
 ## Overview
 [Return to Top](#contents)
 
-This page serves as guidence for the types and scope of data and metadata that will be archived as part of the Coastal carbon RCN's developing tidal soil carbon synthesis. We propose the following data structure, standardized attribute names for metadata and data in order to make datasets machine readable and interoperable. Each sub-heading lists a level of metadata or data hierarchy from *study level* metadata to *site level* to *core level* to *depth/time series* information. Each subheading also represents separate tables which can be joined by common attributes such as study_id, site_id, and core_id. We also include accompanying sets of recommended controlled vocabulary for key categorical variables. Some attributes have controlled units that we wish to keep uniform across datasets. Data that we curate will follow naming conventions outlined herein. Data that we ingest from outside sources will be converted to these conventions when being ingested into the central GitHub databased using custom-built R scripts.
+This page serves as guidence for the types and scope of data and metadata that will be archived as part of the Coastal carbon RCN's developing tidal soil carbon synthesis. We propose the following data structure, standardized attribute names for metadata and data in order to make datasets machine readable and interoperable. Each sub-heading lists a level of metadata or data hierarchy from *study level* metadata to *site level* to *core level* to *depth/time series* information. Each subheading also represents separate tables which can be joined by common attributes such as study_id, site_id, and core_id. We also include accompanying sets of recommended controlled vocabulary for key categorical variables. Some attributes have controlled units that we wish to keep uniform across datasets. Data that we curate will follow naming conventions outlined herein. Data that we ingest from outside sources will be converted to these conventions when being ingested into the central GitHub database using custom-built R scripts.
 
-At a minimum a submission should have the following for inclusion in soil carbon synthesis products: *study_id*, author information, *core_id*, latitude and longitude information associated with either a core or the site, *depth_min*, *depth_max*, *dry_bulk_density*, *organic_matter_fraction* and/or *carbon_fraction*. The more auxillary detail that you provide, the more widely your data can be used.
-
+At a minimum a submission should have the following for inclusion in soil carbon synthesis products: *study_id*, author information, *core_id*, latitude and longitude information associated with either a core or the site, *depth_min*, *depth_max*, *dry_bulk_density*, *organic_matter_fraction* and/or *carbon_fraction*. The more auxillary detail that you provide, the more widely your data can be used. Throughout the tables below **mandatory attributes** are shown in **bold**.
+ 
 There are many opportunities to express your data's individuality. We refer throughout to 'flags' and 'notes'. Flags refer to common methodlogical choices or data issues that can be coded using categorical variables (also known as factors). The idea behind flags is to allow users the option to query datasets based on methodology. Flags are very machine readable but not very flexable from the standoint of a submitter. Notes are available for almost all measured attributes and take the form of free-text allowing submitters to provide context, obeservations, or concerns about methods, sites, cores, or observations. These are more flexable from the perspective of a submitter but are less machine readable.
 
 ### Development Process to Date
@@ -249,7 +249,7 @@ kable(impacts_display, caption = "Anthropogenic Impacts at Site or Subsite")
 ```
 
 
-## User Defined Attributes and Definitions
+## Submitter Defined Attributes and Definitions
 [Return to Top](#contents)
 
 Part of the reason we controll these attribute and variable names are so that the dataset does not become unmanageable, and we can deliver products that run cleanly and smoothly to you. However we know that research is complicated, and not all of the data you want to include can be represented here. As long as it fits within this heirarchy, we allow you to submit user defined variables.
@@ -266,7 +266,7 @@ kable(species_code_display, caption = "Define Species Codes Used")
 ### Other Attributes and variables
 [Return to Top](#contents)
 
-Any user-defined attributes should be included in a separate table indicating the associated level of heirarchy, attribute name, data type (date, factor, character, or numeric). Attribute names should follow good naming practices: self descriptive, don't start with a number or special character, no spaces. Dates should be stored as a character string and should have an accompanying 'string format' indicating the position, number of digits and deliminators for the date time. For example June twenty-sixth two-thousand eighteen written as 2018-06-26 would be formatted as 'YYYY-MM-DD'. [Here is a handy dateTime reference](https://www.w3.org/TR/NOTE-datetime). Numberic values should have their units defined. Factors (or categorical variables) should be defined in a separate table.
+Any submitter-defined attributes should be included in a separate table indicating the associated level of heirarchy, attribute name, data type (date, factor, character, or numeric). Attribute names should follow good naming practices: self descriptive, don't start with a number or special character, no spaces. Dates should be stored as a character string and should have an accompanying 'string format' indicating the position, number of digits and deliminators for the date time. For example June twenty-sixth two-thousand eighteen written as 2018-06-26 would be formatted as 'YYYY-MM-DD'. [Here is a handy dateTime reference](https://www.w3.org/TR/NOTE-datetime). Numberic values should have their units defined. Factors (or categorical variables) should be defined in a separate table.
 
 | level of heirarchy | attribute name | description | data Type | format, unit |
 |:------|:------|:--------------------|:--------|:------------|

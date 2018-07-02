@@ -15,26 +15,34 @@ output: html_document
 * [Digital Object Identifiers](#digital-object-identifiers)
 * [Metadata standards](#metadata-standards)
 * [Variables]("variables")
-    + [Proposed Level of Disaggregation for Variables](#proposed-level-of-disaggregation-for-variables)
+    + [Proposed Level of Disaggregation](#proposed-level-of-disaggregation)
     + [Hierarchical Structure](#hierarchical-structure)
 * [Data Storage](#data-storage)
 * [Quality Control](#quality-control)
 * [Submitting Data](#submitting-data)
 
 ### Types of Data
+[Return to Top](#contents)
+
 The Network recognizes three classes of data: (i) data that we curate, (ii) data that we ingest, and (iii) synthesis products we create. Data that we curate will be hosted by on Smithsonian Institution (SI) servers, but the original data submitter, and funding sources will be credited as the dataset’s creators. Data that we ingest will include both data we curate, and data from any outside sources that meet basic availability, archiving, and metadata standards. These data will be pulled into intermediate files in a centralized database using R code. The workflow and files will be archived and publically available on an SI-dedicated GitHub website. This document refers to soil depth profile data throughout, but it is our intention that these general structures and principles be applied to other types of data as the Network evolves.
 
 ### Digital Object Identifiers
-To be cited and used in the Network synthesis, a dataset needs to have a citable digital object identifier (DOI), which points to a repository containing downloadable data and associated metadata. When data are discussed in a peer-reviewed journal article or report with a DOI, but the data are not publically available in their original form, then a second DOI specific to the dataset will be needed for inclusion in synthesis activities. In cases where data is continuously updated over time, we will version control the data, rather than issuing a new DOI for every update.
+[Return to Top](#contents)
 
-Submitters may archive data according to these outlined standards, host data on an SI server, and apply for a DOI through SI libraries with the assistance of Network personnel. This service is specific to this project. While data will be digitally archived long-term in accordance with SI standards, we cannot guaranty new data will be accepted after Network funding ends. For data that we curate, file trees will be hosted on SI ‘DSpace’ and DOIs will be issued by Smithsonian Institution Libraries (SIL). Landing pages with summaries of projects, sites, cores, will be viewable from the Network website, which will include links to download original data archived on Dspace.
+We encourage submitters to use best practices and to assign datasets a citable digital object identifier (DOI), which links to a repository containing freely downloadable data and associated metadata. We will prioritize ingesting such data into the synthesis. Data submitters can choose to forward DOIs issued outside of the Network for ingestion into the central data structure on the Network’s SI GitHub website. Some DOI-issuing repository services include [Figshare](https://figshare.com/) and the [Environmental Data Initiative](https://environmentaldatainitiative.org/). As a service to the community Network personell can will be available to assist data submitters in archiving data according to outlined standards. 
 
-Data submitters can additionally choose to forward DOIs issued outside of the Network for ingestion into the central data structure on the Network’s SI GitHub website. Some DOI-issuing repository services include [Figshare](https://figshare.com/) and the [Environmental Data Initiative](https://environmentaldatainitiative.org/). While we recognize that there is no official definition for what constitutes a ‘trusted repository’, repositories associated with DOIs should in general have community recognition and trust in their long-term stability. For data curated by the Network we hope that SI’s reputation, DSpace’s status as an approved technology, and the SIL’s commitment to digital object curation, generate this level of community trust.
+Submitters also have the option to also host data on an SI server, and apply for a DOI through SI libraries, with the submitters credited as a dataset author and Network personel credited for their curational role. While data will be digitally archived long-term in accordance with SI standards, we cannot guaranty new data will be accepted after Network funding ends. Landing pages with summaries of projects, sites, cores, will be viewable from the Network website, which will include links to download original data archived on Dspace.
+
+While we recognize that there is no official definition for what constitutes a ‘trusted repository’, repositories associated with DOIs should in general have community recognition and trust in their long-term stability. For data curated by the Network we hope that SI’s reputation, DSpace’s status as an approved technology, and the SIL’s commitment to digital object curation, generate this level of community trust.
 
 ### Metadata standards
+[Return to Top](#contents)
+
 For data curated by the Network, we will use the Environmental Metadata Language standards. This includes an abstract, detailed submitor information, variable definitions, and variable data types (e.g. character, integer, or float). CCRCN personnel will use the R-based [EML](https://cran.rstudio.com/web/packages/EML/) package in our workflow to create metadata for data that we curate. Code used to create EML will be documented, archived and backed up as part of an archive of working project files.
 
 ### Attribute Names
+[Return to Top](#contents)
+
 Attributes naming (analogous to column names in a spreadsheet) should follow good management practices[^1]. Attribute names should be self descriptive and machine readable. They should contain no spaces and must not begin with a number or special character; however, underscores (i.e. ‘pothole case’) are acceptable.  We will reccomend and adopt [controlled vocabulary for attribute naming](Controlled_Attributes_and_Variables.html). There will also be non-controlled variable names and variable types are user defined as described in the associated metadata.
 
 Units for all attributes need to be defined and in some cases controlled. For some variables which typically have commonly reported units we will recommend submittors format using these controlled units. These include fraction_organic_matter (fraction), dry_bulk_density (g cm<sup>-3</sup>) and latitude and longitude (decimal degrees [world geographic survey 1984]). For attributes that are applicable to the synthesis, but typically have multiple common unit formats we recommend an accompanying column defining these units. Uncommon or data types not included in synthesis projects simply need to have units defined in associated metadata.  
@@ -43,10 +51,14 @@ Good data practices require consistently formatting “no data” values and cat
 
 For data we curate we will use controlled vocabulary units and variable types. For data we ingest, we will keep a file of corresponding controlled variables and ‘aliases’ so that data not complying with controlled vocabulary can still be ingested. We will document transformations made to ingested data to standardize them with the data we curate in R code.
 
-##### Proposed Level of Disaggregation for Variables
+#### Proposed Level of Disaggregation
+[Return to Top](#contents)
+
 In general we believe that there should be community agreement on the finest level of data disaggregation archived for practical use and reuse. This fundamental unit should be the most detailed unit typically used and reported in the literature. For soils data we will stratify by site, by core, and by depth increment. For calculations such as loss-on-ignition and bulk density, data by depth increment will be the fundamental level of archiving. For age-depth information will archive radiocarbon (<sup>14</sup>C) age ± sd for a sample for <sup>14</sup>C dates, and counts per unit dry weight ± sd for <sup>210</sup>Pb and <sup>137</sup>Cs profiles. 
 
 #### Hierarchical Structure
+[Return to Top](#contents)
+
 We will make an effort to ingest existing data and curate submitted data in a hierarchical framework. Information associated with submitters, projects, sites, cores, and depth profiles will all be hosted in separate tables related by index codes that are unique in that database. Submitter metadata include name and affiliation data for principal investigators. This will be indexed using the principal investigator’s last name and first initial. Numbers will be added in case of conflicts (Example: Jane Doe = DoeJ). A submitter can be associated with one or more projects.
 
 **Project metadata** will have an abstract and information about coauthors, associated funding source, or set of funding sources, associated publications, and materials and methods. A project should be a discrete unit of research united by consistent personnel, funding sources, and/or materials and methods. A project code should be brief but descriptive and user defined, but should not otherwise conflict with existing project codes. One project should be associated with one DOI. A project can be associated with one or more sites.
@@ -58,14 +70,20 @@ We will make an effort to ingest existing data and curate submitted data in a hi
 **Depth Series Information**:  Soil cores have depth-series information which should include minimum and maximum depth increments, as well as measurements presented in their fundamental unit (explained above), with associated methods notes, uncertainties, and/or QA:QC flags if applicable (explained below). Each sample should have its own ‘sample code’. These can be submitter defined, but should conform to general principles for variable naming. In future syntheses time-series data could also be archived in this format with instrument replacing a core, and time replacing depth.
 
 ### Data Storage
+[Return to Top](#contents)
+
 Tabular data will be stored in a flat text file, meaning that no data formatting will be included. We will default to using tab-delimited text files (“.txt”) for simplicity. Although comma separated values “.csv” are also common, these types of files can be corrupted if commas are ever used within a variable rather than to delineate variables. Submissions that are received in other formats, such Microsoft Excel files will be edit-locked and archived as submission documents. However, a working version of this submission will be formatted according to Network standards in flat text files.
 
 Tabular data will be stored in long-form tables, as opposed to wide-form tables. Each column should correspond to one variable, each row should correspond to one entry. Each column needs to have a single data type, and represent only one variable. Extra information such as units, notes, or operator code will not be encoded as an excel note, cell color, or be included in the same cell as a value.
 
 ### Quality Control
-Network personnel will perform a cursory visual check on all data we curate and relay any concerns with the data submitter during the curation process. We will also write scripts to enforce consistent units and data types for controlled variables, to check for completeness, and to ensure there are no conflicts or duplicates with previously archived data. Some key variables will receive quality control flags. For variables that are strongly intercorrelated, quality control flags will be assigned to the whole sample unit. Key variables independent of sample intercorrelation will receive variable-specific quality code flags. For data that we curate, files will be edit-locked following QA:QC. Any updates or corrections will result in a new named ‘version’ of the file, a change logged by Network personnel in a text file associated with the data, and a note of the change sent to the next update of the Network email list members.
+[Return to Top](#contents)
+
+Network personnel will perform a cursory visual check on all data we curate and relay any concerns with the data submitter during the curation process. We will also write scripts to enforce consistent units and data types for controlled variables, to check for completeness, and to ensure there are no conflicts or duplicates with previously archived data. For data that we curate, files will be edit-locked following QA:QC. Any updates or corrections will result in a new named ‘version’ of the file, a change logged by Network personnel in a text file associated with the data, and a note of the change sent to the next update of the Network email list members.
 
 ### Submitting Data
+[Return to Top](#contents)
+
 If you are interested in submitting data, please email CoastalCarbon@si.edu and CCRCN personel will assist you in the process. We are working on building a webportal to automate a lot of this exchange, but until we do so this will remain a very friendly peer to peer handoff system. Data submissions can remain embargoed for any time specified by the submittor. In these cases a data release will be prepared and shared with submitter via a private dropbox link, until the embargo period ends, the data release is made public, and the dataset is drawn into synthesis products.
 
 

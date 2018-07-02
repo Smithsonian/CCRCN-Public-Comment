@@ -238,7 +238,7 @@ $(document).ready(function () {
 <li><a href="#domiant-species-present">Domiant Species Present</a></li>
 <li><a href="#anthropogenic-impacts-present">Anthropogenic Impacts Present</a></li>
 </ul></li>
-<li><a href="#user-defined-attributes-and-definitions">User Defined Attributes and Definitions</a>
+<li><a href="#submitter-defined-attributes-and-definitions">Submitter Defined Attributes and Definitions</a>
 <ul>
 <li><a href="#study-level-species-table">Study Level Species Table</a></li>
 <li><a href="#other-attributes-and-variables">Other Attributes and Variables</a></li>
@@ -248,8 +248,8 @@ $(document).ready(function () {
 <div id="overview" class="section level2">
 <h2>Overview</h2>
 <p><a href="#contents">Return to Top</a></p>
-<p>This page serves as guidence for the types and scope of data and metadata that will be archived as part of the Coastal carbon RCN’s developing tidal soil carbon synthesis. We propose the following data structure, standardized attribute names for metadata and data in order to make datasets machine readable and interoperable. Each sub-heading lists a level of metadata or data hierarchy from <em>study level</em> metadata to <em>site level</em> to <em>core level</em> to <em>depth/time series</em> information. Each subheading also represents separate tables which can be joined by common attributes such as study_id, site_id, and core_id. We also include accompanying sets of recommended controlled vocabulary for key categorical variables. Some attributes have controlled units that we wish to keep uniform across datasets. Data that we curate will follow naming conventions outlined herein. Data that we ingest from outside sources will be converted to these conventions when being ingested into the central GitHub databased using custom-built R scripts.</p>
-<p>At a minimum a submission should have the following for inclusion in soil carbon synthesis products: <em>study_id</em>, author information, <em>core_id</em>, latitude and longitude information associated with either a core or the site, <em>depth_min</em>, <em>depth_max</em>, <em>dry_bulk_density</em>, <em>organic_matter_fraction</em> and/or <em>carbon_fraction</em>. The more auxillary detail that you provide, the more widely your data can be used.</p>
+<p>This page serves as guidence for the types and scope of data and metadata that will be archived as part of the Coastal carbon RCN’s developing tidal soil carbon synthesis. We propose the following data structure, standardized attribute names for metadata and data in order to make datasets machine readable and interoperable. Each sub-heading lists a level of metadata or data hierarchy from <em>study level</em> metadata to <em>site level</em> to <em>core level</em> to <em>depth/time series</em> information. Each subheading also represents separate tables which can be joined by common attributes such as study_id, site_id, and core_id. We also include accompanying sets of recommended controlled vocabulary for key categorical variables. Some attributes have controlled units that we wish to keep uniform across datasets. Data that we curate will follow naming conventions outlined herein. Data that we ingest from outside sources will be converted to these conventions when being ingested into the central GitHub database using custom-built R scripts.</p>
+<p>At a minimum a submission should have the following for inclusion in soil carbon synthesis products: <em>study_id</em>, author information, <em>core_id</em>, latitude and longitude information associated with either a core or the site, <em>depth_min</em>, <em>depth_max</em>, <em>dry_bulk_density</em>, <em>organic_matter_fraction</em> and/or <em>carbon_fraction</em>. The more auxillary detail that you provide, the more widely your data can be used. Throughout the tables below <strong>mandatory attributes</strong> are shown in <strong>bold</strong>.</p>
 <p>There are many opportunities to express your data’s individuality. We refer throughout to ‘flags’ and ‘notes’. Flags refer to common methodlogical choices or data issues that can be coded using categorical variables (also known as factors). The idea behind flags is to allow users the option to query datasets based on methodology. Flags are very machine readable but not very flexable from the standoint of a submitter. Notes are available for almost all measured attributes and take the form of free-text allowing submitters to provide context, obeservations, or concerns about methods, sites, cores, or observations. These are more flexable from the perspective of a submitter but are less machine readable.</p>
 <div id="development-process-to-date" class="section level3">
 <h3>Development Process to Date</h3>
@@ -424,7 +424,7 @@ $(document).ready(function () {
 <td align="left"><b>corresponding_author</b></td>
 <td align="left">TRUE or FALSE indicating whether the author should be contacted as the corresponding author.</td>
 <td align="left">factor</td>
-<td align="left">NA</td>
+<td align="left">TRUE = The author should be contacted with any further questions. FALSE = The author should not be contacted with any further questions.</td>
 </tr>
 </tbody>
 </table>
@@ -464,7 +464,7 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">funding_notes</td>
-<td align="left">Any other user generated notes about the project funding.</td>
+<td align="left">Any other submitter generated notes about the project funding.</td>
 <td align="left">character</td>
 <td align="left"></td>
 </tr>
@@ -686,130 +686,70 @@ $(document).ready(function () {
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">n</td>
-<td align="left">Number of cores per study. This number can be automatically generated by ingestion code.</td>
-<td align="left">numeric</td>
-<td align="left">number</td>
-</tr>
-<tr class="odd">
 <td align="left">coring_method</td>
 <td align="left">Code indicating what type of device was used to collect soil depth profiles.</td>
 <td align="left">factor</td>
 <td align="left">gouge auger = A half cylinder coring device in which the coring section is open, not sealed off by a fin. hargas corer = A large diameter (&gt;10 cm) coring device consisting of a tube, piston, and a cutting head. mcauley corer = A half cylinder coring device with the coring section sealed off by a fin attached to a rotating pivot point. mccaffrey peat cutter = U-shaped blade that extracts a core by cutting down through peat. none specified = No coring device was specified. other shallow corer = Any other type of coring device typically taking cores shallower than 30 centimeters. piston corer = A device that extrudes core into tube upward with a plunger. push core = Any number of coring types involving driving a tube into the sediment to recover a core. pvc and hammer = PVC pipe was driven into the sediment with a hammer to recover a core. russian corer = A half cylinder coring device with the coring section sealed off by a fin attached to a rotating pivot point. vibracore = A technique involving collecting a core by sinking a continuous pipe into sediment attaching a source of vibration, then recovering using a winch and pulley. surface sample = A technique involving collecting a core shallower than ~5 cm using a circular metal cutter.</td>
 </tr>
-<tr class="even">
-<td align="left">roots_flag</td>
-<td align="left">Any notable comments on how the authors either included or excluded live roots from carbon assesments.</td>
-<td align="left">factor</td>
-<td align="left">roots and rhizomes included = Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements. roots seperated using floation = Roots and rhizomes were separated from soil using floatation before dry bulk density and or organic matter and carbon measurements.</td>
-</tr>
 <tr class="odd">
+<td align="left">roots_flag</td>
+<td align="left">Code indicating whether live roots were included or excluded from carbon assesments.</td>
+<td align="left">factor</td>
+<td align="left">roots and rhizomes included = Roots and rhizomes were included in dry bulk density and or organic matter and carbon measurements. roots and rhizones separated = Roots and rhizomes were separated from soil before dry bulk density and or organic matter and carbon measurements.</td>
+</tr>
+<tr class="even">
 <td align="left">sediment_sieved_flag</td>
-<td align="left">Any notable comments on whether or not sediment was sieved prior to carbon measurements.</td>
+<td align="left">Code indicating whether or not sediment was sieved prior to carbon measurements.</td>
 <td align="left">factor</td>
 <td align="left">sediment sieved = Sediment was sieved prior to analysis for organics. sediment not sieved = Sediment was not sieved prior to analysis for organics.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">sediment_sieve_size</td>
 <td align="left">If sediment was sieved, the size of sieve used.</td>
 <td align="left">numeric</td>
 <td align="left">millimeters</td>
 </tr>
-<tr class="odd">
-<td align="left">compaction_flag</td>
-<td align="left">Any notable codes regarding how the authors qualified or quantified compaction of the core.</td>
-<td align="left">factor</td>
-<td align="left">&lt; 10-20% = Compaction was less than 10 to 20% of the core depth. corer limits compaction = Authors specified that the coring device’s design minimized compaction. no obvious compaction = Authors observed no obvious compaction.</td>
-</tr>
 <tr class="even">
+<td align="left">compaction_flag</td>
+<td align="left">Code indicating how the authors qualified or quantified compaction of the core.</td>
+<td align="left">factor</td>
+<td align="left">compaction qualified = Compaction was at least qualified and noted by the authors. compaction quantified = Compaction was quantified and corrected for in core based measurements. corer limits compaction = Authors specified that the coring device’s design minimized compaction. no obvious compaction = Authors observed no obvious compaction. not specified = Compaction was not specified.</td>
+</tr>
+<tr class="odd">
 <td align="left">dry_bulk_density_temperature</td>
 <td align="left">Temperature at which samples were dried to measure dry bulk density. This can include either samples that were freeze dried or oven dried.</td>
 <td align="left">numeric</td>
 <td align="left">celsius</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">dry_bulk_density_time</td>
 <td align="left">Time over which samples were dried to measure dry bulk density.</td>
 <td align="left">numeric</td>
 <td align="left">hour</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">dry_bulk_density_flag</td>
 <td align="left">Any notable codes regarding how the authors quantified dry bulk density.</td>
 <td align="left">factor</td>
-<td align="left">air dried to constant mass = Methodology specified that samples were air dried to a constant mass. duplicate measurements = Methodology specified that the reported values are the averages of duplicated measurements. estimated from loss on ignition and particle densities of mineral and organic solids = Bulk density was not measured, but was modeled from loss on ignition and assumptions about the particle densities of organic and inorganic matter. freeze dried = Bulk density was measured on freeze dried samples. no details = No additional details regarding bulk density methodology were provided. removed non structural water = Bulk density methodology did not specify drying temperature or length, only that non-strucural water was removed. time approximate = Bulk density time recorded herin is an approximate estimate. time not specified = Bulk density time was not specified. to constant mass = Bulk density methodology did not specify drying temperature or length, only that samples were dried to a constant mass.</td>
+<td align="left">air dried to constant mass = Methodology specified that samples were air dried to a constant mass. modeled = Bulk density was not measured, but was modeled from loss on ignition and assumptions about the particle densities of organic and inorganic matter. freeze dried = Bulk density was measured on freeze dried samples. no details = No additional details regarding bulk density methodology were provided. removed non structural water = Bulk density methodology did not specify drying temperature or length, only that non-strucural water was removed. time approximate = Bulk density time recorded herin is an approximate estimate. time not specified = Bulk density time was not specified. to constant mass = Bulk density methodology did not specify drying temperature or length, only that samples were dried to a constant mass.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">loss_on_ignition_temperature</td>
 <td align="left">Temperature at which samples were combusted to estimate fraction organic matter.</td>
 <td align="left">numeric</td>
 <td align="left">celsius</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">loss_on_ignition_time</td>
 <td align="left">Time over which samples were combusted to estimate fraction organic matter.</td>
 <td align="left">numeric</td>
 <td align="left">hour</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">loss_on_ignition_flag</td>
-<td align="left">Any notable comments on how the authors estimated organic matter fraction using loss on ignition.</td>
+<td align="left">Common codes regarding loss on ignition methodology.</td>
 <td align="left">factor</td>
-<td align="left">duplicate measurements = Methodology specified that the reported values are the averages of duplicated measurements. ground and sieved = Methodology specified that the samples were ground and seived before loss on ignition. no details = No additional details regarding loss on ignition methodology were provided. time not specified = No additional details regarding loss on ignition duration were provided.</td>
-</tr>
-<tr class="even">
-<td align="left">carbon_measured_or_modeled</td>
-<td align="left">Code indicating whether fraction carbon was measured or estimated as a function of organic matter.</td>
-<td align="left">factor</td>
-<td align="left">measured = Fraction carbon was measured as opposed to modeled. modeled = Fraction carbon was modeled as opposed to measured.</td>
-</tr>
-<tr class="odd">
-<td align="left">carbonates_removed</td>
-<td align="left">Whether or not carbonates were removed prior to calculating fraction organic carbon.</td>
-<td align="left">factor</td>
-<td align="left">FALSE = Carbonates were not removed before measuring organic carbon. TRUE = Carbonates were removed before measuring organic carbon.</td>
-</tr>
-<tr class="even">
-<td align="left">carbonate_removal_method</td>
-<td align="left">The method used to remove carbonates prior to measuring fraction carbon.</td>
-<td align="left">factor</td>
-<td align="left">1N H3PO4 = I normal phosphoric acid was used to remove carbonates. direct acid treatment = Carbonates were removed using direct application of dilute acid. HCl fumigation = Carbonates were removed by fumigating with concentrated hydrochloric acid. low carbonate soil = Organic carbon fraction were measured without removing carbonates becasuse assuming carbonate content of the soil type was minimal. none specified = Carbonate removal methodology was not specified.</td>
-</tr>
-<tr class="odd">
-<td align="left">fraction_carbon_flag</td>
-<td align="left">Any notable comments on how the authors measured fraction carbon.</td>
-<td align="left">factor</td>
-<td align="left">extrapolated from subset of samples = A regression model fit using a subset of measurements was used to predict fraction carbon as a funciton of fraction organic matter. fumigated to remove microbeal biomass = Authors report removing microbeal biomass with acid fumigation. no details = No additional detals were provided regarding fraction carbon methodologies. replicate samples = Methodology specified that the reported values are the averages of duplicated measurements.</td>
-</tr>
-<tr class="even">
-<td align="left">cs_137_counting_method</td>
-<td align="left">Code indicating the method used for determining radiocesium activity.</td>
-<td align="left">factor</td>
-<td align="left">alpha = Alpha counting method used. gamma = Gamma counting method used.</td>
-</tr>
-<tr class="odd">
-<td align="left">pb_210_counting_method</td>
-<td align="left">Code indicating the method used for determining lead 210 activity.</td>
-<td align="left">factor</td>
-<td align="left">alpha = Alpha counting method used. gamma = Gamma counting method used.</td>
-</tr>
-<tr class="even">
-<td align="left">excess_pb_210_rate</td>
-<td align="left">Code indicating the mass or accretion rate used in the excess_pb_210_model</td>
-<td align="left">factor</td>
-<td align="left">mass accumulation = Excess <sup>210</sup>Pb modeled using mass accumulation rate. accretion = Excess <sup>210</sup>Pb modeled using vertical accretion rate.</td>
-</tr>
-<tr class="odd">
-<td align="left">excess_pb_210_model</td>
-<td align="left">Code indicating the model used to estimate excess lead 210.</td>
-<td align="left">factor</td>
-<td align="left">CRS = Constant rate of supply model used. CIC = Constant initial concentration model used. CFCS = Constant flux constant sedimentation model used.</td>
-</tr>
-<tr class="even">
-<td align="left">c_14_counting_method</td>
-<td align="left">Code indicating the method used for determining radiocarbon activity.</td>
-<td align="left">factor</td>
-<td align="left">AMS = Accelerator mass spectroscopy used. beta = Beta counting used.</td>
+<td align="left">no details = No additional details regarding loss on ignition methodology were provided. time approximate = Loss on ignition time recorded herin is an approximate estimate. time not specified = No additional details regarding loss on ignition duration were provided.</td>
 </tr>
 <tr class="odd">
 <td align="left">loi_bd_sample_volume</td>
@@ -822,6 +762,90 @@ $(document).ready(function () {
 <td align="left">Sample mass used for loss on ignition and bulk density measurements, if held constant.</td>
 <td align="left">numeric</td>
 <td align="left">grams</td>
+</tr>
+<tr class="odd">
+<td align="left">carbon_measured_or_modeled</td>
+<td align="left">Code indicating whether fraction carbon was measured or estimated as a function of organic matter.</td>
+<td align="left">factor</td>
+<td align="left">measured = Fraction carbon was measured as opposed to modeled. modeled = Fraction carbon was modeled as opposed to measured.</td>
+</tr>
+<tr class="even">
+<td align="left">carbonates_removed</td>
+<td align="left">Whether or not carbonates were removed prior to calculating fraction organic carbon.</td>
+<td align="left">factor</td>
+<td align="left">FALSE = Carbonates were not removed before measuring organic carbon. TRUE = Carbonates were removed before measuring organic carbon.</td>
+</tr>
+<tr class="odd">
+<td align="left">carbonate_removal_method</td>
+<td align="left">The method used to remove carbonates prior to measuring fraction carbon.</td>
+<td align="left">factor</td>
+<td align="left">direct acid treatment = Carbonates were removed using direct application of dilute acid. acid fumigation = Carbonates were removed by fumigating with concentrated acid. low carbonate soil = Organic carbon fraction were measured without removing carbonates becasuse assuming carbonate content of the soil type was minimal. none specified = Carbonate removal methodology was not specified.</td>
+</tr>
+<tr class="even">
+<td align="left">fraction_carbon_flag</td>
+<td align="left">Code indicating the method for which fraction carbon was measured or modeled.</td>
+<td align="left">factor</td>
+<td align="left">extrapolated from subset of samples = A regression model fit using a subset of measurements was used to predict fraction carbon as a funciton of fraction organic matter. no details = No additional detals were provided regarding fraction carbon methodologies.</td>
+</tr>
+<tr class="odd">
+<td align="left">fraction_carbon_type</td>
+<td align="left">Code indicating whether fraction_carbon refers to organic or total carbon.</td>
+<td align="left">factor</td>
+<td align="left">organic carbon = Author specified that fraction carbon measurements were of organic carbon. total carbon = Author specified that fraction carbon measurements were of total carbon.</td>
+</tr>
+<tr class="even">
+<td align="left">carbon_profile_notes</td>
+<td align="left">Any other submitter defined notes describing methodologies for determining dry bulk density, organic matter fraction, and carbon fraction.</td>
+<td align="left">character</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">cs_137_counting_method</td>
+<td align="left">Code indicating the method used for determining radiocesium activity.</td>
+<td align="left">factor</td>
+<td align="left">alpha = Alpha counting method used. gamma = Gamma counting method used.</td>
+</tr>
+<tr class="even">
+<td align="left">pb_210_counting_method</td>
+<td align="left">Code indicating the method used for determining lead 210 activity.</td>
+<td align="left">factor</td>
+<td align="left">alpha = Alpha counting method used. gamma = Gamma counting method used.</td>
+</tr>
+<tr class="odd">
+<td align="left">excess_pb_210_rate</td>
+<td align="left">Code indicating the mass or accretion rate used in the excess_pb_210_model</td>
+<td align="left">factor</td>
+<td align="left">mass accumulation = Excess <sup>210</sup>Pb modeled using mass accumulation rate. accretion = Excess <sup>210</sup>Pb modeled using vertical accretion rate.</td>
+</tr>
+<tr class="even">
+<td align="left">excess_pb_210_model</td>
+<td align="left">Code indicating the model used to estimate excess lead 210.</td>
+<td align="left">factor</td>
+<td align="left">CRS = Constant rate of supply model used. CIC = Constant initial concentration model used. CFCS = Constant flux constant sedimentation model used.</td>
+</tr>
+<tr class="odd">
+<td align="left">c_14_counting_method</td>
+<td align="left">Code indicating the method used for determining radiocarbon activity.</td>
+<td align="left">factor</td>
+<td align="left">AMS = Accelerator mass spectroscopy used. beta = Beta counting used.</td>
+</tr>
+<tr class="even">
+<td align="left">dating_notes</td>
+<td align="left">Any submitter defined notes elaborating on the process of dating the core not yet made clear by the coding.</td>
+<td align="left">character</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">age_depth_model_reference</td>
+<td align="left">Code indicating the reference or 0 year of the age depth model.</td>
+<td align="left">factor</td>
+<td align="left">YBP = Year zero is defined as years before present, 1960 CE. CE = Year zero is set according to Common Era and Before Common Era standards. TS = Year zero is defined as Taylor Swift’s birth year, 1989 CE. core collection date = Year zero is set as the core’s collection year.</td>
+</tr>
+<tr class="even">
+<td align="left">age_depth_model_notes</td>
+<td align="left">Any submitter defined notes on how the age depth model was created.</td>
+<td align="left">character</td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -987,7 +1011,7 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td align="left">core_notes</td>
-<td align="left">Any other relevant user generated notes on how cores were collected.</td>
+<td align="left">Any other relevant submitter generated notes on how cores were collected.</td>
 <td align="left">character</td>
 <td align="left"></td>
 </tr>
@@ -1017,7 +1041,7 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">core_position_notes</td>
-<td align="left">Any relevant user generated notes on how latitude and longitude were determined.</td>
+<td align="left">Any relevant submitter generated notes on how latitude and longitude were determined.</td>
 <td align="left">character</td>
 <td align="left"></td>
 </tr>
@@ -1047,7 +1071,7 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td align="left">core_elevation_notes</td>
-<td align="left">Any relevant user generated notes on how elevation was determined</td>
+<td align="left">Any relevant submitter generated notes on how elevation was determined</td>
 <td align="left">character</td>
 <td align="left"></td>
 </tr>
@@ -1065,7 +1089,7 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">salinity_notes</td>
-<td align="left">Any relevant user generated notes on how salinity_class was determined</td>
+<td align="left">Any relevant submitter generated notes on how salinity_class was determined</td>
 <td align="left">character</td>
 <td align="left"></td>
 </tr>
@@ -1184,40 +1208,40 @@ $(document).ready(function () {
 <td align="left">dimensionless</td>
 </tr>
 <tr class="even">
-<td align="left">fraction_carbon_type</td>
-<td align="left">Code assigned to specify the type of measurement fraction_carbon represents.</td>
-<td align="left">factor</td>
-<td align="left">fraction_organic_carbon = Author specified that fraction carbon measurements were of organic carbon. fraction_total_carbon = Author specified that fraction carbon measurements were of total carbon.</td>
-</tr>
-<tr class="odd">
 <td align="left">compaction_fraction</td>
 <td align="left">Fraction of the sample depth interval reduced due to compaction.</td>
 <td align="left">numeric</td>
 <td align="left">dimensionless</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">compaction_notes</td>
-<td align="left">Any user generated notes on compaction.</td>
+<td align="left">Any submitter generated notes on compaction.</td>
 <td align="left">character</td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">cs137_activity</td>
 <td align="left">Radioactivity counts per unit dry weight for radiocesium (<sup>137</sup>Cs).</td>
 <td align="left">numeric</td>
 <td align="left">becquerelPerKilogram</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">cs137_activity_sd</td>
 <td align="left">1 standard deviation of uncertainty associated with cs137_activity.</td>
 <td align="left">numeric</td>
 <td align="left">becquerelPerKilogram</td>
 </tr>
+<tr class="even">
+<td align="left">total_pb210_activity</td>
+<td align="left">Total radioactivity counts per unit dry weight for excess lead 210 (<sup>210</sup>Pb).</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
 <tr class="odd">
-<td align="left">cs137_notes</td>
-<td align="left">Any user generated notes on <sup>137</sup>Cs dating process.</td>
-<td align="left">character</td>
-<td align="left"></td>
+<td align="left">total_pb210_activity_sd</td>
+<td align="left">1 standard deviation of uncertainty associated with total_pb210_activity.</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">excess_pb210_activity</td>
@@ -1232,68 +1256,98 @@ $(document).ready(function () {
 <td align="left">becquerelPerKilogram</td>
 </tr>
 <tr class="even">
-<td align="left">excess_pb210_notes</td>
-<td align="left">Any user generated notes on <sup>210</sup>Pb dating process.</td>
-<td align="left">character</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
 <td align="left">c14_age</td>
 <td align="left">Radiocarbon age as estimated from AMS measurements.</td>
 <td align="left">numeric</td>
 <td align="left">radiocarbonYear</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">c14_age_sd</td>
 <td align="left">Estimated uncertainty in c14_age.</td>
 <td align="left">numeric</td>
 <td align="left">radiocarbonYear</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">c14_material</td>
 <td align="left">Description of the material selected for radiocarbon (<sup>14</sup>C) dating.</td>
 <td align="left">character</td>
 <td align="left"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">c14_notes</td>
-<td align="left">Any relevant user generated notes on <sup>14</sup>C dating process.</td>
+<td align="left">Any relevant submitter generated notes on <sup>14</sup>C dating process.</td>
 <td align="left">character</td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">delta_13c</td>
 <td align="left">The isotopic signiture of <sup>13</sup>C. This is oftentimes measured along with c14_age and can be useful for analysing carbon lability and provenance.</td>
 <td align="left">numeric</td>
 <td align="left">partsPerMillion</td>
 </tr>
+<tr class="odd">
+<td align="left">be_7_activity</td>
+<td align="left">Radioactivity counts per unit dry weight for <sup>7</sup>Be.</td>
+<td align="left">numeric</td>
+<td align="left">becquerelPerKilogram</td>
+</tr>
 <tr class="even">
+<td align="left">be_7_activity_sd</td>
+<td align="left">Estimated uncertainty in be_7_activity.</td>
+<td align="left">numeric</td>
+<td align="left">becquerelPerKilogram</td>
+</tr>
+<tr class="odd">
 <td align="left">am_241_activity</td>
 <td align="left">Radioactivity counts per unit dry weight for <sup>241</sup>Am.</td>
 <td align="left">numeric</td>
 <td align="left">becquerelPerKilogram</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">am_241_activity_sd</td>
 <td align="left">Estimated uncertainty in am_241_activity.</td>
 <td align="left">numeric</td>
 <td align="left">becquerelPerKilogram</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">marker_date</td>
 <td align="left">The age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.</td>
 <td align="left">Date</td>
 <td align="left">YYYY-MM-DD</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">marker_type</td>
 <td align="left">Code indicating the type of marker.</td>
 <td align="left">factor</td>
 <td align="left">artificial horizon = Horizon was added to the surface artificially by using materials such as feldspar, glitter, or rare earth elements. pollen = Pollen analysis was used to tie horizon to the timing of vegetation change such as the arrival of invasives, or the beginning of local agriculture. pollution = Chemical analysis was used to tie the horizon to the timing of a pollution event. tsunami = Sediment analysis was used to tie the horizon to the timing of a tsunami event.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">marker_notes</td>
-<td align="left">Any other user generated notes about the origin of the marker.</td>
+<td align="left">Any other submitter generated notes about the origin of the marker.</td>
+<td align="left">character</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">age</td>
+<td align="left">Most likely, median, or mean age of the depth interval from submitter generated age depth model.</td>
+<td align="left">numeric</td>
+<td align="left">year</td>
+</tr>
+<tr class="odd">
+<td align="left">age_min</td>
+<td align="left">Minimum age of the depth interval from submitter generated age depth model.</td>
+<td align="left">numeric</td>
+<td align="left">year</td>
+</tr>
+<tr class="even">
+<td align="left">age_max</td>
+<td align="left">Maximum age of the depth interval from submitter generated age depth model.</td>
+<td align="left">numeric</td>
+<td align="left">year</td>
+</tr>
+<tr class="odd">
+<td align="left">depth_interval_notes</td>
+<td align="left">Any other submitter generated notes specific to the depth interval.</td>
 <td align="left">character</td>
 <td align="left"></td>
 </tr>
@@ -1389,8 +1443,8 @@ $(document).ready(function () {
 </table>
 </div>
 </div>
-<div id="user-defined-attributes-and-definitions" class="section level2">
-<h2>User Defined Attributes and Definitions</h2>
+<div id="submitter-defined-attributes-and-definitions" class="section level2">
+<h2>Submitter Defined Attributes and Definitions</h2>
 <p><a href="#contents">Return to Top</a></p>
 <p>Part of the reason we controll these attribute and variable names are so that the dataset does not become unmanageable, and we can deliver products that run cleanly and smoothly to you. However we know that research is complicated, and not all of the data you want to include can be represented here. As long as it fits within this heirarchy, we allow you to submit user defined variables.</p>
 <div id="study-level-species-table" class="section level3">
@@ -1451,7 +1505,7 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td align="left">species_notes</td>
-<td align="left">Any other user submitted notes regarding the species.</td>
+<td align="left">Any other submitter defined notes regarding the species.</td>
 <td align="left">character</td>
 <td align="left"></td>
 </tr>
@@ -1461,7 +1515,7 @@ $(document).ready(function () {
 <div id="other-attributes-and-variables" class="section level3">
 <h3>Other Attributes and variables</h3>
 <p><a href="#contents">Return to Top</a></p>
-<p>Any user-defined attributes should be included in a separate table indicating the associated level of heirarchy, attribute name, data type (date, factor, character, or numeric). Attribute names should follow good naming practices: self descriptive, don’t start with a number or special character, no spaces. Dates should be stored as a character string and should have an accompanying ‘string format’ indicating the position, number of digits and deliminators for the date time. For example June twenty-sixth two-thousand eighteen written as 2018-06-26 would be formatted as ‘YYYY-MM-DD’. <a href="https://www.w3.org/TR/NOTE-datetime">Here is a handy dateTime reference</a>. Numberic values should have their units defined. Factors (or categorical variables) should be defined in a separate table.</p>
+<p>Any submitter-defined attributes should be included in a separate table indicating the associated level of heirarchy, attribute name, data type (date, factor, character, or numeric). Attribute names should follow good naming practices: self descriptive, don’t start with a number or special character, no spaces. Dates should be stored as a character string and should have an accompanying ‘string format’ indicating the position, number of digits and deliminators for the date time. For example June twenty-sixth two-thousand eighteen written as 2018-06-26 would be formatted as ‘YYYY-MM-DD’. <a href="https://www.w3.org/TR/NOTE-datetime">Here is a handy dateTime reference</a>. Numberic values should have their units defined. Factors (or categorical variables) should be defined in a separate table.</p>
 <table style="width:86%;">
 <colgroup>
 <col width="11%" />
