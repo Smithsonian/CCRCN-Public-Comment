@@ -1,5 +1,7 @@
 ---
 title: "Data Management Plan"
+subtitle: "Naming Conventions for Attributes and Variables (Version 1)"
+date: "3 July 2018"
 output: html_document
 ---
 <script>
@@ -29,9 +31,15 @@ The Network recognizes three classes of data: (i) data that we curate, (ii) data
 ## Digital Object Identifiers
 [Return to Top](#contents)
 
+<<<<<<< HEAD
 We encourage submitters to use best practices and to assign datasets a citable digital object identifier (DOI), which links to a repository containing freely downloadable data and associated metadata. We will prioritize ingesting such data into the synthesis. Data submitters can choose to forward DOIs issued outside of the Network for ingestion into the central data structure on the Network's SI GitHub website. Some DOI-issuing repository services include [Figshare](https://figshare.com/){target="_blank"} and the [Environmental Data Initiative](https://environmentaldatainitiative.org/){target="_blank"}. As a service to the community Network personnel can will be available to assist data submitters in archiving data according to outlined standards. 
 
 Submitters also have the option to host data on an SI server, and apply for a DOI through SI libraries, with the submitters credited as a dataset author and Network personel credited for their curatorial role. Landing pages with summaries of projects, sites, and cores will be viewable on Dspace, and the CCRCN website will advertise a link to the data release. While data will be digitally archived long-term in accordance with SI standards, we cannot guarantee new data will be accepted after Network funding ends.
+=======
+We encourage submitters to use best practices and to assign datasets a citable digital object identifier (DOI), which links to a repository containing downloadable data and associated metadata. We will prioritize ingesting such data into the synthesis. Data submitters can choose to forward DOIs issued outside of the Network for ingestion into the central data structure on the Network’s SI GitHub website. Some DOI-issuing repository services include [Figshare](https://figshare.com/) and the [Environmental Data Initiative](https://environmentaldatainitiative.org/). As a service to the community Network personell can will be available to assist data submitters in archiving data according to outlined standards.
+
+Submitters also have the option to also host data on an SI server, and apply for a DOI through SI libraries, with the submitters credited as a dataset author and Network personel credited for their curational role. Landing pages with summaries of projects, sites, cores, will be viewable on Dspae, and the CCRCN website will include a link to the data release. While data will be digitally archived long-term in accordance with SI standards, we cannot guarantee new data will be accepted after Network funding ends.
+>>>>>>> ac9a0bed98dae85ad0a001d1566e783a6dfc6bd2
 
 While we recognize that there is no official definition for what constitutes a trusted repository, repositories associated with DOIs should in general have community recognition and trust in their long-term stability. For data curated by the Network we hope that SI's reputation, DSpace's status as an approved technology, and the SIL's commitment to digital object curation, generate this level of community trust.
 
@@ -45,7 +53,11 @@ For data curated by the Network, we will use the Environmental Metadata Language
 
 Attribute names (analogous to column names in a spreadsheet) should follow good management practices[^1]. Attribute names should be self descriptive and machine readable. They should contain no spaces and must not begin with a number or special character; however, underscores (i.e. pothole_case) are acceptable.  We will recommend and adopt [controlled vocabulary for attribute naming](Controlled_Attributes_and_Variables.html). Any submitter defined attributes should follow the same naming principles and documentation.
 
+<<<<<<< HEAD
 Units for all attributes need to be defined and in some cases controlled. For some variables which typically have commonly reported units we will recommend submitters format using these controlled units. These include fraction_organic_matter (fraction), dry_bulk_density (g cm<sup>-3</sup>) and latitude and longitude (decimal degrees [world geographic survey 1984]). For attributes that are applicable to the synthesis, but typically have multiple common unit formats, we recommend an accompanying column defining these units. Uncommon data types, or data types not included in synthesis projects, simply need to have units defined in associated metadata.
+=======
+Units for all attributes need to be defined and in some cases controlled. For some variables which typically have commonly reported units we will recommend submittors format using these controlled units. These include fraction_organic_matter (fraction), dry_bulk_density (g cm<sup>-3</sup>) and latitude and longitude (decimal degrees [world geographic survey 1984]). Uncommon or data types not included in synthesis projects simply need to have units defined in associated metadata.
+>>>>>>> ac9a0bed98dae85ad0a001d1566e783a6dfc6bd2
 
 Good data practices require consistently formatting no data values and categorical variables. We have adopted the R-based convention of representing no data values as NA for all variable types (never blanks). Categorical variables should have descriptive names stored as text, similar to attribute names. For example, one may code the categorical variable treatments as numeric values 0 and 1 standing in for experimental and control; however, best practices would dictate coding these as descriptive characters (experimental and control) rather than numbers.
 
