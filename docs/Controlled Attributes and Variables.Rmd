@@ -1,6 +1,8 @@
 ---
 title: "Database Structure"
-subtitle: "Naming Conventions for Attributes and Variables"
+subtitle: "Naming Conventions for Attributes and Variables (Version 1)"
+date: "3 July 2018"
+
 output: html_document
 ---
 <script>
