@@ -57,27 +57,29 @@ f materials and methods,sediment_sieve_size,6,FALSE,"If sediment was sieved, the
 f materials and methods,compaction_flag,7,FALSE,Code indicating how the authors qualified or quantified compaction of the core.,NA,NA,NA,factor
 f materials and methods,dry_bulk_density_temperature,8,FALSE,Temperature at which samples were dried to measure dry bulk density. This can include either samples that were freeze dried or oven dried.,NA,celsius,real,numeric
 f materials and methods,dry_bulk_density_time,9,FALSE,Time over which samples were dried to measure dry bulk density.,NA,hour,real,numeric
-f materials and methods,dry_bulk_density_flag,10,FALSE,Any notable codes regarding how the authors quantified dry bulk density.,NA,NA,NA,factor
-f materials and methods,loss_on_ignition_temperature,11,FALSE,Temperature at which samples were combusted to estimate fraction organic matter.,NA,celsius,real,numeric
-f materials and methods,loss_on_ignition_time,12,FALSE,Time over which samples were combusted to estimate fraction organic matter.,NA,hour,real,numeric
-f materials and methods,loss_on_ignition_flag,13,FALSE,Common codes regarding loss on ignition methodology.,NA,NA,NA,factor
-f materials and methods,loi_bd_sample_volume,14,FALSE,"Sample volume used for loss on ignition and bulk density measurements, if held constant.",NA,cubicCentimeters,real,numeric
-f materials and methods,loi_bd_sample_mass,15,FALSE,"Sample mass used for loss on ignition and bulk density measurements, if held constant.",NA,grams,real,numeric
-f materials and methods,carbon_measured_or_modeled,16,FALSE,Code indicating whether fraction carbon was measured or estimated as a function of organic matter.,NA,NA,NA,factor
-f materials and methods,carbonates_removed,17,FALSE,Whether or not carbonates were removed prior to calculating fraction organic carbon.,NA,NA,NA,factor
-f materials and methods,carbonate_removal_method,18,FALSE,The method used to remove carbonates prior to measuring fraction carbon.,NA,NA,NA,factor
-f materials and methods,fraction_carbon_method,19,FALSE,"Code indicating the method for which fraction carbon was measured or modeled (Note: regression based models are permitted, but the use of the Bemmelen factor [0.58 gOC gOM<sup>-1</sup>] is discouraged).",NA,NA,NA,factor
-f materials and methods,fraction_carbon_type,20,FALSE,Code indicating whether fraction_carbon refers to organic or total carbon.,NA,NA,NA,factor
-f materials and methods,carbon_profile_notes,21,FALSE,"Any other submitter defined notes describing methodologies for determining dry bulk density, organic matter fraction, and carbon fraction.",NA,NA,NA,character
-f materials and methods,cs137_counting_method,22,FALSE,Code indicating the method used for determining radiocesium activity.,NA,NA,NA,factor
-f materials and methods,pb210_counting_method,23,FALSE,Code indicating the method used for determining lead 210 activity.,NA,NA,NA,factor
-f materials and methods,excess_pb210_rate,24,FALSE,Code indicating the mass or accretion rate used in the excess_pb_210_model,NA,NA,NA,factor
-f materials and methods,excess_pb210_model,25,FALSE,Code indicating the model used to estimate excess lead 210.,NA,NA,NA,factor
-f materials and methods,ra226_assumption,26,FALSE,Code indicating the assumption used to estimate the core's background <sup>226</sup>Ra levels.,NA,NA,NA,factor
-f materials and methods,c14_counting_method,27,FALSE,Code indicating the method used for determining radiocarbon activity.,NA,NA,NA,factor
-f materials and methods,dating_notes,28,FALSE,Any submitter defined notes elaborating on the process of dating the core not yet made clear by the coding.,NA,NA,NA,character
-f materials and methods,age_depth_model_reference,29,FALSE,Code indicating the reference or 0 year of the age depth model.,NA,NA,NA,factor
-f materials and methods,age_depth_model_notes,30,FALSE,Any submitter defined notes on how the age depth model was created.,NA,NA,NA,character
+f materials and methods,dry_bulk_density_sample_volume,10,FALSE,"Sample volume used for bulk density measurements, if held constant.",,cubicCentimeters,real,numeric
+f materials and methods,dry_bulk_density_sample_mass,11,FALSE,"Sample mass used for bulk density measurements, if held constant.",NA,grams,real,numeric
+f materials and methods,dry_bulk_density_flag,12,FALSE,Any notable codes regarding how the authors quantified dry bulk density.,NA,NA,NA,factor
+f materials and methods,loss_on_ignition_temperature,13,FALSE,Temperature at which samples were combusted to estimate fraction organic matter.,NA,celsius,real,numeric
+f materials and methods,loss_on_ignition_time,14,FALSE,Time over which samples were combusted to estimate fraction organic matter.,NA,hour,real,numeric
+f materials and methods,loss_on_ignition_sample_volume,15,FALSE,"Sample volume used for loss on ignition, if held constant.",NA,cubicCentimeters,real,numeric
+f materials and methods,loss_on_ignition_sample_mass,16,FALSE,"Sample mass used for loss on ignition, if held constant.",,grams,real,numeric
+f materials and methods,loss_on_ignition_flag,17,FALSE,Common codes regarding loss on ignition methodology.,NA,NA,NA,factor
+f materials and methods,carbon_measured_or_modeled,18,FALSE,Code indicating whether fraction carbon was measured or estimated as a function of organic matter.,NA,NA,NA,factor
+f materials and methods,carbonates_removed,19,FALSE,Whether or not carbonates were removed prior to calculating fraction organic carbon.,NA,NA,NA,factor
+f materials and methods,carbonate_removal_method,20,FALSE,The method used to remove carbonates prior to measuring fraction carbon.,NA,NA,NA,factor
+f materials and methods,fraction_carbon_method,21,FALSE,"Code indicating the method for which fraction carbon was measured or modeled (Note: regression based models are permitted, but the use of the Bemmelen factor [0.58 gOC gOM<sup>-1</sup>] is discouraged).",NA,NA,NA,factor
+f materials and methods,fraction_carbon_type,22,FALSE,Code indicating whether fraction_carbon refers to organic or total carbon.,NA,NA,NA,factor
+f materials and methods,carbon_profile_notes,23,FALSE,"Any other submitter defined notes describing methodologies for determining dry bulk density, organic matter fraction, and carbon fraction.",NA,NA,NA,character
+f materials and methods,cs137_counting_method,24,FALSE,Code indicating the method used for determining radiocesium activity.,NA,NA,NA,factor
+f materials and methods,pb210_counting_method,25,FALSE,Code indicating the method used for determining lead 210 activity.,NA,NA,NA,factor
+f materials and methods,excess_pb210_rate,26,FALSE,Code indicating the mass or accretion rate used in the excess_pb_210_model,NA,NA,NA,factor
+f materials and methods,excess_pb210_model,27,FALSE,Code indicating the model used to estimate excess lead 210.,NA,NA,NA,factor
+f materials and methods,ra226_assumption,28,FALSE,Code indicating the assumption used to estimate the core's background <sup>226</sup>Ra levels.,NA,NA,NA,factor
+f materials and methods,c14_counting_method,29,FALSE,Code indicating the method used for determining radiocarbon activity.,NA,NA,NA,factor
+f materials and methods,dating_notes,30,FALSE,Any submitter defined notes elaborating on the process of dating the core not yet made clear by the coding.,NA,NA,NA,character
+f materials and methods,age_depth_model_reference,31,FALSE,Code indicating the reference or 0 year of the age depth model.,NA,NA,NA,factor
+f materials and methods,age_depth_model_notes,32,FALSE,Any submitter defined notes on how the age depth model was created.,NA,NA,NA,character
 g site information,study_id,1,TRUE,"Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores.",NA,NA,NA,character
 g site information,site_id,2,FALSE,Site identification code unique to each study.,NA,NA,NA,character
 g site information,site_description,3,FALSE,Site description including relevant study details and political geographic units. Some of these descriptions can be automated by the ingestion code.,NA,NA,NA,character
