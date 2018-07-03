@@ -45,30 +45,41 @@ f materials and methods,carbon_measured_or_modeled,modeled,Fraction carbon was m
 f materials and methods,carbonates_removed,FALSE,Carbonates were not removed before measuring organic carbon.
 f materials and methods,carbonates_removed,TRUE,Carbonates were removed before measuring organic carbon.
 f materials and methods,carbonate_removal_method,direct acid treatment,Carbonates were removed using direct application of dilute acid.
-f materials and methods,carbonate_removal_method,acid  fumigation,Carbonates were removed by fumigating with concentrated acid.
-f materials and methods,carbonate_removal_method,low carbonate soil,Organic carbon fraction were measured without removing carbonates becasuse assuming carbonate content of the soil type was minimal. 
+f materials and methods,carbonate_removal_method,acid fumigation,Carbonates were removed by fumigating with concentrated acid.
+f materials and methods,carbonate_removal_method,low carbonate soil,Organic carbon fraction were measured without removing carbonates assuming carbonate content of the soil type was minimal. 
+f materials and methods,carbonate_removal_method,carbonates not removed,Carbonates were not removed and low carbonate soil was not specified.
 f materials and methods,carbonate_removal_method,none specified,Carbonate removal methodology was not specified.
-f materials and methods,fraction_carbon_flag,extrapolated from subset of samples,A regression model fit using a subset of measurements was used to predict fraction carbon as a funciton of fraction organic matter.
-f materials and methods,fraction_carbon_flag,no details,No additional detals were provided regarding fraction carbon methodologies.
-f materials and methods,cs_137_counting_method,alpha,Alpha counting method used.
-f materials and methods,cs_137_counting_method,gamma,Gamma counting method used.
-f materials and methods,pb_210_counting_method,alpha,Alpha counting method used.
-f materials and methods,pb_210_counting_method,gamma,Gamma counting method used.
-f materials and methods,excess_pb_210_rate,mass accumulation,Excess <sup>210</sup>Pb modeled using mass accumulation rate.
-f materials and methods,excess_pb_210_rate,accretion,Excess <sup>210</sup>Pb modeled using vertical accretion rate.
-f materials and methods,excess_pb_210_model,CRS,Constant rate of supply model used.
-f materials and methods,excess_pb_210_model,CIC,Constant initial concentration model used.
-f materials and methods,excess_pb_210_model,CFCS,Constant flux constant sedimentation model used.
-f materials and methods,c_14_counting_method,AMS,Accelerator mass spectroscopy used.
-f materials and methods,c_14_counting_method,beta,Beta counting used.
+f materials and methods,fraction_carbon_method,local regression,A regression model fit using a subset of measurements was used to predict fraction carbon as a funciton of fraction organic matter.
+f materials and methods,fraction_carbon_method,Craft regression,"Used regression model from Craft et al., 1991, Estuaries, to predict fraction carbon as a funciton of fraction organic matter."
+f materials and methods,fraction_carbon_method,Holmquist regression,"Used regression model from Holmquist et al., 2018, Scientific Reports, to predict fraction carbon as a funciton of fraction organic matter."
+f materials and methods,fraction_carbon_method,EA,Each sample presented was measured using Elemantal Analysis.
+f materials and methods,fraction_carbon_method,Fourqurean regression,"Used regression model from Fourqurean et al., 2012, Nature Geoscience, to predict fraction carbon as a funciton of fraction organic matter."
+f materials and methods,fraction_carbon_method,wet oxidation,Each sample was measured using a wet oxidation method.
+f materials and methods,fraction_carbon_method,kjeldahl digestion,Each sample was measured kjeldahl digestion method.
+f materials and methods,fraction_carbon_method,no details,No additional detals were provided regarding fraction carbon methodologies.
+f materials and methods,cs137_counting_method,alpha,Alpha counting method used.
+f materials and methods,cs137_counting_method,gamma,Gamma counting method used.
+f materials and methods,pb210_counting_method,alpha,Alpha counting method used.
+f materials and methods,pb210_counting_method,gamma,Gamma counting method used.
+f materials and methods,excess_pb210_rate,mass accumulation,Excess <sup>210</sup>Pb modeled using mass accumulation rate.
+f materials and methods,excess_pb210_rate,accretion,Excess <sup>210</sup>Pb modeled using vertical accretion rate.
+f materials and methods,excess_pb210_model,CRS,Constant rate of supply model used.
+f materials and methods,excess_pb210_model,CIC,Constant initial concentration model used.
+f materials and methods,excess_pb210_model,CFCS,Constant flux constant sedimentation model used.
+f materials and methods,ra226_assumption,each sample,<sup>226</sup>Ra was measured for each sample.
+f materials and methods,ra226_assumption,total core,"<sup>226</sup>Ra was measured for the total core,"
+f materials and methods,ra226_assumption,at asymtote,<sup>226</sup>Ra at the core's <sup>210</sup>Pb activity to depth assymptote was assumed to be the background level of the core.
+f materials and methods,c14_counting_method,AMS,Accelerator mass spectroscopy used.
+f materials and methods,c14_counting_method,beta,Beta counting used.
 f materials and methods,fraction_carbon_type,organic carbon,Author specified that fraction carbon measurements were of organic carbon.
 f materials and methods,fraction_carbon_type,total carbon,Author specified that fraction carbon measurements were of total carbon.
 f materials and methods,age_depth_model_reference,YBP,"Year zero is defined as years before present, 1960 CE."
 f materials and methods,age_depth_model_reference,CE,Year zero is set according to Common Era and Before Common Era standards.
-f materials and methods,age_depth_model_reference,TS,"Year zero is defined as Taylor Swift's birth year, 1989 CE."
 f materials and methods,age_depth_model_reference,core collection date,Year zero is set as the core's collection year.
-g site information,salinity_class,estuarine,5-35 parts per thousand salinity (ppt).
-g site information,salinity_class,palustrine,< 5 ppt.
+g site information,salinity_class,estuarine C-CAP,5-35 parts per thousand salinity (ppt) according to the coastal change analysis program.
+g site information,salinity_class,palustrine C-CAP,< 5 ppt according to the coastal change analysis program.
+g site information,salinity_class,estuarine,0.5-35 ppt according to most other definitions.
+g site information,salinity_class,palustrine,< 0.5 ppt according to most other definitions.
 g site information,salinity_class,brine,>50 ppt.
 g site information,salinity_class,saline,30-50 ppt.
 g site information,salinity_class,brackish,0.5-30 ppt.
@@ -98,7 +109,7 @@ h subsite information,core_position_method,handheld,Conventional Commercially av
 h subsite information,core_position_method,other high resolution,Any other technique resulting in positional error < 1 meter.
 h subsite information,core_position_method,other moderate resolution,Any other technique resulting in positional error < 30 meters.
 h subsite information,core_position_method,other low resolution,Any other technique resulting in positional error > 30 meters.
-h subsite information,core_elevation_datum,NAVD88,"A gravity-based geodetic datum, North American Vertical Datum from 1988."
+h subsite information,core_elevation_datum,NAVD88,"A gravity-based geodetic datum, North American Vertical Datum of 1988."
 h subsite information,core_elevation_datum,MSL,"A tidal datum, Mean Sea Level as measured against a local tide gauge."
 h subsite information,core_elevation_datum,MTL,"A tidal datum, Mean Tidal Level as measured against a local tide gauge."
 h subsite information,core_elevation_datum,MHW,"A tidal datum, Mean High Water as measured against a local tide gauge."
@@ -111,8 +122,10 @@ h subsite information,core_elevation_method,other high resolution,Any other tech
 h subsite information,core_elevation_method,LiDAR,Handheld GPS matched to lidar-based digital elevation model.
 h subsite information,core_elevation_method,DEM,Handheld GPS matched to another digital elevation model.
 h subsite information,core_elevation_method,other low resolution,Any other technique resulting in positional error > 5 cm of random error.
-h subsite information,salinity_class,estuarine,5-35 parts per thousand salinity (ppt).
-h subsite information,salinity_class,palustrine,< 5 ppt.
+h subsite information,salinity_class,estuarine C-CAP,5-35 parts per thousand salinity (ppt) according to the coastal change analysis program.
+h subsite information,salinity_class,palustrine C-CAP,< 5 ppt according to the coastal change analysis program.
+h subsite information,salinity_class,estuarine,0.5-35 ppt according to most other definitions.
+h subsite information,salinity_class,palustrine,< 0.5 ppt according to most other definitions.
 h subsite information,salinity_class,brine,>50 ppt.
 h subsite information,salinity_class,saline,30-50 ppt.
 h subsite information,salinity_class,brackish,0.5-30 ppt.
@@ -144,13 +157,14 @@ j depth series,marker_type,pollen,"Pollen analysis was used to tie horizon to th
 j depth series,marker_type,pollution,Chemical analysis was used to tie the horizon to the timing of a pollution event.
 j depth series,marker_type,tsunami,Sediment analysis was used to tie the horizon to the timing of a tsunami event.
 l impact at site or subsite,impact_class,tidally restricted,Tidal flow is muted or blocked by built structures.
-l impact at site or subsite,impact_class,managed impounded,"Tidal flow is muted or blocked seasonally, and other times follow natural or semi-natural flooding patterns."
-l impact at site or subsite,impact_class,ditched,Tidal hydrology is altered because artificial ditches have been cut to improve drainage.
-l impact at site or subsite,impact_class,drained,"Tidal hydrology is altered because artificial the wetland has been drained by any combination of impoundments, ditching, pumping, etc."
-l impact at site or subsite,impact_class,farmed,"Special case of impoundment, managed impoundment, or drainage in which wetland have been converted to agricultural land."
-l impact at site or subsite,impact_class,impoundment removed,Tidal flow has been restored by removing an artificial impoundment.
-l impact at site or subsite,impact_class,revegetated,Tidal vegetation has been reintroduced by replanting on unvegetated surfaces.
+l impact at site or subsite,impact_class,impounded,"Water level is raised artificially by a tidal restriction, resulting in ponding of water on the wetland and or upland surface."
+l impact at site or subsite,impact_class,managed impounded,"Wetland is impounded seasonally, and other times natural or semi natural hydrology occurs."
+l impact at site or subsite,impact_class,ditched,Tidal hydrology is altered because artificial ditches have been cut to promote tidal flooding and drainage.
+l impact at site or subsite,impact_class,diked and drained,"The wetland has been diked and drained, with or without flapper gates, pumping, or other means."
+l impact at site or subsite,impact_class,farmed,Managed impoundment or drainage in which wetland has been converted to agricultural land.
+l impact at site or subsite,impact_class,tidally restored,Tidal flow has been restored by removing an artificial obstruction.
+l impact at site or subsite,impact_class,revegetated,Wetland vegetation has been reintroduced by replanting on unvegetated surfaces.
 l impact at site or subsite,impact_class,invasive plants removed,Natural plant communities have been restored by the active removal of invasive plant species.
 l impact at site or subsite,impact_class,invasive herbivores removed,Tidal wetland vegetation has been managed by the removal of invasive herbivores.
 l impact at site or subsite,impact_class,sediment added,Elevation has been managed by artificially adding sediment to the site using techniques such as thin layering or sediment diversion.
-l impact at site or subsite,impact_class,wetlands built,Wetlands previously eroded but have been rebuilt using sediments such as dredge spoils or other reclamation techniques.
+l impact at site or subsite,impact_class,wetlands built,Constructed wetland using sediments such as dredge spoils or other sediment source.

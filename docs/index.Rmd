@@ -11,7 +11,6 @@ output:
    });
 </script>
 
-## Overview
 The goal of the Coastal Carbon Research Coordination Network (CCRCN) is to accelerate the pace of discovery in coastal wetland carbon science by providing our community with access to data, analysis tools, and synthesis opportunities. Our activities include bringing data libraries online, creating open source analysis and modeling tools, providing training and outreach opportunities, holding town halls, responding to community feedback, and hosting data synthesis workshops targeted at strategically reducing uncertainty in a coastal carbon science issue. Our first focal activity is building a public online data library of soil carbon data.
 
 The Coastal Carbon Research Coordination Network (herein Network) builds on work by the Blue Carbon Initiative, the NASA Blue Carbon Monitoring System, and the US Carbon Cycle Science Program. Our data management principles incorporate experience from these efforts, and best practices developed in collaboration with data management specialists across the Smithsonian and our partner institutions.
@@ -35,8 +34,8 @@ The Coastal Carbon Research Coordination Network (herein Network) builds on work
 [Return to Top](#contents)
 
 * **Principle Investigators** - Emmett Duffy, Patrick Megonigal, and James Holmquist are responsible for executing the project as proposed to NSF, reporting to NSF on project progress, and carrying out the fiduciary requirements of the grant.
-* **Director** - The Director is responsible for directing the activities of the Principal Investigators, and overall management of the Network.
-* **Manager** - The Manager is responsible for leading the daily activities of the Network, responding to stakeholders, and interacting with the Steering Committee. 
+* **Director** - The Director (Patrick Megonigal) is responsible for directing the activities of the Principal Investigators, and overall management of the Network.
+* **Manager** - The Manager (currently James Holmquist) is hired by the Director with input from the steering committee. The manager is responsible for leading the daily activities of the Network, responding to stakeholders, and interacting with the Steering Committee. 
 * **Steering Committee Members** - Steering committee members are responsible for advising the Director and Manager on Network management, adherence to core principles, workshop topics, and evaluating steering committee nominees.
 * **CCRCN Personnel** - Principal Investigators, the Steering Committee, and people with official Smithsonian affiliations who work on Network-related tasks. Personnel are responsible for implementing the activities of the Network.
 * **Collaborators / Collaborating Organizations** - Collaborators include researchers who are not Network personnel, but are otherwise actively contributing to Network products in collaboration with Network personnel, or as part of data synthesis workshops. Collaborators are expected to participate at the level of co-author on synthesis products. Collaborating Organization responsibilities are similar to Collaborators except the organization and the Network have entered into a memorandum of understanding to formalize expectations with respect to the Network. Collaborating organizations are expected to explore financial support of activities that are not supported by the NSF funding that established the Network, and to explore opportunities to secure funding to support Network activities beyond the initial five years of NSF funding.
@@ -46,17 +45,17 @@ The Coastal Carbon Research Coordination Network (herein Network) builds on work
 ### Steering Committee Membership
 [Return to Top](#contents)
 
-The three Principal Investigators are permanent members of the Steering Committee. Five additional members will be chosen to assist the Network with existing or emerging needs as identified by the Steering Committee. In principle, the members should represent a range of stakeholder interests and technical expertise. Members serve for one year, but can be reappointed for one year at the discretion of the Director. Rotations are staggered so that no more than half of the rotating members on the Steering Committee are replaced in a given year.
+The three Principal Investigators are permanent members of the Steering Committee. Five additional members will be chosen to assist the Network with existing or emerging needs as identified by the Steering Committee. In principle, the members should represent a range of stakeholder interests and technical expertise. Members serve for one year, but can be reappointed for one year at the discretion of the Director. Candidates for the steering committee can nominate themselves or be nominated by their colleagues. The steering committee will vote on replacements with members stepping down helping to choose their replacement. Rotations are staggered so that no more than half of the rotating members on the Steering Committee are replaced in a given year.
 
 ### Data Synthesis Workshops
 [Return to Top](#contents)
 
-Data synthesis products lead by the Network will be developed over the course of five workshops organized and led by Network personal and collaborators. Potential collaborators can [propose a workshop, or apply to participate in workshop](http://serc.si.edu/CoastalCarbon/). The Steering Committee will vote on topics and participants for each workshop, which will typically have 12-15 participants.
+Data synthesis products led by the Network will be developed over the course of five workshops organized and led by Network personal and collaborators. Potential collaborators can [propose a workshop, or apply to participate in workshop](https://serc.si.edu/coastalcarbon/working-group-application). The Steering Committee will vote on topics and participants for each workshop, which will typically have 12-15 participants.
 
 ### Coauthorship Policy
 [Return to Top](#contents)
 
-Researchers accepted to participate in any of the the five synthesis workshops hosted by the Network will be expected to contribute before, during, and following the workshop to be granted co-authorship. We will follow the [American Geophysical Union’s 2017 Scientific and Professional Ethics: Guideline B. Ethical Obligations of Authors/Contributors for determining co-authorship](https://harassment.agu.org/files/2017/08/ScientificIntegrityandProfessionalEthics_25August2017.pdf). Submitting data to the network alone will not merit co-authorship in data syntheses. If done according to the protocols established herein, it will result in citation.
+Those accepted to participate in any of the the five synthesis workshops hosted by the Network will be expected to contribute before, during, and following the workshop, and to be granted co-authorship on puplications resulting from the effort. We will follow the [American Geophysical Union’s 2017 Scientific and Professional Ethics: Guideline B. Ethical Obligations of Authors/Contributors for determining co-authorship](https://harassment.agu.org/files/2017/08/ScientificIntegrityandProfessionalEthics_25August2017.pdf). Submitting data to the network alone will not merit co-authorship in data syntheses. If done according to the protocols established herein, it will result in citation.
 
 Co-authorship policies in data sharing exercises often benefit established researchers from western industrialized nations at the expense of those from groups with less institutional power [^1]. We commit to adopting policies and technologies that facilitate engagement of students, people with indigenous knowledge, and researchers from low and middle income countries as attendees and co-authors in synthesis activities. This policy will be implemented within the limits of NSF CCRCN grant resources.
 

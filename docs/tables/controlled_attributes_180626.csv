@@ -66,26 +66,27 @@ f materials and methods,loi_bd_sample_mass,15,FALSE,"Sample mass used for loss o
 f materials and methods,carbon_measured_or_modeled,16,FALSE,Code indicating whether fraction carbon was measured or estimated as a function of organic matter.,NA,NA,NA,factor
 f materials and methods,carbonates_removed,17,FALSE,Whether or not carbonates were removed prior to calculating fraction organic carbon.,NA,NA,NA,factor
 f materials and methods,carbonate_removal_method,18,FALSE,The method used to remove carbonates prior to measuring fraction carbon.,NA,NA,NA,factor
-f materials and methods,fraction_carbon_flag,19,FALSE,Code indicating the method for which fraction carbon was measured or modeled.,NA,NA,NA,factor
+f materials and methods,fraction_carbon_method,19,FALSE,"Code indicating the method for which fraction carbon was measured or modeled (Note: regression based models are permitted, but the use of the Bemmelen factor [0.58 gOC gOM<sup>-1</sup>] is discouraged).",NA,NA,NA,factor
 f materials and methods,fraction_carbon_type,20,FALSE,Code indicating whether fraction_carbon refers to organic or total carbon.,NA,NA,NA,factor
 f materials and methods,carbon_profile_notes,21,FALSE,"Any other submitter defined notes describing methodologies for determining dry bulk density, organic matter fraction, and carbon fraction.",NA,NA,NA,character
-f materials and methods,cs_137_counting_method,22,FALSE,Code indicating the method used for determining radiocesium activity.,NA,NA,NA,factor
-f materials and methods,pb_210_counting_method,23,FALSE,Code indicating the method used for determining lead 210 activity.,NA,NA,NA,factor
-f materials and methods,excess_pb_210_rate,24,FALSE,Code indicating the mass or accretion rate used in the excess_pb_210_model,NA,NA,NA,factor
-f materials and methods,excess_pb_210_model,25,FALSE,Code indicating the model used to estimate excess lead 210.,NA,NA,NA,factor
-f materials and methods,c_14_counting_method,26,FALSE,Code indicating the method used for determining radiocarbon activity.,NA,NA,NA,factor
-f materials and methods,dating_notes,27,FALSE,Any submitter defined notes elaborating on the process of dating the core not yet made clear by the coding.,NA,NA,NA,character
-f materials and methods,age_depth_model_reference,28,FALSE,Code indicating the reference or 0 year of the age depth model.,NA,NA,NA,factor
-f materials and methods,age_depth_model_notes,29,FALSE,Any submitter defined notes on how the age depth model was created.,NA,NA,NA,character
+f materials and methods,cs137_counting_method,22,FALSE,Code indicating the method used for determining radiocesium activity.,NA,NA,NA,factor
+f materials and methods,pb210_counting_method,23,FALSE,Code indicating the method used for determining lead 210 activity.,NA,NA,NA,factor
+f materials and methods,excess_pb210_rate,24,FALSE,Code indicating the mass or accretion rate used in the excess_pb_210_model,NA,NA,NA,factor
+f materials and methods,excess_pb210_model,25,FALSE,Code indicating the model used to estimate excess lead 210.,NA,NA,NA,factor
+f materials and methods,ra226_assumption,26,FALSE,Code indicating the assumption used to estimate the core's background <sup>226</sup>Ra levels.,NA,NA,NA,factor
+f materials and methods,c14_counting_method,27,FALSE,Code indicating the method used for determining radiocarbon activity.,NA,NA,NA,factor
+f materials and methods,dating_notes,28,FALSE,Any submitter defined notes elaborating on the process of dating the core not yet made clear by the coding.,NA,NA,NA,character
+f materials and methods,age_depth_model_reference,29,FALSE,Code indicating the reference or 0 year of the age depth model.,NA,NA,NA,factor
+f materials and methods,age_depth_model_notes,30,FALSE,Any submitter defined notes on how the age depth model was created.,NA,NA,NA,character
 g site information,study_id,1,TRUE,"Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores.",NA,NA,NA,character
 g site information,site_id,2,FALSE,Site identification code unique to each study.,NA,NA,NA,character
 g site information,site_description,3,FALSE,Site description including relevant study details and political geographic units. Some of these descriptions can be automated by the ingestion code.,NA,NA,NA,character
-g site information,site_latitude_max,5,FALSE,Maximum latitude defining a bounding box for the site in decimal degree WGS84. This can also be generated automatically by the ingestion code.,NA,degree,real,numeric
+g site information,site_latitude_max,5,FALSE,Maximum latitude defining a bounding box for the site in decimal degree World Geodedic System of 1984 (WGS84). This can also be generated automatically by the ingestion code.,NA,degree,real,numeric
 g site information,site_latitude_min,6,FALSE,Minimum latitude defining a bounding box for the site in decimal degree WGS84. This can also be generated automatically by the ingestion code.,NA,degree,real,numeric
 g site information,site_longitude_max,7,FALSE,Maximum longitude defining a bounding box for the site in decimal degree WGS84. This can also be generated automatically by the ingestion code.,NA,degree,real,numeric
 g site information,site_longitude_min,8,FALSE,Minimum longitude defining a bounding box for the site in decimal degree WGS84. This can also be generated automatically by the ingestion code.,NA,degree,real,numeric
 g site information,site_boundaries,9,FALSE,"As an alternative to submitting or automatically generating a bounding box, submittors can include a shapefile (.shp) or keyhole markup language (.kml) documenting the geographic boundaries of the site. This can be converted to and stored in well known text (WTK) format.",NA,NA,NA,character
-g site information,salinity_class,10,FALSE,Code based on submitter field observation or measurement indicating average annual salinity.,NA,NA,NA,factor
+g site information,salinity_class,10,FALSE,"Code based on submitter field observation or measurement indicating average annual salinity (Note: Palustrine and freshwater should only include tidal wetlands, or wetlands that are potentially/formerly tidal but artificially freshened due to artificial tidal restrictions).",NA,NA,NA,factor
 g site information,salinity_method,11,FALSE,Indicate whether salinity_class was determined using a field observation or a measurement.,NA,NA,NA,factor
 g site information,salinity_notes,12,FALSE,Any relevant submitter generated notes on how salinity_class was determined.,NA,NA,NA,character
 g site information,vegetation_class,13,FALSE,Code based on submitter field observations or measurement indicating dominant wetland vegetation type.,NA,NA,NA,factor
@@ -105,11 +106,11 @@ h subsite information,core_position_accuracy,8,FALSE,"Accuracy of latitude and l
 h subsite information,core_position_method,9,FALSE,Code indicating how latitude and longitude were determined.,NA,NA,NA,factor
 h subsite information,core_position_notes,10,FALSE,Any relevant submitter generated notes on how latitude and longitude were determined.,NA,NA,NA,character
 h subsite information,core_elevation,11,FALSE,Surface elevation of the core relative to defined datum.,NA,meters,real,numeric
-h subsite information,core_elevation_datum,12,FALSE,The datum relative to which the core was measured.,NA,NA,NA,factor
+h subsite information,core_elevation_datum,12,FALSE,The datum relative to which the core elevation was measured against (For a complete list of datum names and aliases please refer to the ISO Geodedic Registry https://iso.registry.bespire.eu/register/geodetic/VerticalDatum).,NA,NA,NA,factor
 h subsite information,core_elevation_accuracy,13,FALSE,"Accuracy of elevation measurement, if determined and recorded",NA,meters,real,numeric
 h subsite information,core_elevation_method,14,FALSE,Code indicating how elevationwas determined,NA,NA,NA,factor
 h subsite information,core_elevation_notes,15,FALSE,Any relevant submitter generated notes on how elevation was determined,NA,NA,NA,character
-h subsite information,salinity_class,16,FALSE,Code based on submitter field observation or measurement indicating average annual salinity.,NA,NA,NA,factor
+h subsite information,salinity_class,16,FALSE,"Code based on submitter field observation or measurement indicating average annual salinity (Note: Palustrine and freshwater should only include tidal wetlands, or wetlands that are potentially/formerly tidal but artificially freshened due to artificial tidal restrictions).",NA,NA,NA,factor
 h subsite information,salinity_method,17,FALSE,Indicate whether salinity_class was determined using a field observation or a measurement,NA,NA,NA,factor
 h subsite information,salinity_notes,18,FALSE,Any relevant submitter generated notes on how salinity_class was determined,NA,NA,NA,character
 h subsite information,vegetation_class,19,FALSE,Code based on submitter field observations or measurement indicating dominant wetland vegetation type.,NA,NA,NA,factor
@@ -132,26 +133,28 @@ j depth series,compaction_fraction,11,FALSE,Fraction of the sample depth interva
 j depth series,compaction_notes,12,FALSE,Any submitter generated notes on compaction.,NA,NA,NA,character
 j depth series,cs137_activity,13,FALSE,Radioactivity counts per unit dry weight for radiocesium (<sup>137</sup>Cs).,NA,becquerelPerKilogram,real,numeric
 j depth series,cs137_activity_sd,14,FALSE,1 standard deviation of uncertainty associated with cs137_activity.,NA,becquerelPerKilogram,real,numeric
-j depth series,total_pb210_activity,15,FALSE,Total radioactivity counts per unit dry weight for excess lead 210 (<sup>210</sup>Pb).,,,,
-j depth series,total_pb210_activity_sd,16,FALSE,1 standard deviation of uncertainty associated with total_pb210_activity.,,,,
-j depth series,excess_pb210_activity,17,FALSE,Excess radioactivity counts per unit dry weight for excess lead 210 (<sup>210</sup>Pb).,NA,becquerelPerKilogram,real,numeric
-j depth series,excess_pb210_activity_sd,18,FALSE,1 standard deviation of uncertainty associated with excess_pb210_activity.,NA,becquerelPerKilogram,real,numeric
-j depth series,c14_age,19,FALSE,Radiocarbon age as estimated from AMS measurements.,NA,radiocarbonYear,real,numeric
-j depth series,c14_age_sd,20,FALSE,Estimated uncertainty in c14_age.,NA,radiocarbonYear,real,numeric
-j depth series,c14_material,21,FALSE,Description of the material selected for radiocarbon (<sup>14</sup>C) dating.,NA,NA,NA,character
-j depth series,c14_notes,22,FALSE,Any relevant submitter generated notes on <sup>14</sup>C dating process.,NA,NA,NA,character
-j depth series,delta_13c,23,FALSE,The isotopic signiture of <sup>13</sup>C. This is oftentimes measured along with c14_age and can be useful for analysing carbon lability and provenance.,NA,partsPerMillion,real,numeric
-j depth series,be_7_activity,24,FALSE,Radioactivity counts per unit dry weight for <sup>7</sup>Be.,NA,becquerelPerKilogram,real,numeric
-j depth series,be_7_activity_sd,25,FALSE,Estimated uncertainty in be_7_activity.,NA,becquerelPerKilogram,real,numeric
-j depth series,am_241_activity,26,FALSE,Radioactivity counts per unit dry weight for <sup>241</sup>Am.,NA,becquerelPerKilogram,real,numeric
-j depth series,am_241_activity_sd,27,FALSE,Estimated uncertainty in am_241_activity.,NA,becquerelPerKilogram,real,numeric
-j depth series,marker_date,28,FALSE,"The age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",YYYY-MM-DD,NA,NA,Date
-j depth series,marker_type,29,FALSE,Code indicating the type of marker.,NA,NA,NA,factor
-j depth series,marker_notes,30,FALSE,Any other submitter generated notes about the origin of the marker.,NA,NA,NA,character
-j depth series,age,31,FALSE,"Most likely, median, or mean age of the depth interval from submitter generated age depth model.",NA,year,real,numeric
-j depth series,age_min,32,FALSE,Minimum age of the depth interval from submitter generated age depth model.,NA,year,real,numeric
-j depth series,age_max,33,FALSE,Maximum age of the depth interval from submitter generated age depth model.,NA,year,real,numeric
-j depth series,depth_interval_notes,34,FALSE,Any other submitter generated notes specific to the depth interval.,NA,NA,NA,character
+j depth series,total_pb210_activity,15,FALSE,Total radioactivity counts per unit dry weight for excess lead 210 (<sup>210</sup>Pb).,NA,becquerelPerKilogram,real,numeric
+j depth series,total_pb210_activity_sd,16,FALSE,1 standard deviation of uncertainty associated with total_pb210_activity.,NA,becquerelPerKilogram,real,numeric
+j depth series,ra226_activity,17,FALSE,Total radioactivity counts per unit dry weight for Radium 226 (<sup>226</sup>Ra) if measured as part of the <sup>210</sup>Pb dating process.,NA,becquerelPerKilogram,real,numeric
+j depth series,ra226_activity_sd,18,FALSE,1 standard deviation of uncertainty associated with ra226_activity.,NA,becquerelPerKilogram,real,numeric
+j depth series,excess_pb210_activity,19,FALSE,Excess radioactivity counts per unit dry weight for excess lead 210 (<sup>210</sup>Pb).,NA,becquerelPerKilogram,real,numeric
+j depth series,excess_pb210_activity_sd,20,FALSE,1 standard deviation of uncertainty associated with excess_pb210_activity.,NA,becquerelPerKilogram,real,numeric
+j depth series,c14_age,21,FALSE,Radiocarbon age as estimated from AMS measurements.,NA,radiocarbonYear,real,numeric
+j depth series,c14_age_sd,22,FALSE,Estimated uncertainty in c14_age.,NA,radiocarbonYear,real,numeric
+j depth series,c14_material,23,FALSE,Description of the material selected for radiocarbon (<sup>14</sup>C) dating.,NA,NA,NA,character
+j depth series,c14_notes,24,FALSE,Any relevant submitter generated notes on <sup>14</sup>C dating process.,NA,NA,NA,character
+j depth series,delta_c13,25,FALSE,The isotopic signiture of <sup>13</sup>C. This is oftentimes measured along with c14_age and can be useful for analysing carbon lability and provenance.,NA,partsPerMillion,real,numeric
+j depth series,be7_activity,26,FALSE,Radioactivity counts per unit dry weight for <sup>7</sup>Be.,NA,becquerelPerKilogram,real,numeric
+j depth series,be7_activity_sd,27,FALSE,Estimated uncertainty in be_7_activity.,NA,becquerelPerKilogram,real,numeric
+j depth series,am241_activity,28,FALSE,Radioactivity counts per unit dry weight for <sup>241</sup>Am.,NA,becquerelPerKilogram,real,numeric
+j depth series,am241_activity_sd,29,FALSE,Estimated uncertainty in am_241_activity.,NA,becquerelPerKilogram,real,numeric
+j depth series,marker_date,30,FALSE,"The age of any other dated depth horizon such as an artificial marker, pollen horizon, pollution horizon, etc.",YYYY-MM-DD,NA,NA,Date
+j depth series,marker_type,31,FALSE,Code indicating the type of marker.,NA,NA,NA,factor
+j depth series,marker_notes,32,FALSE,Any other submitter generated notes about the origin of the marker.,NA,NA,NA,character
+j depth series,age,33,FALSE,"Most likely, median, or mean age of the depth interval from submitter generated age depth model.",NA,year,real,numeric
+j depth series,age_min,34,FALSE,Minimum age of the depth interval from submitter generated age depth model.,NA,year,real,numeric
+j depth series,age_max,35,FALSE,Maximum age of the depth interval from submitter generated age depth model.,NA,year,real,numeric
+j depth series,depth_interval_notes,36,FALSE,Any other submitter generated notes specific to the depth interval.,NA,NA,NA,character
 k species present at site or subsite,study_id,1,TRUE,"Unique identifier for the study made up of the first author's family name, as well as the second author's or 'et al.' if more than three, then publication year spearated by underscores.",NA,NA,NA,character
 k species present at site or subsite,site_id,2,FALSE,Site identification code unique to each study.,NA,NA,NA,character
 k species present at site or subsite,core_id,3,FALSE,Core identification code unique to each site.,NA,NA,NA,character

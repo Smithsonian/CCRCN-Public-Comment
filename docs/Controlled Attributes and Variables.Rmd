@@ -34,9 +34,11 @@ output: html_document
 ## Overview
 [Return to Top](#contents)
 
-This page serves as guidence for the types and scope of data and metadata that will be archived as part of the Coastal carbon RCN's developing tidal soil carbon synthesis. We propose the following data structure, standardized attribute names for metadata and data in order to make datasets machine readable and interoperable. Each sub-heading lists a level of metadata or data hierarchy from *study level* metadata to *site level* to *core level* to *depth/time series* information. Each subheading also represents separate tables which can be joined by common attributes such as study_id, site_id, and core_id. We also include accompanying sets of recommended controlled vocabulary for key categorical variables. Some attributes have controlled units that we wish to keep uniform across datasets. Data that we curate will follow naming conventions outlined herein. Data that we ingest from outside sources will be converted to these conventions when being ingested into the central GitHub database using custom-built R scripts.
+This page serves as guidence for the types and scope of data and metadata that will be archived as part of the Coastal carbon RCN's developing tidal soil carbon synthesis. We propose the following data structure, standardized attribute names for metadata and data in order to make datasets machine readable and interoperable. Each sub-heading lists a level of metadata or data hierarchy from *study level* metadata to *site level* to *core level* to *depth series* information. Each subheading also represents separate tables which can be joined by common attributes such as study_id, site_id, and core_id. We also include accompanying sets of recommended controlled vocabulary for key categorical variables. Some attributes have controlled units that we wish to keep uniform across datasets. Data that we curate will follow naming conventions outlined herein. Data that we ingest from outside sources will be converted to these conventions when being ingested into the central GitHub database using custom-built R scripts.
 
 At a minimum a submission should have the following for inclusion in soil carbon synthesis products: *study_id*, author information, *core_id*, latitude and longitude information associated with either a core or the site, *depth_min*, *depth_max*, *dry_bulk_density*, *organic_matter_fraction* and/or *carbon_fraction*. The more auxillary detail that you provide, the more widely your data can be used. Throughout the tables below **mandatory attributes** are shown in **bold**.
+ 
+The *depth series* is the level at which carbon relevant information is housed. This synthesis will not ingest core-level or site-level averages of variables like dry bulk density, fraction organic matter, or fraction carbon. These averages can be derrived from the database, but are not immediately useful to our research questions unless those averages can be traced back to their original data.
  
 There are many opportunities to express your data's individuality. We refer throughout to 'flags' and 'notes'. Flags refer to common methodlogical choices or data issues that can be coded using categorical variables (also known as factors). The idea behind flags is to allow users the option to query datasets based on methodology. Flags are very machine readable but not very flexable from the standoint of a submitter. Notes are available for almost all measured attributes and take the form of free-text allowing submitters to provide context, obeservations, or concerns about methods, sites, cores, or observations. These are more flexable from the perspective of a submitter but are less machine readable.
 
@@ -52,7 +54,7 @@ This guidence is the culminations of three efforts:
 ### Ongoing and Future Development
 [Return to Top](#contents)
 
-We aknowledge that this is a lot of information to process and do not want to imply >100 attribtues are manditory. They are not. While we will make the entire entry template available for download, we are also in the process of designing an application which will generate a custom submission template based on your answers to a questionaire about your dataset.
+We aknowledge that this is a lot of information to process and do not want to imply >100 attribtues are manditory. They are not. While we will make the entire entry template available for download (LINK PENDING), we are also in the process of designing an application which will generate a custom submission template based on your answers to a questionaire about your dataset.
 
 Submitters can feel free to add other attributes to data submissions as long as the attributes and any associated categorical variables are defined with the submission. CCRCN personel will accept and archive related soils data within reason, but will not be able to quality control data falling outside the outlined guidence. If attributes or variables become commonly submitted and there is community coordination behind their inclusion, they could be integrated into periodic updates to this guidence.
 
@@ -190,7 +192,7 @@ kable(mAndM_display, caption = "Materials and Methods")
 ## Site Level
 [Return to Top](#contents)
 
-Site information is not mandatory, but could provide important context for your study. You should describe the site and how it fits into your broader study, provide geographic information (although this can be generated automatically from the cores as well), and add any relevant tags and notes regarding site vegetation and inundation. Vegetation and inundation can alternatively be incorporated into the core-level data, whatever makes the most sense to your study design.
+Site information is not required, but could provide important context for your study. You should describe the site and how it fits into your broader study, provide geographic information (although this can be generated automatically from the cores as well), and add any relevant tags and notes regarding site vegetation and inundation. Vegetation and inundation can alternatively be incorporated into the core-level data, whatever makes the most sense for your study design.
 
 ``` {r, site table, echo = F}
 site_display <- create_attributes_display_table(table_subset = "g site information")
@@ -201,7 +203,7 @@ kable(site_display, caption = "Site Information")
 ## Core Level
 [Return to Top](#contents)
 
-Note positional data can be assigned at the core level, or at the site level, however, it is important that this is specified, that site coordinates are not attributed as core coordinates, and that the method of measurement and precision is noted. Vegetation and inundation can alternatively be incorporated into the site-level data, whatever makes the most sense to your study design. In the future this level of hierarchy will be reassesed as the 'subsite level' as this level of heirarchy can handle any sublocation information such as vegetation plot, and instrument location and description.
+Note that positional data can be assigned at the core level, or at the site level. However, it is important that this is specified, that site coordinates are not attributed as core coordinates, and that the method of measurement and precision is noted. Vegetation and inundation can alternatively be incorporated into the site-level data, whatever makes the most sense to your study design. In the future this level of hierarchy will be reassesed as the 'subsite level' as this level of heirarchy can handle any sublocation information such as vegetation plot, and instrument location and description.
 
 
 ``` {r, Core- (or Subsite-) Level Information, echo = F}
@@ -234,7 +236,7 @@ You can record species codes associated with sites and/or cores.
 
 ``` {r, Species Table, echo = F}
 species_display <- create_attributes_display_table(table_subset = "k species present at site or subsite")
-kable(species_display, caption = "Species Present at Site or Subsite")
+kable(species_display[1:4,], caption = "Species Present at Site or Subsite")
 ```
 
 
