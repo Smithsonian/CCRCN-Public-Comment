@@ -46,17 +46,17 @@ f materials and methods,carbonates_removed,FALSE,Carbonates were not removed bef
 f materials and methods,carbonates_removed,TRUE,Carbonates were removed before measuring organic carbon.
 f materials and methods,carbonate_removal_method,direct acid treatment,Carbonates were removed using direct application of dilute acid.
 f materials and methods,carbonate_removal_method,acid fumigation,Carbonates were removed by fumigating with concentrated acid.
-f materials and methods,carbonate_removal_method,low carbonate soil,Organic carbon fraction were measured without removing carbonates assuming carbonate content of the soil type was minimal. 
+f materials and methods,carbonate_removal_method,low carbonate soil,Organic carbon fraction was measured without removing carbonates assuming carbonate content of the soil type was minimal. 
 f materials and methods,carbonate_removal_method,carbonates not removed,Carbonates were not removed and low carbonate soil was not specified.
 f materials and methods,carbonate_removal_method,none specified,Carbonate removal methodology was not specified.
-f materials and methods,fraction_carbon_method,local regression,A regression model fit using a subset of measurements was used to predict fraction carbon as a funciton of fraction organic matter.
-f materials and methods,fraction_carbon_method,Craft regression,"Used regression model from Craft et al., 1991, Estuaries, to predict fraction carbon as a funciton of fraction organic matter."
-f materials and methods,fraction_carbon_method,Holmquist regression,"Used regression model from Holmquist et al., 2018, Scientific Reports, to predict fraction carbon as a funciton of fraction organic matter."
-f materials and methods,fraction_carbon_method,EA,Each sample presented was measured using Elemantal Analysis.
-f materials and methods,fraction_carbon_method,Fourqurean regression,"Used regression model from Fourqurean et al., 2012, Nature Geoscience, to predict fraction carbon as a funciton of fraction organic matter."
+f materials and methods,fraction_carbon_method,local regression,A regression model fit using a subset of measurements was used to predict fraction carbon as a function of fraction organic matter.
+f materials and methods,fraction_carbon_method,Craft regression,"Used regression model from Craft et al., 1991, Estuaries, to predict fraction carbon as a function of fraction organic matter."
+f materials and methods,fraction_carbon_method,Holmquist regression,"Used regression model from Holmquist et al., 2018, Scientific Reports, to predict fraction carbon as a function of fraction organic matter."
+f materials and methods,fraction_carbon_method,EA,Each sample presented was measured using Elemental Analysis.
+f materials and methods,fraction_carbon_method,Fourqurean regression,"Used regression model from Fourqurean et al., 2012, Nature Geoscience, to predict fraction carbon as a function of fraction organic matter."
 f materials and methods,fraction_carbon_method,wet oxidation,Each sample was measured using a wet oxidation method.
 f materials and methods,fraction_carbon_method,kjeldahl digestion,Each sample was measured kjeldahl digestion method.
-f materials and methods,fraction_carbon_method,no details,No additional detals were provided regarding fraction carbon methodologies.
+f materials and methods,fraction_carbon_method,no details,No additional details were provided regarding fraction carbon methodologies.
 f materials and methods,cs137_counting_method,alpha,Alpha counting method used.
 f materials and methods,cs137_counting_method,gamma,Gamma counting method used.
 f materials and methods,pb210_counting_method,alpha,Alpha counting method used.
@@ -68,7 +68,7 @@ f materials and methods,excess_pb210_model,CIC,Constant initial concentration mo
 f materials and methods,excess_pb210_model,CFCS,Constant flux constant sedimentation model used.
 f materials and methods,ra226_assumption,each sample,<sup>226</sup>Ra was measured for each sample.
 f materials and methods,ra226_assumption,total core,"<sup>226</sup>Ra was measured for the total core,"
-f materials and methods,ra226_assumption,at asymtote,<sup>226</sup>Ra at the core's <sup>210</sup>Pb activity to depth assymptote was assumed to be the background level of the core.
+f materials and methods,ra226_assumption,at asymptote,asy
 f materials and methods,c14_counting_method,AMS,Accelerator mass spectroscopy used.
 f materials and methods,c14_counting_method,beta,Beta counting used.
 f materials and methods,fraction_carbon_type,organic carbon,Author specified that fraction carbon measurements were of organic carbon.
@@ -103,7 +103,7 @@ g site information,inundation_class,low,"Study-specific definition of an elevati
 g site information,inundation_class,levee,"Study-specific definition of a relatively high elevation zone built up on the edge of a river, creek, or channel."
 g site information,inundation_class,back,Study-specific definition of a relatively low elevation zone behind a levee.
 g site information,inundation_method,field observation,Inundation inferred by field observation such as vegetation.
-g site information,inundation_method,measurement,Inundation class assesed from elevation and nearby tidegauge or other similar method.
+g site information,inundation_method,measurement,Inundation class assessed from elevation and nearby tide gauge or other similar method.
 h subsite information,core_position_method,RTK,Real-time kinematic global position system (GPS).
 h subsite information,core_position_method,handheld,Conventional Commercially available hand-held GPS.
 h subsite information,core_position_method,other high resolution,Any other technique resulting in positional error < 1 meter.
